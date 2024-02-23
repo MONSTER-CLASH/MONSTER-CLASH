@@ -9,6 +9,7 @@ public class StatusSystem : MonoBehaviour
     public float CurrentHealth;
     public float Attack;
     public float AttackSpeed;
+    public float AttackRange;
     public float MoveSpeed;
 
     [SerializeField] private UnitStatusData _unitStatusData;
@@ -20,6 +21,7 @@ public class StatusSystem : MonoBehaviour
         CurrentHealth = MaxHealth;
         Attack = _unitStatusData.Attack;
         AttackSpeed = _unitStatusData.AttackSpeed;
+        AttackRange = _unitStatusData.AttackRange;
         MoveSpeed = _unitStatusData.MoveSpeed;
     }
 }

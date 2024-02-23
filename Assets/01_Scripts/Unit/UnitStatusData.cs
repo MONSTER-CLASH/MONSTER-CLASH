@@ -8,5 +8,6 @@ public class UnitStatusData : ScriptableObject
     public float Health;
     public float Attack;
     public float AttackSpeed;
+    public float AttackRange;
     public float MoveSpeed;
 }

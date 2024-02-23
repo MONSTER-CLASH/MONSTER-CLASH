@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class AttackSystem : MonoBehaviour
 {
+    /// <summary>
+    /// float : 가해진 최종 대미지, GameObject : 피해자
+    /// </summary>
     public Action<float, GameObject> OnAttackHitted;
+    /// <summary>
+    /// GameObject : 피해자
+    /// </summary>
     public Action<GameObject> OnKilled;
 
     private StatusSystem _statusSystem;

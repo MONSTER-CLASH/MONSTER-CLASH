@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+    /// <summary>
+    /// float : 받은 최종 대미지, GameObject : 공격자
+    /// </summary>
     public Action<float, GameObject> OnDamaged;
+    /// <summary>
+    /// float : 받은 최종 힐량, GameObject : 치유자
+    /// </summary>
     public Action<float, GameObject> OnHealed;
+    /// <summary>
+    /// GameObject : 처치자
+    /// </summary>
     private Action<GameObject> _onDead;
     public Action<GameObject> OnDead
     {

@@ -7,7 +7,7 @@ public class StatusSystem : MonoBehaviour
     public string Name;
     public float MaxHealth;
     public float CurrentHealth;
-    public float Attack;
+    public float AttackDamage;
     public float AttackSpeed;
     public float AttackRange;
     public float MoveSpeed;
@@ -19,7 +19,7 @@ public class StatusSystem : MonoBehaviour
         Name = _unitStatusData.Name;
         MaxHealth = _unitStatusData.Health;
         CurrentHealth = MaxHealth;
-        Attack = _unitStatusData.Attack;
+        AttackDamage = _unitStatusData.AttackDamage;
         AttackSpeed = _unitStatusData.AttackSpeed;
         AttackRange = _unitStatusData.AttackRange;
         MoveSpeed = _unitStatusData.MoveSpeed;

@@ -13,10 +13,10 @@ public class HealthSystem : MonoBehaviour
     /// float : 받은 최종 힐량, GameObject : 치유자
     /// </summary>
     public Action<float, GameObject> OnHealed;
+    private Action<GameObject> _onDead;
     /// <summary>
     /// GameObject : 처치자
     /// </summary>
-    private Action<GameObject> _onDead;
     public Action<GameObject> OnDead
     {
         get => _isDead ? null : _onDead;

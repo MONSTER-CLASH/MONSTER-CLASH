@@ -10,6 +10,7 @@ public class StatusSystem : MonoBehaviour
     public float AttackDamage;
     public float AttackSpeed;
     public float AttackRange;
+    public float AttackDetectRange;
     public float MoveSpeed;
 
     [SerializeField] private UnitStatusData _unitStatusData;
@@ -22,6 +23,7 @@ public class StatusSystem : MonoBehaviour
         AttackDamage = _unitStatusData.AttackDamage;
         AttackSpeed = _unitStatusData.AttackSpeed;
         AttackRange = _unitStatusData.AttackRange;
+        AttackDetectRange = _unitStatusData.AttackDetectRange;
         MoveSpeed = _unitStatusData.MoveSpeed;
     }
 }

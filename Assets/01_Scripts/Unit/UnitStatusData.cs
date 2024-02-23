@@ -9,5 +9,6 @@ public class UnitStatusData : ScriptableObject
     public float AttackDamage;
     public float AttackSpeed;
     public float AttackRange;
+    public float AttackDetectRange;
     public float MoveSpeed;
 }

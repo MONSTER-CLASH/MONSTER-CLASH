@@ -14,13 +14,6 @@ public class AttackSystem : MonoBehaviour
     /// </summary>
     public Action<GameObject> OnKilled;
 
-    private StatusSystem _statusSystem;
-
-    private void Awake()
-    {
-        _statusSystem = GetComponent<StatusSystem>();
-    }
-
     public void SendDamage(GameObject target, float damage)
     {
         HealthSystem healthSystem = target.GetComponent<HealthSystem>();

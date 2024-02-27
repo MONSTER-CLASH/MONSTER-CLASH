@@ -19,6 +19,7 @@ public class AttackableProjectile : MonoBehaviour
     private GameObject _attacker;
     private GameObject _target;
     private float _damage;
+    private bool _isTargeted;
 
     private void FixedUpdate()
     {
@@ -26,6 +27,11 @@ public class AttackableProjectile : MonoBehaviour
         {
             transform.LookAt(_target.transform.position);
         }
+        else if (_target == null && _isTargeted)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     public void SetProjectileData(GameObject attacker, GameObject target, float damage, float speed)
@@ -33,6 +39,7 @@ public class AttackableProjectile : MonoBehaviour
         _attacker = attacker;
         _target = target;
         _damage = damage;
+        _isTargeted = true;
 
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.VelocityChange);
     }
@@ -61,7 +68,7 @@ public class AttackableProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == _target)
+        if (_target != null && other.gameObject == _target)
         {
             SendDamage();
             Destroy(gameObject);

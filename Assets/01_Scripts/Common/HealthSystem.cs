@@ -34,6 +34,11 @@ public class HealthSystem : MonoBehaviour
     }
 
     private bool _isDead = false;
+    public bool IsDead
+    {
+        get => _isDead;
+    }
+
     private GameObject _killer = null;
 
     private StatusSystem _statusSystem;

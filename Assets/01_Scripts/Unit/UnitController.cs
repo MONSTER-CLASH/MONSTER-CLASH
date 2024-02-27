@@ -7,13 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(AttackSystem))]
 public abstract class UnitController : MonoBehaviour
 {
-    private StatusSystem _statusSystem;
+    private UnitStatusSystem _unitStatusSystem;
     private HealthSystem _healthSystem;
     private AttackSystem _attackSystem;
 
     private void Awake()
     {
-        _statusSystem = GetComponent<StatusSystem>();
+        _unitStatusSystem = GetComponent<UnitStatusSystem>();
         _healthSystem = GetComponent<HealthSystem>();
         _attackSystem = GetComponent<AttackSystem>();
     }

@@ -46,6 +46,5 @@ public class BaseAttackSystem : MonoBehaviour
 
             _attackCool = Time.time + (1f / _baseStatusSystem.AttackSpeed);
         }
-
     }
 }

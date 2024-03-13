@@ -6,17 +6,19 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(UnitStatusSystem))]
 [RequireComponent(typeof(HealthSystem))]
+[RequireComponent(typeof(AttackSystem))]
 public abstract class UnitController : MonoBehaviour
 {
-    private UnitStatusSystem _unitStatusSystem;
+    protected UnitStatusSystem _unitStatusSystem;
     private HealthSystem _healthSystem;
+    protected AttackSystem _attackSystem;
 
     private NavMeshAgent _agent;
     private Animator _animator;
 
     private bool _canAttack => _attackCool < Time.time;
     private float _attackCool;
-    private GameObject _attackTarget;
+    protected GameObject _attackTarget;
 
     private bool _canMove => _motionStopTime < Time.time;
     private float _motionStopTime;

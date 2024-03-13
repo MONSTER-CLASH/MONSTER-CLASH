@@ -13,7 +13,7 @@ public class AttackableProjectile : AttackSystem
         {
             transform.LookAt(_target.transform.position);
         }
-        else if (_target == null && _isTargeted)
+        else if (_isTargeted)
         {
             Destroy(gameObject);
         }

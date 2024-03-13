@@ -45,7 +45,7 @@ public abstract class UnitController : MonoBehaviour
 
     protected void DetectAttackTarget()
     {
-        if (_attackTarget || _healthSystem.IsDead) return;
+        if (_attackTarget || !_canMove || _healthSystem.IsDead) return;
 
         string checkLayer = null;
         if (gameObject.layer == LayerMask.NameToLayer("Player")) checkLayer = "Enemy";
@@ -75,6 +75,7 @@ public abstract class UnitController : MonoBehaviour
         {
             HandleAttack();
             _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
+            //StartCoroutine(SetMotionStopTime());
         }
     }
 
@@ -86,7 +87,17 @@ public abstract class UnitController : MonoBehaviour
 
     protected void Move()
     {
+        _agent.isStopped = !_canMove || _healthSystem.IsDead;
 
+        if (_attackTarget)
+        {
+            _agent.SetDestination(_attackTarget.transform.position);
+        }
+        else
+        {
+            DetectAttackTarget();
+            DetectEnemyBase();
+        }
     }
 
     protected abstract void HandleAttack();

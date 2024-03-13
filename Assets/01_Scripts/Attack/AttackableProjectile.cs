@@ -1,17 +1,7 @@
-using System;
 using UnityEngine;
 
-public class AttackableProjectile : MonoBehaviour
+public class AttackableProjectile : AttackSystem
 {
-    /// <summary>
-    /// float : 가해진 최종 대미지, GameObject : 피해자
-    /// </summary>
-    public Action<float, GameObject> OnAttackHitted;
-    /// <summary>
-    /// GameObject : 피해자
-    /// </summary>
-    public Action<GameObject> OnKilled;
-
     private GameObject _attacker;
     private GameObject _target;
     private float _damage;
@@ -40,33 +30,11 @@ public class AttackableProjectile : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.VelocityChange);
     }
 
-    private void SendDamage()
-    {
-        HealthSystem healthSystem = _target.GetComponent<HealthSystem>();
-
-        Action<float, GameObject> onHitted = (finalDamage, _) => { OnAttackHitted?.Invoke(finalDamage, _target); };
-        Action<GameObject> onKilled = (_) => { OnKilled?.Invoke(_target); };
-
-        if (healthSystem != null)
-        {
-            healthSystem.OnDamaged += onHitted;
-            healthSystem.OnDead += onKilled;
-        }
-
-        healthSystem.TakeDamage(_damage, _attacker);
-
-        if (healthSystem != null)
-        {
-            healthSystem.OnDamaged -= onHitted;
-            healthSystem.OnDead -= onKilled;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (_target != null && other.gameObject == _target)
         {
-            SendDamage();
+            SendDamage(_target, _damage, _attacker);
             Destroy(gameObject);
         }
     }

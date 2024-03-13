@@ -12,7 +12,7 @@ public class AttackSystem : MonoBehaviour
     /// </summary>
     public Action<GameObject> OnKilled;
 
-    public void SendDamage(GameObject target, float damage)
+    public void SendDamage(GameObject target, float damage, GameObject attacker)
     {
         HealthSystem healthSystem = target.GetComponent<HealthSystem>();
 
@@ -25,7 +25,7 @@ public class AttackSystem : MonoBehaviour
             healthSystem.OnDead += onKilled;
         }
 
-        healthSystem.TakeDamage(damage, gameObject);
+        healthSystem.TakeDamage(damage, attacker);
 
         if (healthSystem != null)
         {

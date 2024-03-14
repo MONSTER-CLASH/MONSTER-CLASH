@@ -14,6 +14,5 @@ public class TestUnit : UnitController
     protected override void HandleAttack()
     {
         _attackSystem.SendDamage(_attackTarget, _unitStatusSystem.AttackDamage, gameObject);
-        Debug.Log("Attacked");
     }
 }

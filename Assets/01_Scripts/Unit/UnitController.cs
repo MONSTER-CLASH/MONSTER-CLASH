@@ -126,7 +126,7 @@ public abstract class UnitController : MonoBehaviour
 
     protected virtual IEnumerator DieCoroutine(GameObject killer)
     {
-        _animator.SetBool("Die", true);
+        _animator.SetTrigger("Die");
 
         yield return null;
         yield return new WaitForSeconds(_animator.GetNextAnimatorClipInfo(0).Length);

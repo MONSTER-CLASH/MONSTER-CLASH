@@ -45,4 +45,13 @@ public class BaseAttackSystem : MonoBehaviour
             _attackCool = Time.time + (1f / _baseStatusSystem.AttackSpeed);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        if (_baseStatusSystem)
+        {
+            Gizmos.color = new Color(1, 0, 0, 0.25f);
+            Gizmos.DrawSphere(transform.position, _baseStatusSystem.AttackRange);
+        }
+    }
 }

@@ -35,7 +35,7 @@ public abstract class UnitController : MonoBehaviour
         _attackSystem = GetComponent<AttackSystem>();
 
         _agent = GetComponent<NavMeshAgent>();
-        _animator = GetComponentInChildren<Animator>();
+        _animator = GetComponent<Animator>();
 
         SetOppositeBase();
 
@@ -89,7 +89,6 @@ public abstract class UnitController : MonoBehaviour
 
         if (enemys.Contains(_attackTarget.GetComponent<Collider>()))
         {
-            HandleAttack();
             _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
             StartCoroutine(SetMotionStopTime());
         }

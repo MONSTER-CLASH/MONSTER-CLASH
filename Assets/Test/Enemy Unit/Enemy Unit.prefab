@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 4892258493803381109}
   - component: {fileID: 4892258493803381066}
   - component: {fileID: 4892258493803381067}
+  - component: {fileID: 1438248130}
   m_Layer: 7
   m_Name: Enemy Unit
   m_TagString: Untagged
@@ -355,6 +356,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1438248130
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892258493803381064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7d44b7ac60d92844caab9b6377f0d373, type: 3}
+  m_Controller: {fileID: 22100000, guid: 19e441cc9e8989e47a3b1f93043959ac, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4952949267704732477
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +552,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6641548594833727873}
-  - component: {fileID: 6602624771679137610}
   m_Layer: 0
   m_Name: CactusPA
   m_TagString: Untagged
@@ -555,27 +576,6 @@ Transform:
   m_Father: {fileID: 4892258493803381105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6602624771679137610
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296126762627595067}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7d44b7ac60d92844caab9b6377f0d373, type: 3}
-  m_Controller: {fileID: 22100000, guid: 19e441cc9e8989e47a3b1f93043959ac, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6590174069665260530
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,6 +69,11 @@ public abstract class UnitController : MonoBehaviour
 
     protected void DetectAttackTarget()
     {
+        if (_attackTarget && _attackTarget.GetComponent<HealthSystem>().IsDead)
+        {
+            _attackTarget = null;
+        }
+
         if (_attackTarget || !_canMove || _healthSystem.IsDead) return;
 
         List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackDetectRange, _oppositeLayer).ToList();
@@ -76,9 +81,15 @@ public abstract class UnitController : MonoBehaviour
         
         if (enemys.Count > 0)
         {
-            _attackTarget = enemys[0].gameObject;
+            for (int i=0; i <enemys.Count; i++)
+            {
+                if (!enemys[i].GetComponent<HealthSystem>().IsDead)
+                {
+                    _attackTarget = enemys[i].gameObject;
+                    return;
+                }
+            }
         }
-
     }
 
     protected void Attack()
@@ -128,8 +139,8 @@ public abstract class UnitController : MonoBehaviour
         _animator.SetTrigger("Die");
 
         yield return null;
+        yield return null;
         yield return new WaitForSeconds(_animator.GetNextAnimatorClipInfo(0).Length);
-
         Destroy(gameObject);
 
         yield break;

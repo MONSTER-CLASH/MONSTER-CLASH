@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Unit Status Data
   m_EditorClassIdentifier: 
   Name: Enemy Unit
-  Health: 100
+  Health: 30
   AttackDamage: 10
   AttackSpeed: 1
   AttackRange: 2

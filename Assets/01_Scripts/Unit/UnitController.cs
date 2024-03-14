@@ -25,19 +25,20 @@ public abstract class UnitController : MonoBehaviour
     private bool _canMove => _motionStopTime < Time.time;
     private float _motionStopTime;
 
-    private LayerMask _oppositeLayer;
+    [SerializeField] private LayerMask _oppositeLayer;
 
 
     private void Awake()
     {
         _unitStatusSystem = GetComponent<UnitStatusSystem>();
         _healthSystem = GetComponent<HealthSystem>();
+        _attackSystem = GetComponent<AttackSystem>();
 
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
 
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.NameToLayer("Enemy");
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.NameToLayer("Player");
+        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
+        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
         SetOppositeBase();
 
         _healthSystem.OnDead += HandleDie;
@@ -50,11 +51,11 @@ public abstract class UnitController : MonoBehaviour
 
     protected void SetOppositeBase()
     {
-        if (_oppositeLayer == LayerMask.NameToLayer("Enemy"))
+        if (_oppositeLayer == LayerMask.GetMask("Enemy"))
         {
             _oppositeBasePos = GameObject.FindGameObjectWithTag("EnemyBase").transform;
         }
-        else if (_oppositeLayer == LayerMask.NameToLayer("Player"))
+        else if (_oppositeLayer == LayerMask.GetMask("Player"))
         {
             _oppositeBasePos = GameObject.FindGameObjectWithTag("PlayerBase").transform;
         }

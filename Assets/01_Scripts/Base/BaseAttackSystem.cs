@@ -36,14 +36,19 @@ public class BaseAttackSystem : MonoBehaviour
         Collider[] enemys = Physics.OverlapSphere(transform.position, _baseStatusSystem.AttackRange, _oppositeLayer);
         enemys = enemys.ToList().OrderByDescending(i => Vector3.Distance(transform.position, i.transform.position)).ToArray();
         
-        if (enemys.Length > 0)
+        for (int i=0; i<enemys.Length; i++)
         {
-            AttackableProjectile projectile =
-            Instantiate(_attackProjectilePrefab, attackProjectileSpawnPos.position, Quaternion.identity).GetComponent<AttackableProjectile>();
+            if (!enemys[i].GetComponent<HealthSystem>().IsDead)
+            {
+                AttackableProjectile projectile =
+                    Instantiate(_attackProjectilePrefab, attackProjectileSpawnPos.position, Quaternion.identity).GetComponent<AttackableProjectile>();
 
-            projectile.SetProjectileData(gameObject, enemys[0].gameObject, _baseStatusSystem.AttackDamage, _baseStatusSystem.AttackRange);
+                projectile.SetProjectileData(gameObject, enemys[i].gameObject, _baseStatusSystem.AttackDamage, _baseStatusSystem.AttackRange);
 
-            _attackCool = Time.time + (1f / _baseStatusSystem.AttackSpeed);
+                _attackCool = Time.time + (1f / _baseStatusSystem.AttackSpeed);
+
+                return;
+            }
         }
     }
 

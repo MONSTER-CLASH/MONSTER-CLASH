@@ -39,6 +39,8 @@ public abstract class UnitController : MonoBehaviour
         if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.NameToLayer("Enemy");
         else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.NameToLayer("Player");
         SetOppositeBase();
+
+        _healthSystem.OnDead += HandleDie;
     }
 
     private void Start()
@@ -111,6 +113,11 @@ public abstract class UnitController : MonoBehaviour
         {
             _agent.SetDestination(_oppositeBasePos.transform.position);
         }
+    }
+
+    protected virtual void HandleDie(GameObject killer)
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()

@@ -25,7 +25,7 @@ public abstract class UnitController : MonoBehaviour
     private bool _canMove => _motionStopTime < Time.time;
     private float _motionStopTime;
 
-    [SerializeField] private LayerMask _oppositeLayer;
+    private LayerMask _oppositeLayer;
 
 
     private void Awake()
@@ -35,10 +35,8 @@ public abstract class UnitController : MonoBehaviour
         _attackSystem = GetComponent<AttackSystem>();
 
         _agent = GetComponent<NavMeshAgent>();
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
 
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
         SetOppositeBase();
 
         _healthSystem.OnDead += HandleDie;
@@ -51,6 +49,9 @@ public abstract class UnitController : MonoBehaviour
 
     protected void SetOppositeBase()
     {
+        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
+        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
+
         if (_oppositeLayer == LayerMask.GetMask("Enemy"))
         {
             _oppositeBasePos = GameObject.FindGameObjectWithTag("EnemyBase").transform;
@@ -90,7 +91,7 @@ public abstract class UnitController : MonoBehaviour
         {
             HandleAttack();
             _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
-            //StartCoroutine(SetMotionStopTime());
+            StartCoroutine(SetMotionStopTime());
         }
     }
 
@@ -98,6 +99,7 @@ public abstract class UnitController : MonoBehaviour
 
     private IEnumerator SetMotionStopTime()
     {
+        _animator.SetTrigger("Attack");
         yield return null;
         _motionStopTime = Time.time + _animator.GetNextAnimatorClipInfo(0).Length;
     }
@@ -105,6 +107,7 @@ public abstract class UnitController : MonoBehaviour
     protected void Move()
     {
         _agent.isStopped = !_canMove || (!_attackTarget && !_oppositeBasePos) || _healthSystem.IsDead;
+        _animator.SetInteger("Move", _canMove ? 1 : 0);
 
         if (_attackTarget)
         {
@@ -116,9 +119,21 @@ public abstract class UnitController : MonoBehaviour
         }
     }
 
-    protected virtual void HandleDie(GameObject killer)
+    private void HandleDie(GameObject killer)
     {
+        StartCoroutine(DieCoroutine(killer));
+    }
+
+    protected virtual IEnumerator DieCoroutine(GameObject killer)
+    {
+        _animator.SetBool("Die", true);
+
+        yield return null;
+        yield return new WaitForSeconds(_animator.GetNextAnimatorClipInfo(0).Length);
+
         Destroy(gameObject);
+
+        yield break;
     }
 
     private void OnDrawGizmos()

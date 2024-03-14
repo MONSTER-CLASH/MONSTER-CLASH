@@ -13,10 +13,15 @@ public class BaseAttackSystem : MonoBehaviour
     private BaseStatusSystem _baseStatusSystem;
     private HealthSystem _healthSystem;
 
+    private LayerMask _oppositeLayer;
+
     private void Awake()
     {
         _baseStatusSystem = GetComponent<BaseStatusSystem>();
         _healthSystem = GetComponent<HealthSystem>();
+
+        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
+        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
     }
 
     private void Update()
@@ -28,11 +33,7 @@ public class BaseAttackSystem : MonoBehaviour
     {
         if (!_canAttack || _healthSystem.IsDead) return;
 
-        string checkLayer = null;
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) checkLayer = "Enemy";
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) checkLayer = "Player";
-
-        Collider[] enemys = Physics.OverlapSphere(transform.position, _baseStatusSystem.AttackRange, 1 << LayerMask.NameToLayer(checkLayer));
+        Collider[] enemys = Physics.OverlapSphere(transform.position, _baseStatusSystem.AttackRange, _oppositeLayer);
         enemys = enemys.ToList().OrderByDescending(i => Vector3.Distance(transform.position, i.transform.position)).ToArray();
         
         if (enemys.Length > 0)

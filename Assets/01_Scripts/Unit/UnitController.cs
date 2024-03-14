@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,9 +20,12 @@ public abstract class UnitController : MonoBehaviour
     private bool _canAttack => _attackCool < Time.time;
     private float _attackCool;
     protected GameObject _attackTarget;
+    private Transform _oppositeBasePos;
 
     private bool _canMove => _motionStopTime < Time.time;
     private float _motionStopTime;
+
+    private LayerMask _oppositeLayer;
 
 
     private void Awake()
@@ -31,17 +35,31 @@ public abstract class UnitController : MonoBehaviour
 
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+
+        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.NameToLayer("Enemy");
+        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.NameToLayer("Player");
+        SetOppositeBase();
     }
 
-    protected void DetectEnemyBase()
+    private void Start()
     {
-        GameObject enemyBase = null;
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) enemyBase = GameObject.FindGameObjectWithTag("EnemyBase");
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) enemyBase = GameObject.FindGameObjectWithTag("PlayerBase");
+        _agent.speed = _unitStatusSystem.MoveSpeed;
+    }
 
-        if (enemyBase != null)
+    protected void SetOppositeBase()
+    {
+        if (_oppositeLayer == LayerMask.NameToLayer("Enemy"))
         {
-            _agent.SetDestination(enemyBase.transform.position);
+            _oppositeBasePos = GameObject.FindGameObjectWithTag("EnemyBase").transform;
+        }
+        else if (_oppositeLayer == LayerMask.NameToLayer("Player"))
+        {
+            _oppositeBasePos = GameObject.FindGameObjectWithTag("PlayerBase").transform;
+        }
+
+        if (_oppositeBasePos == null)
+        {
+            Debug.LogError("Opposite Base is Missing.\nGameObject : " + gameObject.name);
         }
     }
 
@@ -49,11 +67,7 @@ public abstract class UnitController : MonoBehaviour
     {
         if (_attackTarget || !_canMove || _healthSystem.IsDead) return;
 
-        string checkLayer = null;
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) checkLayer = "Enemy";
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) checkLayer = "Player";
-
-        List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackDetectRange, 1 << LayerMask.NameToLayer(checkLayer)).ToList();
+        List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackDetectRange, _oppositeLayer).ToList();
         enemys = enemys.OrderByDescending(i => Vector3.Distance(transform.position, i.transform.position)).ToList();
         
         if (enemys.Count > 0)
@@ -67,11 +81,7 @@ public abstract class UnitController : MonoBehaviour
     {
         if (!_canAttack || !_attackTarget || _healthSystem.IsDead) return;
 
-        string checkLayer = null;
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) checkLayer = "Enemy";
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) checkLayer = "Player";
-
-        Collider[] enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackRange, 1 << LayerMask.NameToLayer(checkLayer));
+        Collider[] enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackRange, _oppositeLayer);
 
         if (enemys.Contains(_attackTarget.GetComponent<Collider>()))
         {
@@ -81,6 +91,8 @@ public abstract class UnitController : MonoBehaviour
         }
     }
 
+    protected abstract void HandleAttack();
+
     private IEnumerator SetMotionStopTime()
     {
         yield return null;
@@ -89,18 +101,27 @@ public abstract class UnitController : MonoBehaviour
 
     protected void Move()
     {
-        _agent.isStopped = !_canMove || _healthSystem.IsDead;
+        _agent.isStopped = !_canMove || (!_attackTarget && !_oppositeBasePos) || _healthSystem.IsDead;
 
         if (_attackTarget)
         {
             _agent.SetDestination(_attackTarget.transform.position);
         }
-        else
+        else if (_oppositeBasePos)
         {
-            DetectAttackTarget();
-            DetectEnemyBase();
+            _agent.SetDestination(_oppositeBasePos.transform.position);
         }
     }
 
-    protected abstract void HandleAttack();
+    private void OnDrawGizmos()
+    {
+        if (_unitStatusSystem)
+        {
+            Gizmos.color = new Color(0, 1, 0, 0.25f);
+            Gizmos.DrawSphere(transform.position, _unitStatusSystem.AttackDetectRange);
+
+            Gizmos.color = new Color(1, 0, 0, 0.25f);
+            Gizmos.DrawSphere(transform.position, _unitStatusSystem.AttackRange);
+        }
+    }
 }

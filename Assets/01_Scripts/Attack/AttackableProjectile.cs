@@ -5,6 +5,7 @@ public class AttackableProjectile : AttackSystem
     private GameObject _attacker;
     private GameObject _target;
     private float _damage;
+    private float _speed;
     private bool _isTargeted;
 
     private void FixedUpdate()
@@ -12,6 +13,7 @@ public class AttackableProjectile : AttackSystem
         if (_target != null)
         {
             transform.LookAt(_target.transform.position);
+            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }
         else if (_isTargeted)
         {
@@ -25,9 +27,8 @@ public class AttackableProjectile : AttackSystem
         _attacker = attacker;
         _target = target;
         _damage = damage;
+        _speed = speed;
         _isTargeted = true;
-
-        GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.VelocityChange);
     }
 
     private void OnTriggerEnter(Collider other)

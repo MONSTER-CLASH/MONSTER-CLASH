@@ -22,7 +22,7 @@ public class HealthSystem : MonoBehaviour
         {
             if (_isDead)
             {
-                value.Invoke(_killer);
+                value?.Invoke(_killer);
             }
             else
             {

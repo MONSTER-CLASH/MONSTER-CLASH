@@ -35,7 +35,6 @@ public class UnitSpawner : MonoBehaviour
                 {
                     if (_unitSpawnDatas[i]._specialWaveStartHp >= _teamBaseHealth)
                     {
-                        Debug.Log(_teamBaseHealth);
                         StartCoroutine(UnitSpawnCoroutine(_unitSpawnDatas[i]));
                         _unitSpawnDatas.Remove(_unitSpawnDatas[i]);
                     }

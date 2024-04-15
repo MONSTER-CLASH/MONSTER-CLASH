@@ -111,7 +111,7 @@ public abstract class UnitController : MonoBehaviour
     {
         _animator.SetTrigger("Attack");
         yield return null;
-        _motionStopTime = Time.time + _animator.GetNextAnimatorClipInfo(0).Length;
+        _motionStopTime = Time.time + _animator.GetCurrentAnimatorStateInfo(0).length;
     }
 
     protected void Move()
@@ -139,8 +139,7 @@ public abstract class UnitController : MonoBehaviour
         _animator.SetTrigger("Die");
 
         yield return null;
-        yield return null;
-        yield return new WaitForSeconds(_animator.GetNextAnimatorClipInfo(0).Length);
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
 
         yield break;

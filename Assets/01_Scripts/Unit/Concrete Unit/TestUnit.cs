@@ -10,12 +10,4 @@ public class TestUnit : UnitController
         DetectAttackTarget();
         Attack();
     }
-
-    protected override void HandleAttack()
-    {
-        if (_attackTarget)
-        {
-            _attackSystem.SendDamage(_attackTarget, _unitStatusSystem.AttackDamage, gameObject);
-        }
-    }
 }

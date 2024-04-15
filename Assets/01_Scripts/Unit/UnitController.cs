@@ -8,7 +8,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(UnitStatusSystem))]
 [RequireComponent(typeof(HealthSystem))]
 [RequireComponent(typeof(AttackSystem))]
-public abstract class UnitController : MonoBehaviour
+public class UnitController : MonoBehaviour
 {
     protected UnitStatusSystem _unitStatusSystem;
     private HealthSystem _healthSystem;
@@ -105,7 +105,13 @@ public abstract class UnitController : MonoBehaviour
         }
     }
 
-    protected abstract void HandleAttack();
+    protected virtual void HandleAttack()
+    {
+        if (_attackTarget)
+        {
+            _attackSystem.SendDamage(_attackTarget, _unitStatusSystem.AttackDamage, gameObject);
+        }
+    }
 
     private IEnumerator SetMotionStopTime()
     {

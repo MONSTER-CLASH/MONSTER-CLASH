@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Unit Level Data", menuName = "Scriptable Object/Unit Level Data")]
 public class UnitLevelData : ScriptableObject
 {
+    public int MaxLevel { get => _levelDatas.Length; }
     [SerializeField] private LevelData[] _levelDatas;
 
     [Serializable]

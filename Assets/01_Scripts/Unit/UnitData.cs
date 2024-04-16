@@ -9,7 +9,7 @@ public class UnitData : ScriptableObject
     public int UnitLevel;
     public UnitPosition UnitPosition;
     public UnitLevelData UnitLevelData;
-    public UnitStatusData UnitStatusData;
+    public bool HasUnit;
 }
 
 public enum UnitPosition

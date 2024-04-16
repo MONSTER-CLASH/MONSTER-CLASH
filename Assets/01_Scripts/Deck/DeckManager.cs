@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class DeckManager : MonoBehaviour
 {
-    public Text _currentGoldText;
+    [SerializeField] private Text _currentGoldText;
 
+    [SerializeField] private Transform _haveUnitParent;
+    [SerializeField] private GameObject _haveUnitInfoItem;
 
+    private void Awake()
+    {
+        
+    }
 }

@@ -5,11 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Unit Data", menuName = "Scriptable Object/Unit Data")]
 public class UnitData : ScriptableObject
 {
+    [Space()]
     public string UnitName;
-    public Sprite UnitImage;
     public int UnitLevel;
+    public Sprite UnitImage;
+
+    [Space()]
     public UnitPosition UnitPosition;
     public UnitLevelData UnitLevelData;
+
+    [Space()]
     public bool HasUnit;
 }
 

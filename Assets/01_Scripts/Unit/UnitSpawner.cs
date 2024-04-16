@@ -57,7 +57,7 @@ public class UnitSpawner : MonoBehaviour
         {
             for (int j=0; j<unitSpawnData._spawnUnitCount; j++)
             {
-                Instantiate(unitSpawnData._spawnUnit, transform.position, Quaternion.identity);
+                Instantiate(unitSpawnData._spawnUnit, transform.position, Quaternion.identity).GetComponent<UnitStatusSystem>().SetUnitStatusForEnemyUnit(unitSpawnData._unitLevel);
             }
 
             yield return new WaitForSeconds(unitSpawnData._spawnDelay);
@@ -72,6 +72,7 @@ public struct UnitSpawnData
 {
     public float _spawnTime;
     public GameObject _spawnUnit;
+    public int _unitLevel;
     public int _spawnCount;
     public int _spawnUnitCount;
     public float _spawnDelay;

@@ -6,8 +6,8 @@ public class HaveUnitItem : MonoBehaviour
 {
     [SerializeField] private GameObject _haveUnitInfoLayer;
     [SerializeField] private Image _unitImage;
-    [SerializeField] private TextMeshProUGUI _unitName;
-    [SerializeField] private TextMeshProUGUI _unitLevel;
+    [SerializeField] private TextMeshProUGUI _unitNameText;
+    [SerializeField] private TextMeshProUGUI _unitLevelText;
 
     private UnitData _unitData;
 
@@ -21,8 +21,8 @@ public class HaveUnitItem : MonoBehaviour
         _unitData = unitData;
 
         _unitImage.sprite = _unitData.UnitImage;
-        _unitName.text = _unitData.UnitName;
-        _unitLevel.text = "레벨 " + _unitData.UnitLevel;
+        _unitNameText.text = _unitData.UnitName;
+        _unitLevelText.text = "레벨 " + _unitData.UnitLevel;
     }
 
     public void ShowUnitInfoLayer()

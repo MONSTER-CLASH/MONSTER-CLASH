@@ -34,4 +34,18 @@ public class UnitManager : MonoBehaviour
 
         return unitDatas.ToArray();
     }
+
+    public UnitData GetUnitDataViaName(string unitName)
+    {
+        for (int i=0; i<_unitDatas.Length;i++)
+        {
+            if (_unitDatas[i].UnitName == unitName)
+            {
+                return _unitDatas[i];
+            }
+        }
+
+        Debug.LogWarning("Not Found Unit Data Via Name");
+        return null;
+    }
 }

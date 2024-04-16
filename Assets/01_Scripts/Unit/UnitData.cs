@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Unit Data", menuName = "Scriptable Object/Unit Data")]
 public class UnitData : ScriptableObject
 {
+    public string UnitName;
     public Sprite UnitImage;
     public int UnitLevel;
     public UnitPosition UnitPosition;

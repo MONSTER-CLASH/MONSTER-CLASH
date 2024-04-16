@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Unit Level Data", menuName = "Scriptable Object/Unit Level Data")]
 public class UnitLevelData : ScriptableObject
 {
-    public LevelData[] LevelDatas;
+    [SerializeField] private LevelData[] _levelDatas;
 
     [Serializable]
     public struct LevelData
@@ -20,6 +20,6 @@ public class UnitLevelData : ScriptableObject
 
     public LevelData GetLevelData(int level)
     {
-        return LevelDatas[Mathf.Min(level - 1, LevelDatas.Length - 1)];
+        return _levelDatas[Mathf.Min(level - 1, _levelDatas.Length - 1)];
     }
 }

@@ -31,9 +31,9 @@ public class UnitSpawner : MonoBehaviour
         {
             for (int i=0; i<_unitSpawnDatas.Count; i++)
             {
-                if (_unitSpawnDatas[i]._isSpecialWave)
+                if (_unitSpawnDatas[i].IsSpecialWave)
                 {
-                    if (_unitSpawnDatas[i]._specialWaveStartHp >= _teamBaseHealth)
+                    if (_unitSpawnDatas[i].SpecialWaveStartHp >= _teamBaseHealth)
                     {
                         StartCoroutine(UnitSpawnCoroutine(_unitSpawnDatas[i]));
                         _unitSpawnDatas.Remove(_unitSpawnDatas[i]);
@@ -41,7 +41,7 @@ public class UnitSpawner : MonoBehaviour
                 }
                 else
                 {
-                    if (_unitSpawnDatas[i]._spawnTime < Time.time)
+                    if (_unitSpawnDatas[i].SpawnTime < Time.time)
                     {
                         StartCoroutine(UnitSpawnCoroutine(_unitSpawnDatas[i]));
                         _unitSpawnDatas.Remove(_unitSpawnDatas[i]);
@@ -53,14 +53,14 @@ public class UnitSpawner : MonoBehaviour
 
     private IEnumerator UnitSpawnCoroutine(UnitSpawnData unitSpawnData)
     {
-        for (int i=0; i<unitSpawnData._spawnCount; i++)
+        for (int i=0; i<unitSpawnData.SpawnCount; i++)
         {
-            for (int j=0; j<unitSpawnData._spawnUnitCount; j++)
+            for (int j=0; j<unitSpawnData.SpawnUnitCount; j++)
             {
-                Instantiate(unitSpawnData._spawnUnit, transform.position, Quaternion.identity).GetComponent<UnitStatusSystem>().SetUnitStatusForEnemyUnit(unitSpawnData._unitLevel);
+                Instantiate(unitSpawnData.SpawnUnit, transform.position, Quaternion.identity).GetComponent<UnitStatusSystem>().SetUnitStatusForEnemyUnit(unitSpawnData.UnitLevel);
             }
 
-            yield return new WaitForSeconds(unitSpawnData._spawnDelay);
+            yield return new WaitForSeconds(unitSpawnData.SpawnDelay);
         }
 
         yield break;
@@ -70,13 +70,13 @@ public class UnitSpawner : MonoBehaviour
 [Serializable]
 public struct UnitSpawnData
 {
-    public float _spawnTime;
-    public GameObject _spawnUnit;
-    public int _unitLevel;
-    public int _spawnCount;
-    public int _spawnUnitCount;
-    public float _spawnDelay;
+    public float SpawnTime;
+    public GameObject SpawnUnit;
+    public int UnitLevel;
+    public int SpawnCount;
+    public int SpawnUnitCount;
+    public float SpawnDelay;
 
-    public bool _isSpecialWave;
-    public float _specialWaveStartHp;
+    public bool IsSpecialWave;
+    public float SpecialWaveStartHp;
 }

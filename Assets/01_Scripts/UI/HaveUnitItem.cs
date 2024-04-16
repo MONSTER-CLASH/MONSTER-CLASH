@@ -20,13 +20,13 @@ public class HaveUnitItem : MonoBehaviour
     {
         _unitData = unitData;
 
-        _unitImage.sprite = _unitData.UnitImage;
+        //_unitImage.sprite = _unitData.UnitImage;
         _unitNameText.text = _unitData.UnitName;
         _unitLevelText.text = "·¹º§ " + _unitData.UnitLevel;
     }
 
     public void ShowUnitInfoLayer()
     {
-
+        Debug.Log("ShowUnitInfoLayer");
     }
 }

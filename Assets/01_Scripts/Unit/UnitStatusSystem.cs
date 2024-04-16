@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class UnitStatusSystem : StatusSystem
 {
-    [SerializeField] private string _unitName;
-    [SerializeField] private int _unitLevel;
-
     public float AttackDetectRange;
     public float MoveSpeed;
+    [SerializeField] private int _unitLevel;
 
     private void Awake()
     {
-        UnitData unitData = UnitManager.Instance.GetUnitDataViaName(_unitName);
+        UnitData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
 
         if (gameObject.layer == LayerMask.NameToLayer("Player"))
         {

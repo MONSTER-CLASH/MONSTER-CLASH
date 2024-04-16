@@ -11,7 +11,7 @@ public class UnitLevelData : ScriptableObject
     public struct LevelData
     {
         public UnitStatusData UnitStatusData;
-        public int UpgradeCost;
+        public int UpgradeCost;  // 현재 레벨에서 다음 레벨로 업그레이드 하기 위해 필요한 골드량
     }
 
     public LevelData GetLevelData(int level)

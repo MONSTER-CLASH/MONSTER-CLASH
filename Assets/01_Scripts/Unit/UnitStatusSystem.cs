@@ -13,13 +13,13 @@ public class UnitStatusSystem : StatusSystem
         if (gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Name = unitData.UnitName;
-            MaxHealth = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).Health;
+            MaxHealth = unitData.GetUnitStatusData().Health;
             CurrentHealth = MaxHealth;
-            AttackDamage = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).AttackDamage;
-            AttackSpeed = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).AttackSpeed;
-            AttackRange = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).AttackRange;
-            AttackDetectRange = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).AttackDetectRange;
-            MoveSpeed = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).MoveSpeed;
+            AttackDamage = unitData.GetUnitStatusData().AttackDamage;
+            AttackSpeed = unitData.GetUnitStatusData().AttackSpeed;
+            AttackRange = unitData.GetUnitStatusData().AttackRange;
+            AttackDetectRange = unitData.GetUnitStatusData().AttackDetectRange;
+            MoveSpeed = unitData.GetUnitStatusData().MoveSpeed;
         }
     }
 
@@ -28,12 +28,12 @@ public class UnitStatusSystem : StatusSystem
         UnitData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
 
         Name = unitData.UnitName;
-        MaxHealth = unitData.UnitLevelData.GetLevelData(unitLevel).Health;
+        MaxHealth = unitData.GetUnitStatusData(unitLevel).Health;
         CurrentHealth = MaxHealth;
-        AttackDamage = unitData.UnitLevelData.GetLevelData(unitLevel).AttackDamage;
-        AttackSpeed = unitData.UnitLevelData.GetLevelData(unitLevel).AttackSpeed;
-        AttackRange = unitData.UnitLevelData.GetLevelData(unitLevel).AttackRange;
-        AttackDetectRange = unitData.UnitLevelData.GetLevelData(unitLevel).AttackDetectRange;
-        MoveSpeed = unitData.UnitLevelData.GetLevelData(unitLevel).MoveSpeed;
+        AttackDamage = unitData.GetUnitStatusData(unitLevel).AttackDamage;
+        AttackSpeed = unitData.GetUnitStatusData(unitLevel).AttackSpeed;
+        AttackRange = unitData.GetUnitStatusData(unitLevel).AttackRange;
+        AttackDetectRange = unitData.GetUnitStatusData(unitLevel).AttackDetectRange;
+        MoveSpeed = unitData.GetUnitStatusData(unitLevel).MoveSpeed;
     }
 }

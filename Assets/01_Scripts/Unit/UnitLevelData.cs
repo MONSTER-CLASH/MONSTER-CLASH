@@ -10,12 +10,7 @@ public class UnitLevelData : ScriptableObject
     [Serializable]
     public struct LevelData
     {
-        public float Health;
-        public float AttackDamage;
-        public float AttackSpeed;
-        public float AttackRange;
-        public float AttackDetectRange;
-        public float MoveSpeed;
+        public UnitStatusData UnitStatusData;
         public int UpgradeCost;
     }
 

@@ -44,8 +44,7 @@ public class HaveUnitInfo : MonoBehaviour
                 break;
         }
 
-        float health = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).Health;
-        float upgradeHealthValue = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel + 1).Health - health;
+
 
         //_healthText.text = unitData.UnitLevelData.GetLevelData(unitData.UnitLevel).Health + 
         //    unitData.UnitLevel < unitData.UnitLevelData.MaxLevel ? " +" + (unitData.UnitLevelData.GetLevelData(unitData.UnitLevel + 1).Health - );

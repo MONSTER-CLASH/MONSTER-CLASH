@@ -56,9 +56,29 @@ public class HaveUnitInfo : MonoBehaviour
                 break;
         }
 
-        float curLevelHealth = _unitData.GetUnitStatusData().Health;
-        _healthText.text = curLevelHealth +
-            (_unitData.UnitLevel < _unitData.UnitLevelData.MaxLevel ? " +" + (_unitData.GetUnitStatusData(_unitData.UnitLevel + 1).Health - curLevelHealth) : "");
+        float health = _unitData.GetUnitStatusData().Health;
+        float nextLevelHealth = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).Health : 0;
+        _healthText.text = health + (_unitData.CanUpgrade() ? $" +{ nextLevelHealth - health }" : "");
+
+        float attackDamage = _unitData.GetUnitStatusData().AttackDamage;
+        float nextLevelAttackDamage = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackDamage : 0;
+        _attackDamageText.text = attackDamage + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackDamage - attackDamage }" : "");
+
+        float attackSpeed = _unitData.GetUnitStatusData().AttackSpeed;
+        float nextLevelAttackSpeed = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackSpeed : 0;
+        _attackSpeedText.text = attackSpeed + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackSpeed - attackSpeed }" : "");
+
+        float attackRange = _unitData.GetUnitStatusData().AttackRange;
+        float nextLevelAttackRange = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackRange : 0;
+        _attackRangeText.text = attackRange + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackRange - attackRange }" : "");
+
+        float attackDetectRange = _unitData.GetUnitStatusData().AttackDetectRange;
+        float nextLevelAttackDetectRange = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackDetectRange : 0;
+        _attackDetectRangeText.text = attackDetectRange + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackDetectRange - attackDetectRange }" : "");
+
+        float moveSpeed = _unitData.GetUnitStatusData().MoveSpeed;
+        float nextLevelMoveSpeed = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).MoveSpeed : 0;
+        _moveSpeedText.text = moveSpeed + (_unitData.CanUpgrade() ? $" +{ nextLevelMoveSpeed - moveSpeed }" : "");
 
         _upgradeCostText.text = _unitData.UnitLevel < _unitData.UnitLevelData.MaxLevel ? _unitData.GetUpgradeCost().ToString() : "최대 레벨";
     }

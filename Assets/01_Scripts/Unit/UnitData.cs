@@ -31,6 +31,11 @@ public class UnitData : ScriptableObject
     {
         return UnitLevelData.GetLevelData(level.HasValue ? level.Value : UnitLevel).UpgradeCost;
     }
+
+    public bool CanUpgrade()
+    {
+        return UnitLevel < UnitLevelData.MaxLevel;
+    }
 }
 
 public enum UnitPosition

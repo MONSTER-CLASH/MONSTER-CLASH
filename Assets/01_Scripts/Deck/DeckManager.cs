@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class DeckManager : MonoBehaviour
 {
+    [Header("Have Unit and Skill")]
     public static int Gold;
-    [Space()]
+
     [SerializeField] private TextMeshProUGUI _currentGoldText;
 
     [Space()]
@@ -17,6 +18,12 @@ public class DeckManager : MonoBehaviour
     [Space()]
     [SerializeField] private Transform _haveSkillItemParent;
     [SerializeField] private GameObject _haveSkillItem;
+
+    [Header("Equipped Unit and Skill")]
+    [SerializeField] private UnitData[] _equippedUnits = new UnitData[6];
+
+    [Space()]
+    [SerializeField] private SkillData _equippedSkill;
 
     private void Awake()
     {
@@ -48,5 +55,15 @@ public class DeckManager : MonoBehaviour
     private void Update()
     {
         _currentGoldText.text = Gold.ToString();
+    }
+
+    public void EquipUnit(UnitData unitData, int index)
+    {
+        _equippedUnits[index] = unitData;
+    }
+
+    public void EquipSkill(SkillData skillData)
+    {
+        _equippedSkill = skillData;
     }
 }

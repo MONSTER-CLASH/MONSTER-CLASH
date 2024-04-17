@@ -15,4 +15,4 @@ MonoBehaviour:
   SkillName: FireBall
   SkillImage: {fileID: 0}
   SkillPrefab: {fileID: 0}
-  HasSkill: 0
+  HasSkill: 1

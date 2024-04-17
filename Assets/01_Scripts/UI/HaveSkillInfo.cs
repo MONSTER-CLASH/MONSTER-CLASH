@@ -20,7 +20,7 @@ public class HaveSkillInfo : MonoBehaviour
 
     public void ShowHaveSkillInfo(SkillData skillData)
     {
-        _skillImage.sprite = skillData.SkillImage;
+        //_skillImage.sprite = skillData.SkillImage;
 
         _skillNameText.text = skillData.SkillName;
 

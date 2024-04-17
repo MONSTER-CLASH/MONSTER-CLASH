@@ -27,6 +27,12 @@ public class HaveUnitItem : MonoBehaviour
 
     public void ShowUnitInfoLayer()
     {
-        Debug.Log("ShowUnitInfoLayer");
+        _haveUnitInfoLayer.SetActive(true);
+        _haveUnitInfoLayer.GetComponent<HaveUnitInfo>().ShowHaveUnitInfo(_unitData, this);
+    }
+
+    public void UpdateUnitItem()
+    {
+        _unitLevelText.text = "·¹º§" + _unitData.UnitLevel;
     }
 }

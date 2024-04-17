@@ -15,8 +15,7 @@ public class DeckManager : MonoBehaviour
 
     private void Awake()
     {
-        _currentGoldText.text = Gold.ToString();
-
+        Gold += 10000;
         ShowHaveUnitItem();
     }
 
@@ -31,5 +30,10 @@ public class DeckManager : MonoBehaviour
                 Instantiate(_haveUnitItem, _haveUnitItemParent).GetComponent<HaveUnitItem>().SetItemData(unitDatas[i]);
             }
         }
+    }
+
+    private void Update()
+    {
+        _currentGoldText.text = Gold.ToString();
     }
 }

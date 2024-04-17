@@ -13,24 +13,27 @@ MonoBehaviour:
   m_Name: Player Unit Level Data
   m_EditorClassIdentifier: 
   _levelDatas:
-  - Health: 30
-    AttackDamage: 10
-    AttackSpeed: 1
-    AttackRange: 2
-    AttackDetectRange: 5
-    MoveSpeed: 1
+  - UnitStatusData:
+      Health: 20
+      AttackDamage: 0
+      AttackSpeed: 0
+      AttackRange: 0
+      AttackDetectRange: 0
+      MoveSpeed: 0
     UpgradeCost: 10
-  - Health: 40
-    AttackDamage: 15
-    AttackSpeed: 1
-    AttackRange: 2
-    AttackDetectRange: 5
-    MoveSpeed: 1
+  - UnitStatusData:
+      Health: 30
+      AttackDamage: 0
+      AttackSpeed: 0
+      AttackRange: 0
+      AttackDetectRange: 0
+      MoveSpeed: 0
     UpgradeCost: 20
-  - Health: 50
-    AttackDamage: 20
-    AttackSpeed: 1
-    AttackRange: 2
-    AttackDetectRange: 5
-    MoveSpeed: 1
-    UpgradeCost: 0
+  - UnitStatusData:
+      Health: 50
+      AttackDamage: 0
+      AttackSpeed: 0
+      AttackRange: 0
+      AttackDetectRange: 0
+      MoveSpeed: 0
+    UpgradeCost: 30

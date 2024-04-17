@@ -39,7 +39,7 @@ public class HaveUnitInfo : MonoBehaviour
 
         //_unitImage.sprite = unitData.UnitImage;
         _unitNameText.text = _unitData.UnitName;
-        _unitLevelText.text = "레벨 " + _unitData.UnitLevel + " +1";
+        _unitLevelText.text = "레벨 " + (_unitData.CanUpgrade() ? $"{_unitData.UnitLevel } +1" : "");
         switch (_unitData.UnitPosition)
         {
             case UnitPosition.Warrior:

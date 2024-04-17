@@ -31,10 +31,7 @@ public class DeckManager : MonoBehaviour
 
         for (int i=0; i<unitDatas.Length; i++)
         {
-            if (unitDatas[i].HasUnit)
-            {
-                Instantiate(_haveUnitItem, _haveUnitItemParent).GetComponent<HaveUnitItem>().SetItemData(unitDatas[i]);
-            }
+            Instantiate(_haveUnitItem, _haveUnitItemParent).GetComponent<HaveUnitItem>().SetItemData(unitDatas[i]);
         }
     }
 

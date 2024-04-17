@@ -25,6 +25,7 @@ public class HaveSkillItem : MonoBehaviour
 
     public void ShowSkillInfoLayer()
     {
-
+        _haveSkillInfoLayer.SetActive(true);
+        _haveSkillInfoLayer.GetComponent<HaveSkillInfo>().ShowHaveSkillInfo(_skillData);
     }
 }

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Unit Data", menuName = "Scriptable Object/Unit Data")]
+[CreateAssetMenu(fileName = "Skill Data", menuName = "Scriptable Object/Skill Data")]
 public abstract class SkillData : ScriptableObject
 {
     [Space()]

@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HaveSkillItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject _haveSkillInfoLayer;
+    [SerializeField] private Image _skillImage;
+    [SerializeField] private TextMeshProUGUI _skillNameText;
+
+    private SkillData _skillData;
+
+    private void Awake()
     {
-        
+        GetComponent<Button>().onClick.AddListener(ShowSkillInfoLayer);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetItemData(SkillData skillData)
     {
-        
+        _skillData = skillData;
+
+        //_skillImage.sprite = _skillData.SkillImage;
+        _skillNameText.text = _skillData.SkillName;
+    }
+
+    public void ShowSkillInfoLayer()
+    {
+
     }
 }

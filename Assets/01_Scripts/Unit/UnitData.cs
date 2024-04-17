@@ -24,6 +24,7 @@ public class UnitData : ScriptableObject
         return UnitLevelData.GetLevelData(level.HasValue ? level.Value : UnitLevel).UnitStatusData;
     }
 
+
     public int GetUpgradeCost(int? level = null)
     {
         return UnitLevelData.GetLevelData(level.HasValue ? level.Value : UnitLevel).UpgradeCost;

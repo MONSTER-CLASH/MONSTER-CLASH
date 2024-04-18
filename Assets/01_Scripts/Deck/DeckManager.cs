@@ -17,7 +17,8 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject _haveSkillItem;
 
     [Header("Equipped Unit and Skill")]
-    [SerializeField] private UnitData[] _equippedUnits = new UnitData[6];
+    [SerializeField] EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
+    public static UnitData EquipSelectUnitData;
 
     [Space()]
     [SerializeField] private SkillData _equippedSkill;
@@ -52,11 +53,6 @@ public class DeckManager : MonoBehaviour
     private void Update()
     {
         _currentGoldText.text = Gold.ToString();
-    }
-
-    public void EquipUnit(UnitData unitData, int index)
-    {
-        _equippedUnits[index] = unitData;
     }
 
     public void EquipSkill(SkillData skillData)

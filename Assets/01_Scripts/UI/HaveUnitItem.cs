@@ -8,12 +8,14 @@ public class HaveUnitItem : MonoBehaviour
     [SerializeField] private Image _unitImage;
     [SerializeField] private TextMeshProUGUI _unitNameText;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
+    [SerializeField] private GameObject _equipSelectBtn;
 
     private UnitData _unitData;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(ShowUnitInfoLayer);
+        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(EquipSelectItem);
     }
 
     public void SetItemData(UnitData unitData)
@@ -34,5 +36,10 @@ public class HaveUnitItem : MonoBehaviour
     public void UpdateUnitItem()
     {
         _unitLevelText.text = "·¹º§" + _unitData.UnitLevel;
+    }
+
+    public void EquipSelectItem()
+    {
+        DeckManager.EquipSelectUnitData = _unitData;
     }
 }

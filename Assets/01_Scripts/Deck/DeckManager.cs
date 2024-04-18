@@ -23,7 +23,8 @@ public class DeckManager : MonoBehaviour
     public UnitData EquipSelectUnitData;
 
     [Space()]
-    [SerializeField] private SkillData _equippedSkill;
+    [SerializeField] private EquipSkillItem _equipSkillItem;
+    public SkillData EquipSelectSkillData;
 
     private void Awake()
     {
@@ -87,8 +88,13 @@ public class DeckManager : MonoBehaviour
         }
     }
 
-    public void EquipSkill(SkillData skillData)
+    public void EquipSkill()
     {
-        _equippedSkill = skillData;
+        if (EquipSelectSkillData != null)
+        {
+            _equipSkillItem.SkillData = EquipSelectSkillData;
+            _equipSkillItem.UpdateEquipSkillData();
+            EquipSelectSkillData = null;
+        }
     }
 }

@@ -7,12 +7,14 @@ public class HaveSkillItem : MonoBehaviour
     [SerializeField] private GameObject _haveSkillInfoLayer;
     [SerializeField] private Image _skillImage;
     [SerializeField] private TextMeshProUGUI _skillNameText;
+    [SerializeField] private GameObject _equipSelectBtn;
 
     private SkillData _skillData;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(ShowSkillInfoLayer);
+        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(() => DeckManager.Instance.EquipSelectSkillData = _skillData);
     }
 
     public void SetItemData(SkillData skillData)

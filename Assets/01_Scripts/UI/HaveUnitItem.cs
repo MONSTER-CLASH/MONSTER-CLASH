@@ -15,7 +15,7 @@ public class HaveUnitItem : MonoBehaviour
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(ShowUnitInfoLayer);
-        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(EquipSelectItem);
+        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(() => DeckManager.Instance.EquipSelectUnitData = _unitData);
     }
 
     public void SetItemData(UnitData unitData)
@@ -36,10 +36,5 @@ public class HaveUnitItem : MonoBehaviour
     public void UpdateUnitItem()
     {
         _unitLevelText.text = "·¹º§" + _unitData.UnitLevel;
-    }
-
-    public void EquipSelectItem()
-    {
-        DeckManager.Instance.EquipSelectUnitData = _unitData;
     }
 }

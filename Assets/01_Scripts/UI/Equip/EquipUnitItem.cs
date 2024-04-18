@@ -6,30 +6,27 @@ using UnityEngine.UI;
 
 public class EquipUnitItem : MonoBehaviour
 {
+    public UnitData UnitData;
+
+    [SerializeField] private int _itemIndex;
     [SerializeField] private Image _unitImage;
     [SerializeField] private TextMeshProUGUI _unitNameText;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
-    [SerializeField] private UnitData _unitData;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(EquipUnit);
     }
 
-    private void EquipUnit()
+    public void UpdateEquipUnitData()
     {
-        if (DeckManager.EquipSelectUnitData != null)
-        {
-            _unitData = DeckManager.EquipSelectUnitData;
-            UpdateEquipUnitData();
-            DeckManager.EquipSelectUnitData = null;
-        }
+        _unitImage.sprite = UnitData ? UnitData.UnitImage : null;
+        _unitNameText.text = UnitData ? UnitData.UnitName : "";
+        _unitLevelText.text = UnitData ? "레벨 " + UnitData.UnitLevel : "";
     }
 
-    private void UpdateEquipUnitData()
+    private void EquipUnit()
     {
-        _unitImage.sprite = _unitData.UnitImage;
-        _unitNameText.text = _unitData.UnitName;
-        _unitLevelText.text = "레벨 " + _unitData.UnitLevel;
+        DeckManager.Instance.EquipUnit(_itemIndex);
     }
 }

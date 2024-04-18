@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
+    public static DeckManager Instance;
+
     [Header("Have Unit and Skill")]
     public static int Gold;
 
@@ -18,13 +20,15 @@ public class DeckManager : MonoBehaviour
 
     [Header("Equipped Unit and Skill")]
     [SerializeField] EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
-    public static UnitData EquipSelectUnitData;
+    public UnitData EquipSelectUnitData;
 
     [Space()]
     [SerializeField] private SkillData _equippedSkill;
 
     private void Awake()
     {
+        Instance = this;
+
         Gold += 10000;
         ShowHaveUnitItem();
         ShowHaveSkillItem();
@@ -53,6 +57,34 @@ public class DeckManager : MonoBehaviour
     private void Update()
     {
         _currentGoldText.text = Gold.ToString();
+    }
+
+    public void EquipUnit(int index)
+    {
+
+        if (EquipSelectUnitData != null)
+        {
+            for (int i=0; i<_equipUnitItems.Length; i++)
+            {
+                if (_equipUnitItems[i].UnitData == EquipSelectUnitData)
+                {
+                    _equipUnitItems[i].UnitData = _equipUnitItems[index].UnitData;
+                }
+            }
+
+            _equipUnitItems[index].UnitData = EquipSelectUnitData;
+            UpdateEquipUnitItem();
+
+            EquipSelectUnitData = null;
+        }
+    }
+
+    public void UpdateEquipUnitItem()
+    {
+        foreach (EquipUnitItem item in _equipUnitItems)
+        {
+            item.UpdateEquipUnitData();
+        }
     }
 
     public void EquipSkill(SkillData skillData)

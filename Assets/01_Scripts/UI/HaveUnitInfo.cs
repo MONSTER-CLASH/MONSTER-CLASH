@@ -89,6 +89,7 @@ public class HaveUnitInfo : MonoBehaviour
             _unitData.UnitLevel++;
             ShowHaveUnitInfo(_unitData);
             _parentUnitItem.UpdateUnitItem();
+            DeckManager.Instance.UpdateEquipUnitItem();
         }
     }
 }

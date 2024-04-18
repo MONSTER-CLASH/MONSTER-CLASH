@@ -40,6 +40,6 @@ public class HaveUnitItem : MonoBehaviour
 
     public void EquipSelectItem()
     {
-        DeckManager.EquipSelectUnitData = _unitData;
+        DeckManager.Instance.EquipSelectUnitData = _unitData;
     }
 }

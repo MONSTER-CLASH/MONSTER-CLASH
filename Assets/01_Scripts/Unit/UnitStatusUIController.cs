@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class UnitStatusUIController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _unitNameText;
+    [SerializeField] private Transform _unitStatusUIParent;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
-    [SerializeField] private Image _unitHealth;
+    [SerializeField] private Image _unitHealthImage;
 
     private UnitStatusSystem _unitStatusSystem;
 
@@ -20,14 +20,17 @@ public class UnitStatusUIController : MonoBehaviour
 
     private void Start()
     {
-        _unitNameText.text = _unitStatusSystem.Name;
         _unitLevelText.text = _unitStatusSystem.UnitLevel.ToString();
+        _unitHealthImage.fillAmount = _unitStatusSystem.CurrentHealth / _unitStatusSystem.MaxHealth;
+    }
 
-        _unitHealth.fillAmount = _unitStatusSystem.CurrentHealth / _unitStatusSystem.MaxHealth;
+    private void Update()
+    {
+        _unitStatusUIParent.LookAt(Camera.main.transform);
     }
 
     private void UpdateUnitStatusUI(float damage, GameObject attacker)
     {
-        _unitHealth.fillAmount = _unitStatusSystem.CurrentHealth / _unitStatusSystem.MaxHealth;
+        _unitHealthImage.fillAmount = _unitStatusSystem.CurrentHealth / _unitStatusSystem.MaxHealth;
     }
 }

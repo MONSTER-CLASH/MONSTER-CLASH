@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeckManager : MonoBehaviour
 {
@@ -58,6 +59,11 @@ public class DeckManager : MonoBehaviour
     private void Update()
     {
         _currentGoldText.text = Gold.ToString();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("TestScene");
+        }
     }
 
     public void EquipUnit(int index)

@@ -835,13 +835,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitSpawnDatas:
-  - _spawnTime: 0
-    _spawnUnit: {fileID: 4892258493803381064, guid: 06809177e733433418b820b3961796b0, type: 3}
-    _spawnCount: 1
-    _spawnUnitCount: 3
-    _spawnDelay: 1
-    _isSpecialWave: 1
-    _specialWaveStartHp: 950
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 0}
+    UnitLevel: 0
+    SpawnCount: 0
+    SpawnUnitCount: 0
+    SpawnDelay: 0
+    IsSpecialWave: 0
+    SpecialWaveStartHp: 0
 --- !u!1 &1521346367
 GameObject:
   m_ObjectHideFlags: 0

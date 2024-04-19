@@ -4,7 +4,7 @@ public class UnitStatusSystem : StatusSystem
 {
     public float AttackDetectRange;
     public float MoveSpeed;
-    [SerializeField] private int unitLevel;
+    public int UnitLevel;
 
     private void Awake()
     {
@@ -20,6 +20,8 @@ public class UnitStatusSystem : StatusSystem
             AttackRange = unitData.GetUnitStatusData().AttackRange;
             AttackDetectRange = unitData.GetUnitStatusData().AttackDetectRange;
             MoveSpeed = unitData.GetUnitStatusData().MoveSpeed;
+
+            UnitLevel = unitData.UnitLevel;
         }
     }
 

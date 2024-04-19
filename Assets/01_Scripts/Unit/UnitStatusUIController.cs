@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitStatusUIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI _unitNameText;
+    [SerializeField] private TextMeshProUGUI _unitLevelText;
+    [SerializeField] private Image _unitHealth;
+
+    private UnitStatusSystem _unitStatusSystem;
+
+    private void Awake()
     {
-        
+        _unitStatusSystem = GetComponent<UnitStatusSystem>();
+        GetComponent<HealthSystem>().OnDamaged += UpdateUnitStatusUI;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _unitNameText.text = _unitStatusSystem.Name;
+        _unitLevelText.text = _unitStatusSystem.UnitLevel.ToString();
+
+        _unitHealth.fillAmount = _unitStatusSystem.CurrentHealth / _unitStatusSystem.MaxHealth;
+    }
+
+    private void UpdateUnitStatusUI(float damage, GameObject attacker)
+    {
+        _unitHealth.fillAmount = _unitStatusSystem.CurrentHealth / _unitStatusSystem.MaxHealth;
     }
 }

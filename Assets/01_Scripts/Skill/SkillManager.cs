@@ -15,7 +15,7 @@ public class SkillManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("SkillManager Instance Error\nGameObject : " + gameObject.name);
+            Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
     }

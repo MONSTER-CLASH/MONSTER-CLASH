@@ -15,14 +15,9 @@ public class UnitManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("UnitManager Instance Error\nGameObject : " + gameObject);
+            Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-
-        foreach(UnitData unitData in _unitDatas)
-        {
-            unitData.UnitLevel = 1;
-        }
     }
 
     public UnitData[] GetHasUnitDatas()

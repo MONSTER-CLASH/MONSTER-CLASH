@@ -4407,7 +4407,7 @@ MonoBehaviour:
   - {fileID: 1282879229}
   - {fileID: 347696190}
   - {fileID: 775131331}
-  EquipSelectUnitData: {fileID: 0}
+  SelectedHaveUnitData: {fileID: 0}
   _equipSkillItem: {fileID: 1656099673}
   EquipSelectSkillData: {fileID: 0}
 --- !u!1 &1941023942

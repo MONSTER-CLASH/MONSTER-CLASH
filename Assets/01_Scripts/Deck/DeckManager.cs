@@ -21,7 +21,7 @@ public class DeckManager : MonoBehaviour
 
     [Header("Equipped Unit and Skill")]
     [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
-    public UnitData EquipSelectUnitData;
+    public UnitData SelectedHaveUnitData;
 
     [Space()]
     [SerializeField] private EquipSkillItem _equipSkillItem;
@@ -69,20 +69,21 @@ public class DeckManager : MonoBehaviour
     public void EquipUnit(int index)
     {
 
-        if (EquipSelectUnitData != null)
+        if (SelectedHaveUnitData != null)
         {
             for (int i=0; i<_equipUnitItems.Length; i++)
             {
-                if (_equipUnitItems[i].UnitData == EquipSelectUnitData)
+                if (_equipUnitItems[i].UnitData == SelectedHaveUnitData)
                 {
                     _equipUnitItems[i].UnitData = _equipUnitItems[index].UnitData;
                 }
             }
 
-            _equipUnitItems[index].UnitData = EquipSelectUnitData;
+            _equipUnitItems[index].UnitData = SelectedHaveUnitData;
             UpdateEquipUnitItem();
+            HideAllSelectedImage();
 
-            EquipSelectUnitData = null;
+            SelectedHaveUnitData = null;
         }
     }
 
@@ -91,6 +92,14 @@ public class DeckManager : MonoBehaviour
         foreach (EquipUnitItem item in _equipUnitItems)
         {
             item.UpdateEquipUnitData();
+        }
+    }
+
+    public void HideAllSelectedImage()
+    {
+        foreach(HaveUnitItem item in _haveUnitItemParent.GetComponentsInChildren<HaveUnitItem>())
+        {
+            item.HideSelectedImage();
         }
     }
 

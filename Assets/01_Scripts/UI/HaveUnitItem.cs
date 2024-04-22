@@ -16,7 +16,11 @@ public class HaveUnitItem : MonoBehaviour
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(ShowUnitInfoLayer);
-        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(() => DeckManager.Instance.EquipSelectUnitData = _unitData);
+        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(() => {
+            DeckManager.Instance.HideAllSelectedImage();
+            DeckManager.Instance.SelectedHaveUnitData = _unitData;
+            _selectedImage.SetActive(true);
+        });
     }
 
     public void SetItemData(UnitData unitData)

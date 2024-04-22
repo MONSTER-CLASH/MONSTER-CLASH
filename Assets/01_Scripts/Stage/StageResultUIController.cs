@@ -20,10 +20,10 @@ public class StageResultUIController : MonoBehaviour
         _stageRetryBtn.onClick.AddListener(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
     }
 
-    public void SetStageResultUI(int stageLevel, int stageRewardGold, bool isPlayerWin)
+    public void SetStageResultUI(int stageLevel, float stageTime, int stageRewardGold, bool isPlayerWin)
     {
         _stageTimeText.text = "스테이지 " + stageLevel;
-        _stageTimeText.text = (int)(Time.time / 60) + ":" + (int)(Time.time % 60);
+        _stageTimeText.text = (int)(stageTime / 60) + ":" + (int)(stageTime % 60);
         _stageRewardGoldText.text = "+" + stageRewardGold;
 
         if (isPlayerWin)

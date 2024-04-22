@@ -9,6 +9,7 @@ public class HaveUnitItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _unitNameText;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
     [SerializeField] private GameObject _equipSelectBtn;
+    [SerializeField] private GameObject _selectedImage;
 
     private UnitData _unitData;
 
@@ -36,5 +37,10 @@ public class HaveUnitItem : MonoBehaviour
     public void UpdateUnitItem()
     {
         _unitLevelText.text = "·¹º§" + _unitData.UnitLevel;
+    }
+
+    public void HideSelectedImage()
+    {
+        _selectedImage.SetActive(false);
     }
 }

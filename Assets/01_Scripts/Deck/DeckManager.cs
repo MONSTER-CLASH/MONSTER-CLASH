@@ -20,7 +20,7 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject _haveSkillItem;
 
     [Header("Equipped Unit and Skill")]
-    [SerializeField] EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
+    [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
     public UnitData EquipSelectUnitData;
 
     [Space()]

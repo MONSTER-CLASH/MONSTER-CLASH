@@ -25,7 +25,7 @@ public class DeckManager : MonoBehaviour
 
     [Space()]
     [SerializeField] private EquipSkillItem _equipSkillItem;
-    public SkillData EquipSelectSkillData;
+    public SkillData SelectedHaveSkillData;
 
     private void Awake()
     {
@@ -101,15 +101,21 @@ public class DeckManager : MonoBehaviour
         {
             item.HideSelectedImage();
         }
+
+        foreach(HaveSkillItem item in _haveSkillItemParent.GetComponentsInChildren<HaveSkillItem>())
+        {
+            item.HideSelectedImage();
+        }
     }
 
     public void EquipSkill()
     {
-        if (EquipSelectSkillData != null)
+        if (SelectedHaveSkillData != null)
         {
-            _equipSkillItem.SkillData = EquipSelectSkillData;
+            _equipSkillItem.SkillData = SelectedHaveSkillData;
             _equipSkillItem.UpdateEquipSkillData();
-            EquipSelectSkillData = null;
+            HideAllSelectedImage();
+            SelectedHaveSkillData = null;
         }
     }
 }

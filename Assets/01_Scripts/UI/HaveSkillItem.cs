@@ -8,13 +8,18 @@ public class HaveSkillItem : MonoBehaviour
     [SerializeField] private Image _skillImage;
     [SerializeField] private TextMeshProUGUI _skillNameText;
     [SerializeField] private GameObject _equipSelectBtn;
+    [SerializeField] private GameObject _selectedImage;
 
     private SkillData _skillData;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(ShowSkillInfoLayer);
-        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(() => DeckManager.Instance.EquipSelectSkillData = _skillData);
+        _equipSelectBtn.GetComponent<Button>().onClick.AddListener(() => {
+            DeckManager.Instance.HideAllSelectedImage();
+            DeckManager.Instance.SelectedHaveSkillData = _skillData;
+            _selectedImage.SetActive(true);
+        });
     }
 
     public void SetItemData(SkillData skillData)
@@ -29,5 +34,10 @@ public class HaveSkillItem : MonoBehaviour
     {
         _haveSkillInfoLayer.SetActive(true);
         _haveSkillInfoLayer.GetComponent<HaveSkillInfo>().ShowHaveSkillInfo(_skillData);
+    }
+
+    public void HideSelectedImage()
+    {
+        _selectedImage?.SetActive(false);
     }
 }

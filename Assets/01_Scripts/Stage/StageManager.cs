@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    [SerializeField] private int _stageClearRewardGold;
+    [SerializeField] private int _stageLevel;
+    [SerializeField] private int _stageRewardGold;
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;
 
@@ -16,12 +17,12 @@ public class StageManager : MonoBehaviour
 
     private void PlayerWin(GameObject killer)
     {
-        Instantiate(_stageResultUIPrefab, _stageResultUIParent);
-        DeckManager.Gold += _stageClearRewardGold;
+        Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageLevel, _stageRewardGold, true);
+        DeckManager.Gold += _stageRewardGold;
     }
 
     private void PlayerDefeat(GameObject killer)
     {
-        Instantiate(_stageResultUIPrefab, _stageResultUIParent);
+        Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageLevel, _stageRewardGold, false);
     }
 }

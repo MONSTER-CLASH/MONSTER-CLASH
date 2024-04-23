@@ -20,12 +20,14 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject _haveSkillItem;
 
     [Header("Equipped Unit and Skill")]
-    [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
+    public static UnitData[] EquipUnitDatas = new UnitData[6];
     public UnitData SelectedHaveUnitData;
+    [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
 
     [Space()]
-    [SerializeField] private EquipSkillItem _equipSkillItem;
+    public static SkillData EquipSkillData;
     public SkillData SelectedHaveSkillData;
+    [SerializeField] private EquipSkillItem _equipSkillItem;
 
     private void Awake()
     {
@@ -62,6 +64,7 @@ public class DeckManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            SetEquipDeck();
             SceneManager.LoadScene("TestScene");
         }
     }
@@ -117,5 +120,15 @@ public class DeckManager : MonoBehaviour
             HideAllSelectedImage();
             SelectedHaveSkillData = null;
         }
+    }
+
+    public void SetEquipDeck()
+    {
+        for (int i=0; i<6; i++)
+        {
+            EquipUnitDatas[i] = _equipUnitItems[i].UnitData;
+        }
+
+        EquipSkillData = _equipSkillItem.SkillData;
     }
 }

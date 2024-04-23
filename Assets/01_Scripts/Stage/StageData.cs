@@ -14,4 +14,5 @@ public class StageData : ScriptableObject
     public int StageWinGold;
     public int StageDefeatGold;
     public bool IsSubStage;
+    public UnitData[] RewardUnits;
 }

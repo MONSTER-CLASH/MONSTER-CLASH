@@ -28,6 +28,17 @@ public class StageManager : MonoBehaviour
         Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageData.StageLevel, _stageTime, _stageData.StageWinGold, true);
         DeckManager.Gold += _stageData.StageWinGold;
         if (!_stageData.IsSubStage) LastClearStageLevel = _stageData.StageLevel;
+
+        for (int i=0; i<_stageData.RewardUnits.Length; i++)
+        {
+            for (int j=0; j<UnitManager.Instance.UnitDatas.Length; j++)
+            {
+                if (_stageData.RewardUnits[i] == UnitManager.Instance.UnitDatas[j])
+                {
+                    UnitManager.Instance.UnitDatas[j].HasUnit = true;
+                }
+            }
+        }
     }
 
     private void PlayerDefeat(GameObject killer)

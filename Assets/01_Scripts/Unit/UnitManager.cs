@@ -5,7 +5,7 @@ public class UnitManager : MonoBehaviour
 {
     public static UnitManager Instance;
 
-    [SerializeField] private UnitData[] _unitDatas;
+    public UnitData[] UnitDatas;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class UnitManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        foreach(UnitData unitData in _unitDatas)
+        foreach(UnitData unitData in UnitDatas)
         {
             unitData.UnitLevel = 1;
         }
@@ -29,11 +29,11 @@ public class UnitManager : MonoBehaviour
     {
         List<UnitData> unitDatas = new List<UnitData>();
 
-        for (int i=0; i<_unitDatas.Length; i++)
+        for (int i=0; i<UnitDatas.Length; i++)
         {
-            if (_unitDatas[i].HasUnit)
+            if (UnitDatas[i].HasUnit)
             {
-                unitDatas.Add(_unitDatas[i]);
+                unitDatas.Add(UnitDatas[i]);
             }
         }
 
@@ -42,11 +42,11 @@ public class UnitManager : MonoBehaviour
 
     public UnitData GetUnitDataViaName(string unitName)
     {
-        for (int i=0; i<_unitDatas.Length;i++)
+        for (int i=0; i<UnitDatas.Length;i++)
         {
-            if (_unitDatas[i].UnitName == unitName)
+            if (UnitDatas[i].UnitName == unitName)
             {
-                return _unitDatas[i];
+                return UnitDatas[i];
             }
         }
 

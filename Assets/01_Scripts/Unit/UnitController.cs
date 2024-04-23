@@ -122,7 +122,7 @@ public class UnitController : MonoBehaviour
 
     protected void Move()
     {
-        _agent.isStopped = !_canMove || (!_attackTarget && !_oppositeBasePos) || _healthSystem.IsDead;
+        _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || _healthSystem.IsDead;
         _animator.SetInteger("Move", _canMove ? 1 : 0);
 
         if (_attackTarget)

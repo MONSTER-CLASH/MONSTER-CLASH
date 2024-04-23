@@ -8,6 +8,7 @@ public class UnitData : ScriptableObject
     public string UnitName;
     public int UnitLevel;
     public Sprite UnitImage;
+    public string UnitDescription;
 
     [Space()]
     public UnitPosition UnitPosition;

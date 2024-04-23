@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    public static int LastClearStageLevel = 0;
+
     [SerializeField] private int _stageLevel;
     [SerializeField] private int _stageRewardGold;
     [SerializeField] private GameObject _stageResultUIPrefab;
@@ -26,6 +28,7 @@ public class StageManager : MonoBehaviour
     {
         Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageLevel, _stageTime, _stageRewardGold, true);
         DeckManager.Gold += _stageRewardGold;
+        LastClearStageLevel = _stageLevel;
     }
 
     private void PlayerDefeat(GameObject killer)

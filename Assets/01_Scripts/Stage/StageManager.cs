@@ -6,9 +6,7 @@ public class StageManager : MonoBehaviour
 {
     public static int LastClearStageLevel = 0;
 
-    [SerializeField] private int _stageLevel;
-    [SerializeField] private int _stageRewardGold;
-    [SerializeField] private bool _isSubStage;
+    [SerializeField] private StageData _stageData;
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;
 
@@ -27,13 +25,14 @@ public class StageManager : MonoBehaviour
 
     private void PlayerWin(GameObject killer)
     {
-        Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageLevel, _stageTime, _stageRewardGold, true);
-        DeckManager.Gold += _stageRewardGold;
-        LastClearStageLevel = _isSubStage ? LastClearStageLevel : _stageLevel;
+        Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageData.StageLevel, _stageTime, _stageData.StageWinGold, true);
+        DeckManager.Gold += _stageData.StageWinGold;
+        if (!_stageData.IsSubStage) LastClearStageLevel = _stageData.StageLevel;
     }
 
     private void PlayerDefeat(GameObject killer)
     {
-        Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageLevel, _stageTime, _stageRewardGold, false);
+        Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageData.StageLevel, _stageTime, _stageData.StageDefeatGold, false);
+        DeckManager.Gold += _stageData.StageDefeatGold;
     }
 }

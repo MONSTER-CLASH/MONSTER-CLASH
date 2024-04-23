@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15de0fbd5edf3404399b24daa681a9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitDatas:
+  UnitDatas:
   - {fileID: 11400000, guid: 2cae607d762903641a2c87316e6f0314, type: 2}
 --- !u!1 &57094937
 GameObject:
@@ -4400,6 +4400,7 @@ MonoBehaviour:
   _haveUnitItem: {fileID: 669146450886167862, guid: 62d6751a447444842b478fade8caa09a, type: 3}
   _haveSkillItemParent: {fileID: 6897913}
   _haveSkillItem: {fileID: 306781184445604715, guid: 42ef112a9f0cc6947af4be0df6edd5a3, type: 3}
+  SelectedHaveUnitData: {fileID: 0}
   _equipUnitItems:
   - {fileID: 1773206083}
   - {fileID: 1669752939}
@@ -4407,9 +4408,8 @@ MonoBehaviour:
   - {fileID: 1282879229}
   - {fileID: 347696190}
   - {fileID: 775131331}
-  SelectedHaveUnitData: {fileID: 0}
+  SelectedHaveSkillData: {fileID: 0}
   _equipSkillItem: {fileID: 1656099673}
-  EquipSelectSkillData: {fileID: 0}
 --- !u!1 &1941023942
 GameObject:
   m_ObjectHideFlags: 0

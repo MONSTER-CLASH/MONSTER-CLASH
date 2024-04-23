@@ -15,6 +15,7 @@ MonoBehaviour:
   UnitName: PlayerUnit
   UnitLevel: 1
   UnitImage: {fileID: 0}
+  UnitDescription: "\uBC84\uC12F\uC774\uB2E4. \uC6C0\uC9C1\uC778\uB2E4. \uACF5\uACA9\uD55C\uB2E4."
   UnitPosition: 0
   UnitLevelData: {fileID: 11400000, guid: 9ed756f3d61d79d4f87570c8d3fe3a0c, type: 2}
   HasUnit: 1

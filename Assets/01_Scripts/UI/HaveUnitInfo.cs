@@ -9,6 +9,7 @@ public class HaveUnitInfo : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _unitNameText;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
     [SerializeField] private TextMeshProUGUI _unitPositionText;
+    [SerializeField] private TextMeshProUGUI _unitDescriptionText;
 
     [Header("Lower UI Elements")]
     [SerializeField] private TextMeshProUGUI _healthText;
@@ -53,6 +54,7 @@ public class HaveUnitInfo : MonoBehaviour
                 _unitPositionText.text = "ейд©";
                 break;
         }
+        _unitDescriptionText.text = _unitData.UnitDescription;
 
         float health = _unitData.GetUnitStatusData().Health;
         float nextLevelHealth = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).Health : 0;

@@ -13,6 +13,10 @@ public class UnitData : ScriptableObject
     [Space()]
     public GameObject UnitModel; // µ¦ ¿ÀºêÁ§Æ®¿¡ »ý¼ºµÉ À¯´Ö µ¿»ó ¸ðµ¨ ÇÁ¸®ÆÕ
     public GameObject UnitPrefab; // ½ÇÁ¦ ¸Ê¿¡ ¼ÒÈ¯µÉ À¯´Ö ÇÁ¸®ÆÕ
+    public int SpawnCost;
+
+    [Space()]
+    public int StorePrice;
     public UnitPosition UnitPosition;
     public UnitLevelData UnitLevelData;
 

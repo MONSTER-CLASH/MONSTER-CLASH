@@ -26,7 +26,7 @@ public class HaveSkillItem : MonoBehaviour
     {
         _skillData = skillData;
 
-        //_skillImage.sprite = _skillData.SkillImage;
+        _skillImage.sprite = _skillData.SkillImage;
         _skillNameText.text = _skillData.SkillName;
     }
 

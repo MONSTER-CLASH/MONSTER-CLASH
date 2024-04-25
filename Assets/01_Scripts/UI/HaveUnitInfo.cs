@@ -36,7 +36,7 @@ public class HaveUnitInfo : MonoBehaviour
         if (_unitData == null) _unitData = unitData;
         if (_parentUnitItem == null) _parentUnitItem = parentUnitItem;
 
-        //_unitImage.sprite = unitData.UnitImage;
+        _unitImage.sprite = unitData.UnitImage;
         _unitNameText.text = _unitData.UnitName;
         _unitLevelText.text = "·¹º§ " + (_unitData.CanUpgrade() ? $"{_unitData.UnitLevel } +1" : "");
         switch (_unitData.UnitPosition)

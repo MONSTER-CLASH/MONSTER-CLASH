@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Test Skill Data", menuName = "Scriptable Object/Skill Datas/Test Skill Data")]
-public class TestSkillData : SkillData
+[CreateAssetMenu(fileName = "Fire Ball Skill Data", menuName = "Scriptable Object/Skill Datas/Test Skill Data")]
+public class FireBallSkillData : SkillData
 {
     public override string GetSkillDescription()
     {

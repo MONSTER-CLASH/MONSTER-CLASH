@@ -1225,9 +1225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11a32812e014cc41b3dc08903da9cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MercenaryCoin: 0
   _stageData: {fileID: 11400000, guid: 68b8bfb30afc82d4bb5ed122620ef814, type: 2}
   _stageResultUIPrefab: {fileID: 7515603718052802130, guid: ae522a45c8dbc11429af935cbeb8e5da, type: 3}
   _stageResultUIParent: {fileID: 554380910}
+  _getMercenaryCoinValuePerSecond: 0
 --- !u!4 &397091567
 Transform:
   m_ObjectHideFlags: 0

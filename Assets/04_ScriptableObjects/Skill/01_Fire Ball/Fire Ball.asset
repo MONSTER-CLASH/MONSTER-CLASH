@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Fire Ball
   m_EditorClassIdentifier: 
   SkillName: Fire Ball
-  SkillImage: {fileID: 0}
-  SkillPrefab: {fileID: 0}
+  SkillImage: {fileID: 21300000, guid: 363add853068c3440b05ab8fd0fac5c3, type: 3}
   HasSkill: 1
+  SkillModel: {fileID: 8767483906824521164, guid: de0a01bb7ac765949ba70e02994444cd, type: 3}
+  SkillPrefab: {fileID: 7722308213897832500, guid: aed4065a6ddbc7e43ae93d9568b6c0be, type: 3}
+  SpawnCoolTime: 10

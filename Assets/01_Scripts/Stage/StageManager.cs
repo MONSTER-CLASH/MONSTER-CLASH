@@ -7,9 +7,12 @@ public class StageManager : MonoBehaviour
     public static StageManager Instance;
     public static int LastClearStageLevel = 0;
 
+    public int MercenaryCoin;
+
     [SerializeField] private StageData _stageData;
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;
+    [SerializeField] private int _getMercenaryCoinValuePerSecond;
 
     private float _stageTime;
     private bool _isStageEnd;
@@ -20,6 +23,8 @@ public class StageManager : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("PlayerBase").GetComponent<HealthSystem>().OnDead += PlayerDefeat;
         GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
+
+        StartCoroutine(GetMercenaryCostCoroutine());
     }
 
     private void Update()
@@ -59,5 +64,17 @@ public class StageManager : MonoBehaviour
 
             _isStageEnd=true;
         }
+    }
+
+    private IEnumerator GetMercenaryCostCoroutine()
+    {
+        while (!_isStageEnd)
+        {
+            MercenaryCoin += _getMercenaryCoinValuePerSecond;
+
+            yield return new WaitForSeconds(1);
+        }
+
+        yield break;
     }
 }

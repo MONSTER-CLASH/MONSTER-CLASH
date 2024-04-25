@@ -14,8 +14,6 @@ public class SpecialWaveWarningShower : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        ShowWarning();
     }
 
     public void ShowWarning()

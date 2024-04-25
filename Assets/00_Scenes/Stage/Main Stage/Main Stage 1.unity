@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75195188}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Base Status UI Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 156505298}
   - component: {fileID: 156505300}
   - component: {fileID: 156505299}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Base Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 195875049}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attack Projectile Spawn Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 430564300}
   - component: {fileID: 430564302}
   - component: {fileID: 430564301}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Base Health Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,7 +1867,7 @@ GameObject:
   - component: {fileID: 711126815}
   - component: {fileID: 711126817}
   - component: {fileID: 711126816}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Base Health Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2141,7 +2141,7 @@ GameObject:
   - component: {fileID: 757078238}
   - component: {fileID: 757078237}
   - component: {fileID: 757078236}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Base Status UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2242,7 +2242,7 @@ GameObject:
   - component: {fileID: 785433857}
   - component: {fileID: 785433856}
   - component: {fileID: 785433855}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemy Base Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3116,7 +3116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1091255235}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Base Status UI Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4317,7 +4317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339769569}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Attack Projectile Spawn Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4350,7 +4350,7 @@ GameObject:
   - component: {fileID: 1359379445}
   - component: {fileID: 1359379447}
   - component: {fileID: 1359379446}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Base Health Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4620,6 +4620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447151613}
+  - component: {fileID: 1447151614}
   m_Layer: 0
   m_Name: Grounds
   m_TagString: Untagged
@@ -4650,6 +4651,36 @@ Transform:
   m_Father: {fileID: 1214449711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447151614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447151612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 1dca4d8d12345bb4382093762b71040d, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1494950432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,7 +4692,7 @@ GameObject:
   - component: {fileID: 1494950433}
   - component: {fileID: 1494950435}
   - component: {fileID: 1494950434}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Base Health Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5214,7 +5245,7 @@ GameObject:
   - component: {fileID: 1688148382}
   - component: {fileID: 1688148381}
   - component: {fileID: 1688148380}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Base Status UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6452,6 +6483,8 @@ GameObject:
   - component: {fileID: 1926451880}
   - component: {fileID: 1926451879}
   - component: {fileID: 1926451878}
+  - component: {fileID: 1926451882}
+  - component: {fileID: 1926451883}
   m_Layer: 6
   m_Name: Player Base
   m_TagString: PlayerBase
@@ -6537,6 +6570,35 @@ MonoBehaviour:
   AttackSpeed: 0
   AttackRange: 0
   _baesStatusData: {fileID: 11400000, guid: 363bd94a98fc48e42b27b5ce2ac3fb2e, type: 2}
+--- !u!65 &1926451882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926451876}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.5, y: 6, z: 8.5}
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!208 &1926451883
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926451876}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.75, y: 2.5, z: 3.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1930410213
 GameObject:
   m_ObjectHideFlags: 0
@@ -6648,6 +6710,8 @@ GameObject:
   - component: {fileID: 1954739377}
   - component: {fileID: 1954739376}
   - component: {fileID: 1954739375}
+  - component: {fileID: 1954739380}
+  - component: {fileID: 1954739379}
   m_Layer: 7
   m_Name: Enemy Base
   m_TagString: EnemyBase
@@ -6733,6 +6797,35 @@ MonoBehaviour:
   AttackSpeed: 0
   AttackRange: 0
   _baesStatusData: {fileID: 11400000, guid: a0408824871ccf348a281a60e21281f1, type: 2}
+--- !u!208 &1954739379
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954739373}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.75, y: 2.5, z: 3.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &1954739380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954739373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.5, y: 6, z: 8.5}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &2046626619
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,7 +7033,7 @@ GameObject:
   - component: {fileID: 2085306197}
   - component: {fileID: 2085306199}
   - component: {fileID: 2085306198}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Base Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7232,7 +7325,7 @@ GameObject:
   - component: {fileID: 349694190374847710}
   - component: {fileID: 336962337315659368}
   - component: {fileID: 324473829538190932}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player Base Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

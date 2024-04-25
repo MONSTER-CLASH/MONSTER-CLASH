@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 5711287239404712390}
   - component: {fileID: 1623549632}
   m_Layer: 6
-  m_Name: Player Unit
+  m_Name: Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef3eba8aa245ba48bac3a2c9b60fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: PlayerUnit
+  Name: Mushroom
   MaxHealth: 0
   CurrentHealth: 0
   AttackDamage: 0

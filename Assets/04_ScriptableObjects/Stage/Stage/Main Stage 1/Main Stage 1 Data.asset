@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f9ccd468b643b4aab252a2c36298b1, type: 3}
   m_Name: Main Stage 1 Data
   m_EditorClassIdentifier: 
-  StageLevel: 0
-  StageName: 
+  StageLevel: 1
+  StageName: Main Stage 1
   StageDescription: 
-  StageWinGold: 0
-  StageDefeatGold: 0
+  StageWinGold: 100
+  StageDefeatGold: 20
   IsSubStage: 0
   RewardUnits: []

@@ -65,7 +65,7 @@ public class DeckManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SetEquipDeck();
-            SceneManager.LoadScene("TestScene");
+            SceneManager.LoadScene("Main Stage 1");
         }
     }
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 890e03fe5432b554eb22cde6f76c04fa, type: 3}
-  m_Name: Player Unit Level Data
+  m_Name: Mushroom Unit Level Data
   m_EditorClassIdentifier: 
   _levelDatas:
   - UnitStatusData:

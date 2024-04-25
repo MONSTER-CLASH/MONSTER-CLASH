@@ -14,6 +14,7 @@ public class UnitData : ScriptableObject
     public GameObject UnitModel; // µ¦ ¿ÀºêÁ§Æ®¿¡ »ý¼ºµÉ À¯´Ö µ¿»ó ¸ðµ¨ ÇÁ¸®ÆÕ
     public GameObject UnitPrefab; // ½ÇÁ¦ ¸Ê¿¡ ¼ÒÈ¯µÉ À¯´Ö ÇÁ¸®ÆÕ
     public int SpawnCost;
+    public float SpawnCoolTime;
 
     [Space()]
     public int StorePrice;

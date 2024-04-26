@@ -2104,6 +2104,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722828430}
   m_Mesh: {fileID: 4300000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+--- !u!1 &731585787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731585788}
+  - component: {fileID: 731585789}
+  m_Layer: 7
+  m_Name: Enemy Unit Spawner 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &731585788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731585787}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7, y: 0.5, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1954739374}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &731585789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731585787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a922ef85f0f5c5b49a26f7d3ee36c651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitSpawnDatas:
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
+    UnitLevel: 1
+    SpawnCount: 20
+    SpawnUnitCount: 1
+    SpawnDelay: 5
+    IsSpecialWave: 0
+    SpecialWaveStartHp: 0
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
+    UnitLevel: 2
+    SpawnCount: 5
+    SpawnUnitCount: 1
+    SpawnDelay: 3
+    IsSpecialWave: 1
+    SpecialWaveStartHp: 300
 --- !u!1 &736733013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,6 +4720,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359379444}
   m_CullTransparentMesh: 1
+--- !u!1 &1390270135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390270136}
+  - component: {fileID: 1390270137}
+  m_Layer: 7
+  m_Name: Enemy Unit Spawner 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390270136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390270135}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7, y: 0.5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1954739374}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390270137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390270135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a922ef85f0f5c5b49a26f7d3ee36c651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitSpawnDatas:
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
+    UnitLevel: 1
+    SpawnCount: 20
+    SpawnUnitCount: 1
+    SpawnDelay: 5
+    IsSpecialWave: 0
+    SpecialWaveStartHp: 0
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
+    UnitLevel: 2
+    SpawnCount: 5
+    SpawnUnitCount: 1
+    SpawnDelay: 3
+    IsSpecialWave: 1
+    SpecialWaveStartHp: 300
 --- !u!1 &1409380429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,6 +7138,8 @@ Transform:
   - {fileID: 785433857}
   - {fileID: 75195188}
   - {fileID: 1339769569}
+  - {fileID: 1390270136}
+  - {fileID: 731585788}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

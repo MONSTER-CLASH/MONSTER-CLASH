@@ -18,6 +18,9 @@ MonoBehaviour:
   UnitDescription: "\uBC84\uC12F\uC774\uB2E4. \uC6C0\uC9C1\uC778\uB2E4. \uACF5\uACA9\uD55C\uB2E4."
   UnitModel: {fileID: 6005971452490253276, guid: 82467876ef651014e8b3d24da89f18a5, type: 3}
   UnitPrefab: {fileID: 5711287239404712445, guid: a85be2793141c224d84faa8c63892c6f, type: 3}
+  SpawnCost: 5
+  SpawnCoolTime: 5
+  StorePrice: 50
   UnitPosition: 0
   UnitLevelData: {fileID: 11400000, guid: 9ed756f3d61d79d4f87570c8d3fe3a0c, type: 2}
   HasUnit: 1

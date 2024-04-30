@@ -9,6 +9,7 @@ public class HaveUnitInfo : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _unitNameText;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
     [SerializeField] private TextMeshProUGUI _unitPositionText;
+    [SerializeField] private TextMeshProUGUI _unitCostText;
     [SerializeField] private TextMeshProUGUI _unitDescriptionText;
 
     [Header("Lower UI Elements")]
@@ -54,6 +55,7 @@ public class HaveUnitInfo : MonoBehaviour
                 _unitPositionText.text = "ейд©";
                 break;
         }
+        _unitCostText.text = _unitData.SpawnCost.ToString();
         _unitDescriptionText.text = _unitData.UnitDescription;
 
         float health = _unitData.GetUnitStatusData().Health;

@@ -8,6 +8,7 @@ public class HaveUnitItem : MonoBehaviour
     [SerializeField] private Image _unitImage;
     [SerializeField] private TextMeshProUGUI _unitNameText;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
+    [SerializeField] private TextMeshProUGUI _unitCostText;
     [SerializeField] private GameObject _equipSelectBtn;
     [SerializeField] private GameObject _selectedImage;
 
@@ -29,7 +30,8 @@ public class HaveUnitItem : MonoBehaviour
 
         _unitImage.sprite = _unitData.UnitImage;
         _unitNameText.text = _unitData.UnitName;
-        _unitLevelText.text = "레벨 " + _unitData.UnitLevel;
+        _unitLevelText.text = _unitData.UnitLevel.ToString();
+        _unitCostText.text = _unitData.SpawnCost.ToString();
     }
 
     public void ShowUnitInfoLayer()
@@ -40,7 +42,7 @@ public class HaveUnitItem : MonoBehaviour
 
     public void UpdateUnitItem()
     {
-        _unitLevelText.text = "레벨" + _unitData.UnitLevel;
+        _unitLevelText.text = _unitData.UnitLevel.ToString();
     }
 
     public void HideSelectedImage()

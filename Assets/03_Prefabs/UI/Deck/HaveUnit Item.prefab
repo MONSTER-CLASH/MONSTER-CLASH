@@ -706,6 +706,7 @@ MonoBehaviour:
   _unitNameText: {fileID: 5998188203515473310}
   _unitLevelText: {fileID: 647113895151544062}
   _unitPositionText: {fileID: 590797158902414519}
+  _unitCostText: {fileID: 6122624152680828875}
   _unitDescriptionText: {fileID: 8799491985916982627}
   _healthText: {fileID: 4147835989162396344}
   _attackDamageText: {fileID: 3452356837513771890}
@@ -995,6 +996,7 @@ MonoBehaviour:
   _unitImage: {fileID: 669146450342763736}
   _unitNameText: {fileID: 669146450036734966}
   _unitLevelText: {fileID: 3955679534682901655}
+  _unitCostText: {fileID: 7041810391690597631}
   _equipSelectBtn: {fileID: 1343335686}
   _selectedImage: {fileID: 7413172606962280326}
 --- !u!114 &669146450886167857

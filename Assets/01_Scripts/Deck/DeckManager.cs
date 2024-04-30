@@ -36,6 +36,9 @@ public class DeckManager : MonoBehaviour
         Gold += 10000;
         ShowHaveUnitItem();
         ShowHaveSkillItem();
+
+        UpdateEquipUnitItem();
+        _equipSkillItem.UpdateEquipSkillData();
     }
 
     private void ShowHaveUnitItem()

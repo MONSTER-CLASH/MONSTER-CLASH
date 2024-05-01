@@ -4,7 +4,6 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
-    public static int LastClearStageLevel = 0;
 
     public int MercenaryCoin;
 
@@ -37,7 +36,7 @@ public class StageManager : MonoBehaviour
         {
             Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageData.StageLevel, _stageTime, _stageData.StageWinGold, true);
             DeckManager.Gold += _stageData.StageWinGold;
-            if (!_stageData.IsSubStage) LastClearStageLevel = _stageData.StageLevel;
+            if (!_stageData.IsSubStage) StageSelectManager.LastClearStageLevel = _stageData.StageLevel;
 
             for (int i = 0; i < _stageData.RewardUnits.Length; i++)
             {

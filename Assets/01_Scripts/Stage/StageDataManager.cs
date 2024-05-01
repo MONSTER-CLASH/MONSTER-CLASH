@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StageSelectManager : MonoBehaviour
+public class StageDataManager : MonoBehaviour
 {
-    public static StageSelectManager Instance;
+    public static StageDataManager Instance;
     public static int LastClearStageLevel;
 
     [SerializeField] private StageData[] _mainStageDatas;

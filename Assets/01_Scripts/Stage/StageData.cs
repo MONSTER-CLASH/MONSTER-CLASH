@@ -3,14 +3,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Stage Data", menuName = "Scriptable Object/Stage Data")]
 public class StageData : ScriptableObject
 {
-    [Space()]
+    [Header("Stage Info")]
     public int StageLevel;
     public string StageName;
     public string StageDescription;
 
-    [Space()]
+    [Header("Stage Reward")]
     public int StageWinGold;
     public int StageDefeatGold;
-    public bool IsSubStage;
     public UnitData[] RewardUnits;
+
+    [Header("Sub Stage")]
+    public bool IsSubStage;
+    public int RequiredMinMainStage;
+    public int RequiredMaxMainStage;
 }

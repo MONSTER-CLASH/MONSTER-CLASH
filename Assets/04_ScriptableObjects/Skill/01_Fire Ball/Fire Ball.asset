@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2817da0483c101e4c841044fa078cfca, type: 3}
   m_Name: Fire Ball
   m_EditorClassIdentifier: 
-  SkillName: Fire Ball
+  SkillName: "\uD30C\uC774\uC5B4 \uBCFC"
   SkillImage: {fileID: 21300000, guid: 363add853068c3440b05ab8fd0fac5c3, type: 3}
   HasSkill: 1
   SkillModel: {fileID: 8767483906824521164, guid: de0a01bb7ac765949ba70e02994444cd, type: 3}

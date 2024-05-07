@@ -10,7 +10,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private StageData _stageData;
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;
-    [SerializeField] private int _getMercenaryCoinValuePerSecond;
+    [SerializeField] private int _getMercenaryCoinValuePerSecond; // 초당 용병주화 생성량
 
     private float _stageTime;
     private bool _isStageEnd;

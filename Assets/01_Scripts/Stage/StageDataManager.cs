@@ -17,18 +17,29 @@ public class StageDataManager : MonoBehaviour
         Instance = this;
     }
 
+    /// <summary>
+    /// 다음 메인 스테이지 정보 반환 메서드
+    /// </summary>
     public StageData GetNextMainStageData()
     {
         return _mainStageDatas[LastClearStageLevel];
     }
 
+    /// <summary>
+    /// StageData를 통한 스테이지 시작 메서드
+    /// </summary>
     public void StartStage(StageData stageData)
     {
+        DeckManager.Instance.SetEquipDeck();
         SceneManager.LoadScene(stageData.StageName);
     }
 
+    /// <summary>
+    /// 스테이지 이름를 통한 스테이지 시작 메서드
+    /// </summary>
     public void StartStage(string stageName)
     {
+        DeckManager.Instance.SetEquipDeck();
         SceneManager.LoadScene(stageName);
     }
 

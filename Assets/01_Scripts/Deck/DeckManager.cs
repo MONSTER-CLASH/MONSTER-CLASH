@@ -6,10 +6,11 @@ public class DeckManager : MonoBehaviour
 {
     public static DeckManager Instance;
 
-    [Header("Have Unit and Skill")]
     public static int Gold;
 
     [SerializeField] private TextMeshProUGUI _currentGoldText;
+
+    [Header("Have Unit and Skill")]
 
     [Space()]
     [SerializeField] private Transform _haveUnitItemParent;
@@ -20,14 +21,14 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject _haveSkillItem;
 
     [Header("Equipped Unit and Skill")]
-    public static UnitData[] EquipUnitDatas = new UnitData[6];
+    public static UnitData[] EquipUnitDatas = new UnitData[6]; // 장착된 유닛 정보, 스테이지 시작 시 자동으로 업데이트
     public UnitData SelectedHaveUnitData;
     [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
 
     [Space()]
     public static SkillData EquipSkillData;
     public SkillData SelectedHaveSkillData;
-    [SerializeField] private EquipSkillItem _equipSkillItem;
+    [SerializeField] private EquipSkillItem _equipSkillItem; // 장착된 스킬 정보, 스테이지 시작 시 자동으로 업데이트
 
     private void Awake()
     {
@@ -64,12 +65,6 @@ public class DeckManager : MonoBehaviour
     private void Update()
     {
         _currentGoldText.text = Gold.ToString();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetEquipDeck();
-            SceneManager.LoadScene("Main Stage 1");
-        }
     }
 
     public void EquipUnit(int index)

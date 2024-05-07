@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/00_Scenes/Stage Select Scene.unity
+    guid: ade639d4436796d408c05dfd278ade18
+  - enabled: 1
+    path: Assets/00_Scenes/Stage/Main Stage/Main Stage 1.unity
+    guid: 10d922ebdaa44c94d98f40c41d059974
   m_configObjects:
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 18b159be205ee8e449f97682a770518c, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c803140c37968fd42ab10cd5e7ace435, type: 2}

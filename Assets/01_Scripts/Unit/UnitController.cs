@@ -8,7 +8,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(UnitStatusSystem))]
 [RequireComponent(typeof(HealthSystem))]
 [RequireComponent(typeof(AttackSystem))]
-public abstract class UnitController : MonoBehaviour
+public class UnitController : MonoBehaviour
 {
     protected UnitStatusSystem _unitStatusSystem;
     private HealthSystem _healthSystem;
@@ -25,7 +25,7 @@ public abstract class UnitController : MonoBehaviour
     private bool _canMove => _motionStopTime < Time.time;
     private float _motionStopTime;
 
-    [SerializeField] private LayerMask _oppositeLayer;
+    private LayerMask _oppositeLayer;
 
 
     private void Awake()
@@ -37,8 +37,6 @@ public abstract class UnitController : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
 
-        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
-        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
         SetOppositeBase();
 
         _healthSystem.OnDead += HandleDie;
@@ -51,6 +49,9 @@ public abstract class UnitController : MonoBehaviour
 
     protected void SetOppositeBase()
     {
+        if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
+        else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
+
         if (_oppositeLayer == LayerMask.GetMask("Enemy"))
         {
             _oppositeBasePos = GameObject.FindGameObjectWithTag("EnemyBase").transform;
@@ -68,6 +69,11 @@ public abstract class UnitController : MonoBehaviour
 
     protected void DetectAttackTarget()
     {
+        if (_attackTarget && _attackTarget.GetComponent<HealthSystem>().IsDead)
+        {
+            _attackTarget = null;
+        }
+
         if (_attackTarget || !_canMove || _healthSystem.IsDead) return;
 
         List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackDetectRange, _oppositeLayer).ToList();
@@ -75,9 +81,15 @@ public abstract class UnitController : MonoBehaviour
         
         if (enemys.Count > 0)
         {
-            _attackTarget = enemys[0].gameObject;
+            for (int i=0; i <enemys.Count; i++)
+            {
+                if (!enemys[i].GetComponent<HealthSystem>().IsDead)
+                {
+                    _attackTarget = enemys[i].gameObject;
+                    return;
+                }
+            }
         }
-
     }
 
     protected void Attack()
@@ -88,23 +100,30 @@ public abstract class UnitController : MonoBehaviour
 
         if (enemys.Contains(_attackTarget.GetComponent<Collider>()))
         {
-            HandleAttack();
             _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
-            //StartCoroutine(SetMotionStopTime());
+            StartCoroutine(SetMotionStopTime());
         }
     }
 
-    protected abstract void HandleAttack();
+    protected virtual void HandleAttack()
+    {
+        if (_attackTarget)
+        {
+            _attackSystem.SendDamage(_attackTarget, _unitStatusSystem.AttackDamage, gameObject);
+        }
+    }
 
     private IEnumerator SetMotionStopTime()
     {
+        _animator.SetTrigger("Attack");
         yield return null;
-        _motionStopTime = Time.time + _animator.GetNextAnimatorClipInfo(0).Length;
+        _motionStopTime = Time.time + _animator.GetCurrentAnimatorStateInfo(0).length;
     }
 
     protected void Move()
     {
-        _agent.isStopped = !_canMove || (!_attackTarget && !_oppositeBasePos) || _healthSystem.IsDead;
+        _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || _healthSystem.IsDead;
+        _animator.SetInteger("Move", _canMove ? 1 : 0);
 
         if (_attackTarget)
         {
@@ -116,9 +135,20 @@ public abstract class UnitController : MonoBehaviour
         }
     }
 
-    protected virtual void HandleDie(GameObject killer)
+    private void HandleDie(GameObject killer)
     {
+        StartCoroutine(DieCoroutine(killer));
+    }
+
+    protected virtual IEnumerator DieCoroutine(GameObject killer)
+    {
+        _animator.SetTrigger("Die");
+
+        yield return null;
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
+
+        yield break;
     }
 
     private void OnDrawGizmos()

@@ -4,18 +4,38 @@ public class UnitStatusSystem : StatusSystem
 {
     public float AttackDetectRange;
     public float MoveSpeed;
-
-    [SerializeField] private UnitStatusData _unitStatusData;
+    public int UnitLevel;
 
     private void Awake()
     {
-        Name = _unitStatusData.Name;
-        MaxHealth = _unitStatusData.Health;
+        UnitData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
+
+        if (gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Name = unitData.UnitName;
+            MaxHealth = unitData.GetUnitStatusData().Health;
+            CurrentHealth = MaxHealth;
+            AttackDamage = unitData.GetUnitStatusData().AttackDamage;
+            AttackSpeed = unitData.GetUnitStatusData().AttackSpeed;
+            AttackRange = unitData.GetUnitStatusData().AttackRange;
+            AttackDetectRange = unitData.GetUnitStatusData().AttackDetectRange;
+            MoveSpeed = unitData.GetUnitStatusData().MoveSpeed;
+
+            UnitLevel = unitData.UnitLevel;
+        }
+    }
+
+    public void SetUnitStatusForEnemyUnit(int unitLevel)
+    {
+        UnitData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
+
+        Name = unitData.UnitName;
+        MaxHealth = unitData.GetUnitStatusData(unitLevel).Health;
         CurrentHealth = MaxHealth;
-        AttackDamage = _unitStatusData.AttackDamage;
-        AttackSpeed = _unitStatusData.AttackSpeed;
-        AttackRange = _unitStatusData.AttackRange;
-        AttackDetectRange = _unitStatusData.AttackDetectRange;
-        MoveSpeed = _unitStatusData.MoveSpeed;
+        AttackDamage = unitData.GetUnitStatusData(unitLevel).AttackDamage;
+        AttackSpeed = unitData.GetUnitStatusData(unitLevel).AttackSpeed;
+        AttackRange = unitData.GetUnitStatusData(unitLevel).AttackRange;
+        AttackDetectRange = unitData.GetUnitStatusData(unitLevel).AttackDetectRange;
+        MoveSpeed = unitData.GetUnitStatusData(unitLevel).MoveSpeed;
     }
 }

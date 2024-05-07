@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageLevel: 1
   StageName: Main Stage 1
-  StageDescription: 
+  StageDescription: "\uCCAB\uBC88\uC9F8 \uBA54\uC778 \uC758\uB8B0."
   StageWinGold: 100
   StageDefeatGold: 20
-  IsSubStage: 0
   RewardUnits: []
+  IsSubStage: 0
+  RequiredMinMainStage: 0
+  RequiredMaxMainStage: 0

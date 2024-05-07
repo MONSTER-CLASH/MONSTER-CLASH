@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerBase
   - EnemyBase
+  - SpawnZone
   layers:
   - Default
   - TransparentFX
@@ -39,8 +40,6 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - Teleport
   m_SortingLayers:
   - name: Default
     uniqueID: 0

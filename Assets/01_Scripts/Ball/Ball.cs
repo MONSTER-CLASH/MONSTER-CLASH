@@ -26,7 +26,7 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        //FixPosition();
+        FixPosition();
     }
 
     public void Drop()
@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state != State.Drop || other.CompareTag("GameController"))
+        if (state != State.Drop || other.CompareTag("GameController") || other.CompareTag("Enemy") || other.CompareTag("Player"))
             return;
 
         if (other.gameObject.CompareTag("SpawnZone"))

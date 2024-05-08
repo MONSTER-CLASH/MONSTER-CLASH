@@ -30,8 +30,8 @@ MonoBehaviour:
       MoveSpeed: 1
     UpgradeCost: 20
   - UnitStatusData:
-      Health: 70
-      AttackDamage: 20
+      Health: 700
+      AttackDamage: 50
       AttackSpeed: 1
       AttackRange: 2
       AttackDetectRange: 5

@@ -7,7 +7,7 @@ public class RequestBulletinBoardManager : MonoBehaviour
     [SerializeField] private RequestItem _mainRequestItem;
     [SerializeField] private RequestItem[] _subRequestItems = new RequestItem[2];
 
-    private void Awake()
+    private void Start()
     {
         UpdateRequestItem();
     }

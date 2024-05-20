@@ -10,15 +10,15 @@ public class RequestItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _requestDescriptionText;
     [SerializeField] private TextMeshProUGUI _requestRewardGoldText;
     [SerializeField] private Image[] _requestRewardUnitImages;
-    private string _requestName;
+    private StageData _stageData;
 
     public void UpdateRequestInfo(StageData stageData)
     {
+        _stageData = stageData;
+
         _requestNameText.text = stageData.StageName;
         _requestDescriptionText.text = stageData.StageDescription;
         _requestRewardGoldText.text = stageData.StageWinGold.ToString();
-
-        _requestName = stageData.StageName;
 
         for (int i = 0; i < _requestRewardUnitImages.Length; i++)
         {
@@ -35,6 +35,6 @@ public class RequestItem : MonoBehaviour
 
     public void StartRequest()
     {
-        StageDataManager.Instance.StartStage(_requestName);
+        StageDataManager.Instance.StartStage(_stageData);
     }
 }

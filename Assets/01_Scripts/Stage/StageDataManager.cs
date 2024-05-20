@@ -8,6 +8,7 @@ public class StageDataManager : MonoBehaviour
 {
     public static StageDataManager Instance;
     public static int LastClearStageLevel;
+    public static StageData _playingStageData;
 
     [SerializeField] private StageData[] _mainStageDatas;
     [SerializeField] private StageData[] _subStageDatas;
@@ -31,16 +32,8 @@ public class StageDataManager : MonoBehaviour
     public void StartStage(StageData stageData)
     {
         DeckManager.Instance.SetEquipDeck();
+        _playingStageData = stageData;
         SceneManager.LoadScene(stageData.StageName);
-    }
-
-    /// <summary>
-    /// 스테이지 이름를 통한 스테이지 시작 메서드
-    /// </summary>
-    public void StartStage(string stageName)
-    {
-        DeckManager.Instance.SetEquipDeck();
-        SceneManager.LoadScene(stageName);
     }
 
     public void StartNextMainStage()

@@ -1374,8 +1374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11a32812e014cc41b3dc08903da9cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageData: {fileID: 0}
   MercenaryCoin: 0
-  _stageData: {fileID: 11400000, guid: 68b8bfb30afc82d4bb5ed122620ef814, type: 2}
   _stageResultUIPrefab: {fileID: 7515603718052802130, guid: ae522a45c8dbc11429af935cbeb8e5da, type: 3}
   _stageResultUIParent: {fileID: 554380910}
   _getMercenaryCoinValuePerSecond: 0
@@ -2534,23 +2534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a922ef85f0f5c5b49a26f7d3ee36c651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitSpawnDatas:
-  - SpawnTime: 0
-    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
-    UnitLevel: 1
-    SpawnCount: 20
-    SpawnUnitCount: 1
-    SpawnDelay: 5
-    IsSpecialWave: 0
-    SpecialWaveStartHp: 0
-  - SpawnTime: 0
-    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
-    UnitLevel: 2
-    SpawnCount: 5
-    SpawnUnitCount: 1
-    SpawnDelay: 3
-    IsSpecialWave: 1
-    SpecialWaveStartHp: 300
+  _isLeft: 0
 --- !u!1 &736733013
 GameObject:
   m_ObjectHideFlags: 0
@@ -5464,23 +5448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a922ef85f0f5c5b49a26f7d3ee36c651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitSpawnDatas:
-  - SpawnTime: 0
-    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
-    UnitLevel: 1
-    SpawnCount: 20
-    SpawnUnitCount: 1
-    SpawnDelay: 5
-    IsSpecialWave: 0
-    SpecialWaveStartHp: 0
-  - SpawnTime: 0
-    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
-    UnitLevel: 2
-    SpawnCount: 5
-    SpawnUnitCount: 1
-    SpawnDelay: 3
-    IsSpecialWave: 1
-    SpecialWaveStartHp: 300
+  _isLeft: 1
 --- !u!1 &1409380429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7815,7 +7783,6 @@ MonoBehaviour:
   AttackDamage: 0
   AttackSpeed: 0
   AttackRange: 0
-  _baesStatusData: {fileID: 11400000, guid: 363bd94a98fc48e42b27b5ce2ac3fb2e, type: 2}
 --- !u!65 &1926451882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8049,7 +8016,6 @@ MonoBehaviour:
   AttackDamage: 0
   AttackSpeed: 0
   AttackRange: 0
-  _baesStatusData: {fileID: 11400000, guid: a0408824871ccf348a281a60e21281f1, type: 2}
 --- !u!208 &1954739379
 NavMeshObstacle:
   m_ObjectHideFlags: 0

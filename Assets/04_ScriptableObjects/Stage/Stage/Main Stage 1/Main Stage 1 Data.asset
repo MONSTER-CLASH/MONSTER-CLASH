@@ -15,6 +15,26 @@ MonoBehaviour:
   StageLevel: 1
   StageName: Main Stage 1
   StageDescription: "\uCCAB\uBC88\uC9F8 \uBA54\uC778 \uC758\uB8B0."
+  PlayerBaseStatusData: {fileID: 11400000, guid: 363bd94a98fc48e42b27b5ce2ac3fb2e, type: 2}
+  EnemyBaseStatusData: {fileID: 11400000, guid: a0408824871ccf348a281a60e21281f1, type: 2}
+  LeftUnitSpawnDatas:
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
+    UnitLevel: 1
+    SpawnCount: 3
+    SpawnUnitCount: 1
+    SpawnDelay: 2
+    IsSpecialWave: 0
+    SpecialWaveStartHp: 0
+  RightUnitSpawnDatas:
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 5711287239404712445, guid: 97f1e51ab13dd024da77cdcae8c906ee, type: 3}
+    UnitLevel: 1
+    SpawnCount: 3
+    SpawnUnitCount: 1
+    SpawnDelay: 2
+    IsSpecialWave: 0
+    SpecialWaveStartHp: 0
   StageWinGold: 100
   StageDefeatGold: 20
   RewardUnits: []

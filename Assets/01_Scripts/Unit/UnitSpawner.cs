@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
 {
-    [SerializeField] private List<UnitSpawnData> _unitSpawnDatas;
+    [SerializeField] private bool _isLeft;
+    private List<UnitSpawnData> _unitSpawnDatas;
     private HealthSystem _teamBaseHealthSystem;
     private BaseStatusSystem _teamBaseStatusSystem;
     private bool _isTeamBaseDead => _teamBaseHealthSystem ? _teamBaseHealthSystem.IsDead : false;
@@ -22,6 +23,15 @@ public class UnitSpawner : MonoBehaviour
         {
             _teamBaseStatusSystem = GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<BaseStatusSystem>();
             _teamBaseHealthSystem = GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>();
+        }
+
+        if (_isLeft)
+        {
+            _unitSpawnDatas = new List<UnitSpawnData>(StageManager.StageData.LeftUnitSpawnDatas);
+        }
+        else
+        {
+            _unitSpawnDatas = new List<UnitSpawnData>(StageManager.StageData.RightUnitSpawnDatas);
         }
     }
 

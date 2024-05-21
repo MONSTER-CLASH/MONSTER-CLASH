@@ -24,14 +24,15 @@ public class UnitSpawner : MonoBehaviour
             _teamBaseStatusSystem = GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<BaseStatusSystem>();
             _teamBaseHealthSystem = GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>();
         }
-    }
 
-    private void Start()
-    {
         if (_isLeft)
-            _unitSpawnDatas = StageManager.Instance.StageData.LeftUnitSpawnDatas;
+        {
+            _unitSpawnDatas = new List<UnitSpawnData>(StageManager.StageData.LeftUnitSpawnDatas);
+        }
         else
-            _unitSpawnDatas = StageManager.Instance.StageData.RightUnitSpawnDatas;
+        {
+            _unitSpawnDatas = new List<UnitSpawnData>(StageManager.StageData.RightUnitSpawnDatas);
+        }
     }
 
     private void Update()

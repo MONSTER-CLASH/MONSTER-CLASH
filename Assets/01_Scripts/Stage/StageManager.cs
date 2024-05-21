@@ -5,7 +5,7 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
 
-    public StageData StageData;
+    public static StageData StageData;
     public int MercenaryCoin;
 
     [Header("Result UI")]
@@ -24,8 +24,6 @@ public class StageManager : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("PlayerBase").GetComponent<HealthSystem>().OnDead += PlayerDefeat;
         GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
-
-        StageData = StageDataManager._playingStageData;
 
         StartCoroutine(GetMercenaryCostCoroutine());
     }

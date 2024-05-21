@@ -5,11 +5,14 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
 
+    public StageData StageData;
     public int MercenaryCoin;
 
-    [SerializeField] private StageData _stageData;
+    [Header("Result UI")]
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;
+
+    [Space()]
     [SerializeField] private int _getMercenaryCoinValuePerSecond; // 초당 용병주화 생성량
 
     private float _stageTime;
@@ -21,6 +24,8 @@ public class StageManager : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("PlayerBase").GetComponent<HealthSystem>().OnDead += PlayerDefeat;
         GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
+
+        StageData = StageDataManager._playingStageData;
 
         StartCoroutine(GetMercenaryCostCoroutine());
     }
@@ -34,15 +39,15 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageData.StageLevel, _stageTime, _stageData.StageWinGold, true);
-            DeckManager.Gold += _stageData.StageWinGold;
-            if (!_stageData.IsSubStage) StageDataManager.LastClearStageLevel = _stageData.StageLevel;
+            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData.StageLevel, _stageTime, StageData.StageWinGold, true);
+            DeckManager.Gold += StageData.StageWinGold;
+            if (!StageData.IsSubStage) StageDataManager.LastClearStageLevel = StageData.StageLevel;
 
-            for (int i = 0; i < _stageData.RewardUnits.Length; i++)
+            for (int i = 0; i < StageData.RewardUnits.Length; i++)
             {
                 for (int j = 0; j < UnitManager.Instance.UnitDatas.Length; j++)
                 {
-                    if (_stageData.RewardUnits[i] == UnitManager.Instance.UnitDatas[j])
+                    if (StageData.RewardUnits[i] == UnitManager.Instance.UnitDatas[j])
                     {
                         UnitManager.Instance.UnitDatas[j].HasUnit = true;
                     }
@@ -57,8 +62,8 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(_stageData.StageLevel, _stageTime, _stageData.StageDefeatGold, false);
-            DeckManager.Gold += _stageData.StageDefeatGold;
+            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData.StageLevel, _stageTime, StageData.StageDefeatGold, false);
+            DeckManager.Gold += StageData.StageDefeatGold;
 
             _isStageEnd=true;
         }

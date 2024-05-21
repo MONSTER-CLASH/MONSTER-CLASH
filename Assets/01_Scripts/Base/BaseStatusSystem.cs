@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class BaseStatusSystem : StatusSystem
 {
-    [SerializeField] private BaseStatusData _baesStatusData;
+    private BaseStatusData _baseStatusData;
 
-    private void Awake()
+    private void Start()
     {
-        Name = _baesStatusData.Name;
-        MaxHealth = _baesStatusData.Health;
+        if (gameObject.layer == LayerMask.NameToLayer("Player"))
+            _baseStatusData = StageManager.Instance.StageData.PlayerBaseStatusData;
+        else if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            _baseStatusData = StageManager.Instance.StageData.EnemyBaseStatusData;
+
+        Name = _baseStatusData.Name;
+        MaxHealth = _baseStatusData.Health;
         CurrentHealth = MaxHealth;
-        AttackDamage = _baesStatusData.AttackDamage;
-        AttackSpeed = _baesStatusData.AttackSpeed;
-        AttackRange = _baesStatusData.AttackRange;
+        AttackDamage = _baseStatusData.AttackDamage;
+        AttackSpeed = _baseStatusData.AttackSpeed;
+        AttackRange = _baseStatusData.AttackRange;
     }
 }

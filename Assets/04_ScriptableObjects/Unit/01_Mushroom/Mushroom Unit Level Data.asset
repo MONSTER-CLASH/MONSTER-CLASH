@@ -12,28 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890e03fe5432b554eb22cde6f76c04fa, type: 3}
   m_Name: Mushroom Unit Level Data
   m_EditorClassIdentifier: 
-  _levelDatas:
-  - UnitStatusData:
-      Health: 500
-      AttackDamage: 200
-      AttackSpeed: 1
-      AttackRange: 2
-      AttackDetectRange: 5
-      MoveSpeed: 1
-    UpgradeCost: 10
-  - UnitStatusData:
-      Health: 50
-      AttackDamage: 15
-      AttackSpeed: 1
-      AttackRange: 2
-      AttackDetectRange: 5
-      MoveSpeed: 1
-    UpgradeCost: 20
-  - UnitStatusData:
-      Health: 700
-      AttackDamage: 50
-      AttackSpeed: 1
-      AttackRange: 2
-      AttackDetectRange: 5
-      MoveSpeed: 1
-    UpgradeCost: 30
+  UpgradeCosts: 0a000000140000003200000064000000c8000000
+  _health: 100
+  _healthUpgradeRatio: 1.1
+  _attackDamage: 10
+  _attackDamageUpgradeRatio: 1.1
+  _attackSpeed: 1
+  _attackSpeedUpgradeRatio: 1.05
+  _attackRange: 2
+  _attackRangeUpgradeRatio: 0
+  _attackDetectRange: 4
+  _attackDetectRangeUpgradeRatio: 0
+  _moveSpeed: 2
+  _moveSpeedUpgradeRatio: 0

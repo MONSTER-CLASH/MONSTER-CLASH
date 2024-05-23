@@ -29,7 +29,7 @@ public class UnitData : ScriptableObject
     /// </summary>
     public UnitStatusData GetUnitStatusData(int? level = null)
     {
-        return UnitLevelData.GetLevelData(level.HasValue ? level.Value : UnitLevel).UnitStatusData;
+        return UnitLevelData.GetLevelData(level.HasValue ? level.Value : UnitLevel);
     }
 
     /// <summary>
@@ -37,7 +37,7 @@ public class UnitData : ScriptableObject
     /// </summary>
     public int GetUpgradeCost(int? level = null)
     {
-        return UnitLevelData.GetLevelData(level.HasValue ? level.Value : UnitLevel).UpgradeCost;
+        return UnitLevelData.UpgradeCosts[level.HasValue ? level.Value : UnitLevel];
     }
 
     public bool CanUpgrade()

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelDatas:
   - UnitStatusData:
-      Health: 30
-      AttackDamage: 10
+      Health: 500
+      AttackDamage: 200
       AttackSpeed: 1
       AttackRange: 2
       AttackDetectRange: 5

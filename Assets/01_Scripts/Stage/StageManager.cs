@@ -37,7 +37,7 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData.StageLevel, _stageTime, StageData.StageWinGold, true);
+            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, true);
             DeckManager.Gold += StageData.StageWinGold;
             if (!StageData.IsSubStage) StageDataManager.LastClearStageLevel = StageData.StageLevel;
 
@@ -60,7 +60,7 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData.StageLevel, _stageTime, StageData.StageDefeatGold, false);
+            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, false);
             DeckManager.Gold += StageData.StageDefeatGold;
 
             _isStageEnd=true;

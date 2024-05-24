@@ -23,7 +23,7 @@ public class HaveUnitInfo : MonoBehaviour
     [Space()]
     [SerializeField] private TextMeshProUGUI _upgradeCostText;
 
-    private UnitData _unitData;
+    private CardData _unitData;
     private HaveUnitItem _parentUnitItem;
 
     private void Awake()
@@ -32,65 +32,66 @@ public class HaveUnitInfo : MonoBehaviour
         _upgradeCostText.transform.parent.GetComponent<Button>().onClick.AddListener(UpgradeUnit);
     }
 
-    public void ShowHaveUnitInfo(UnitData unitData, HaveUnitItem parentUnitItem = null)
+    public void ShowHaveUnitInfo(CardData unitData, HaveUnitItem parentUnitItem = null)
     {
         if (_unitData == null) _unitData = unitData;
         if (_parentUnitItem == null) _parentUnitItem = parentUnitItem;
 
-        _unitImage.sprite = unitData.UnitImage;
-        _unitNameText.text = _unitData.UnitName;
-        _unitLevelText.text = "레벨 " + (_unitData.CanUpgrade() ? $"{_unitData.UnitLevel } +1" : "");
-        switch (_unitData.UnitPosition)
+        _unitImage.sprite = unitData.CardImage;
+        _unitNameText.text = _unitData.CardName;
+        _unitLevelText.text = "레벨 " + (_unitData.CanUpgrade() ? $"{_unitData.CardLevel } +1" : "");
+        switch (_unitData.CardType)
         {
-            case UnitPosition.Warrior:
+            case CardType.Warrior:
                 _unitPositionText.text = "전사";
                 break;
-            case UnitPosition.Wizard:
+            case CardType.Wizard:
                 _unitPositionText.text = "마법사";
                 break;
-            case UnitPosition.Range:
+            case CardType.Range:
                 _unitPositionText.text = "원거리 딜러";
                 break;
-            case UnitPosition.Tank:
+            case CardType.Tank:
                 _unitPositionText.text = "탱커";
                 break;
         }
         _unitCostText.text = _unitData.SpawnCost.ToString();
-        _unitDescriptionText.text = _unitData.UnitDescription;
+        _unitDescriptionText.text = _unitData.CardDescription;
 
         float health = _unitData.GetUnitStatusData().Health;
-        float nextLevelHealth = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).Health : 0;
+        float nextLevelHealth = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.CardLevel + 1).Health : 0;
         _healthText.text = health + (_unitData.CanUpgrade() ? $" +{ nextLevelHealth - health }" : "");
 
         float attackDamage = _unitData.GetUnitStatusData().AttackDamage;
-        float nextLevelAttackDamage = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackDamage : 0;
+        float nextLevelAttackDamage = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.CardLevel + 1).AttackDamage : 0;
         _attackDamageText.text = attackDamage + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackDamage - attackDamage }" : "");
 
         float attackSpeed = _unitData.GetUnitStatusData().AttackSpeed;
-        float nextLevelAttackSpeed = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackSpeed : 0;
+        float nextLevelAttackSpeed = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.CardLevel + 1).AttackSpeed : 0;
         _attackSpeedText.text = attackSpeed + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackSpeed - attackSpeed }" : "");
 
         float attackRange = _unitData.GetUnitStatusData().AttackRange;
-        float nextLevelAttackRange = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackRange : 0;
+        float nextLevelAttackRange = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.CardLevel + 1).AttackRange : 0;
         _attackRangeText.text = attackRange + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackRange - attackRange }" : "");
 
         float attackDetectRange = _unitData.GetUnitStatusData().AttackDetectRange;
-        float nextLevelAttackDetectRange = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).AttackDetectRange : 0;
+        float nextLevelAttackDetectRange = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.CardLevel + 1).AttackDetectRange : 0;
         _attackDetectRangeText.text = attackDetectRange + (_unitData.CanUpgrade() ? $" +{ nextLevelAttackDetectRange - attackDetectRange }" : "");
 
         float moveSpeed = _unitData.GetUnitStatusData().MoveSpeed;
-        float nextLevelMoveSpeed = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.UnitLevel + 1).MoveSpeed : 0;
+        float nextLevelMoveSpeed = _unitData.CanUpgrade() ? _unitData.GetUnitStatusData(_unitData.CardLevel + 1).MoveSpeed : 0;
         _moveSpeedText.text = moveSpeed + (_unitData.CanUpgrade() ? $" +{ nextLevelMoveSpeed - moveSpeed }" : "");
 
-        _upgradeCostText.text = _unitData.UnitLevel < _unitData.UnitLevelData.MaxLevel ? _unitData.GetUpgradeCost().ToString() : "최대 레벨";
+        _upgradeCostText.text = _unitData.CardLevel < _unitData.MaxCardLevel ? _unitData.GetUpgradeCost().ToString() : "최대 레벨";
     }
 
     public void UpgradeUnit()
     {
-        if (_unitData.UnitLevel < _unitData.UnitLevelData.MaxLevel && DeckManager.Gold >= _unitData.GetUpgradeCost())
+        if (_unitData.CardLevel < _unitData.MaxCardLevel && DeckManager.Gold >= _unitData.GetUpgradeCost())
         {
             DeckManager.Gold -= _unitData.GetUpgradeCost();
-            _unitData.UnitLevel++;
+            _unitData.UpgradeCard();
+            _unitData.CardLevel++;
             ShowHaveUnitInfo(_unitData);
             _parentUnitItem.UpdateUnitItem();
             DeckManager.Instance.UpdateEquipUnitItem();

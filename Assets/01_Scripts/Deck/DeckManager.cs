@@ -21,8 +21,8 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject _haveSkillItem;
 
     [Header("Equipped Unit and Skill")]
-    public static UnitData[] EquipUnitDatas = new UnitData[6]; // 장착된 유닛 정보, 스테이지 시작 시 자동으로 업데이트
-    public UnitData SelectedHaveUnitData;
+    public static CardData[] EquipUnitDatas = new CardData[6]; // 장착된 유닛 정보, 스테이지 시작 시 자동으로 업데이트
+    public CardData SelectedHaveUnitData;
     [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
 
     [Space()]
@@ -44,7 +44,7 @@ public class DeckManager : MonoBehaviour
 
     private void ShowHaveUnitItem()
     {
-        UnitData[] unitDatas = UnitManager.Instance.GetHasUnitDatas();
+        CardData[] unitDatas = UnitManager.Instance.GetHasUnitDatas();
 
         for (int i=0; i<unitDatas.Length; i++)
         {

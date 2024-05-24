@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EquipUnitItem : MonoBehaviour
 {
-    public UnitData UnitData;
+    public CardData UnitData;
 
     [SerializeField] private int _itemIndex;
     [SerializeField] private Image _unitImage;
@@ -18,9 +18,9 @@ public class EquipUnitItem : MonoBehaviour
 
     public void UpdateEquipUnitData()
     {
-        _unitImage.sprite = UnitData ? UnitData.UnitImage : null;
-        _unitNameText.text = UnitData ? UnitData.UnitName : "";
-        _unitLevelText.text = UnitData ? "레벨 " + UnitData.UnitLevel : "";
+        _unitImage.sprite = UnitData ? UnitData.CardImage : null;
+        _unitNameText.text = UnitData ? UnitData.CardName : "";
+        _unitLevelText.text = UnitData ? "레벨 " + UnitData.CardLevel : "";
     }
 
     private void EquipUnit()

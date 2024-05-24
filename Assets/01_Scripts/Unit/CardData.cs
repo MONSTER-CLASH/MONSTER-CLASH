@@ -1,12 +1,83 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Unit Level Data", menuName = "Scriptable Object/Unit Level Data")]
-public class UnitLevelData : ScriptableObject
+public abstract class CardData : ScriptableObject
 {
-    public int MaxLevel { get => UpgradeCosts.Length; }
+    [Header("Card Info")]
+    public string CardName;
+    public Sprite CardImage;
+    [TextArea] public string CardDescription;
+
+    [Space()]
+    [Header("Card Upgrade")]
+    public int CardLevel;
+    public int MaxCardLevel { get => UpgradeCosts.Length; }
     public int[] UpgradeCosts;
 
+    [Space()]
+    [Header("Card Spawn")]
+    public GameObject CardModel; // 덱 오브젝트에 생성될 모델 프리팹
+    public GameObject CardPrefab; // 실제 맵에 소환될 프리팹
+    public int SpawnCost;
+    public float SpawnCoolTime;
+
+    [Space()]
+    [Header("ETC")]
+    public int StorePrice;
+    public CardType CardType;
+    public bool HaveCard;
+
+    [Space()]
+    [Header("Unit Upgrade Data")]
+    public UnitUpgradeData UnitUpgradeData;
+
+    /// <summary>
+    /// level 매개변수 입력 시 해당 레벨의, 미 입력 시 현재 레벨의 UnitStatusData를 반환합니다.
+    /// </summary>
+    public UnitStatusData GetUnitStatusData(int? level = null)
+    {
+        return UnitUpgradeData.GetLevelData(level.HasValue ? level.Value : CardLevel);
+    }
+
+    /// <summary>
+    /// level 매개변수 입력 시 해당 레벨의, 미 입력 시 현재 레벨의 UpgradeCost를 반환합니다.
+    /// </summary>
+    public int GetUpgradeCost(int? level = null)
+    {
+        return UpgradeCosts[level.HasValue ? level.Value : CardLevel];
+    }
+
+    public bool CanUpgrade()
+    {
+        return CardLevel < MaxCardLevel;
+    }
+
+    public abstract void UpgradeCard();
+}
+
+public enum CardType
+{
+    Warrior = 0,
+    Wizard,
+    Range,
+    Tank,
+    Skill
+}
+
+[Serializable]
+public struct UnitStatusData
+{
+    public float Health;
+    public float AttackDamage;
+    public float AttackSpeed;
+    public float AttackRange;
+    public float AttackDetectRange;
+    public float MoveSpeed;
+}
+
+[Serializable]
+public struct UnitUpgradeData
+{
     [Header("Health")]
     [SerializeField] private float _health;
     [SerializeField] private float _healthUpgradeRatio;
@@ -41,7 +112,7 @@ public class UnitLevelData : ScriptableObject
         float attackDetectRange = _attackDetectRange;
         float moveSpeed = _moveSpeed;
 
-        for (int i=0; i<level-1; i++)
+        for (int i = 0; i < level - 1; i++)
         {
             health *= _healthUpgradeRatio;
             attackDamage *= _attackDamageUpgradeRatio;

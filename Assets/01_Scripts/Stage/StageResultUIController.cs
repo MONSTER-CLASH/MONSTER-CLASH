@@ -35,7 +35,7 @@ public class StageResultUIController : MonoBehaviour
             {
                 if (stageData.RewardUnits.Length > i)
                 {
-                    _stageRewardUnitImages[i].sprite = stageData.RewardUnits[i].UnitImage;
+                    _stageRewardUnitImages[i].sprite = stageData.RewardUnits[i].CardImage;
                 }
                 else
                 {

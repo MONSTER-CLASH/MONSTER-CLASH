@@ -20,7 +20,7 @@ public class StageData : ScriptableObject
     [Header("Stage Reward")]
     public int StageWinGold;
     public int StageDefeatGold;
-    public UnitData[] RewardUnits;
+    public CardData[] RewardUnits;
 
     [Header("Sub Stage")]
     public bool IsSubStage;

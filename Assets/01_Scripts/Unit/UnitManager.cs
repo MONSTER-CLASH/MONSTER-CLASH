@@ -5,7 +5,7 @@ public class UnitManager : MonoBehaviour
 {
     public static UnitManager Instance;
 
-    public UnitData[] UnitDatas;
+    public CardData[] UnitDatas;
 
     private void Awake()
     {
@@ -19,19 +19,19 @@ public class UnitManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        foreach(UnitData unitData in UnitDatas)
+        foreach(CardData unitData in UnitDatas)
         {
-            unitData.UnitLevel = 1;
+            unitData.CardLevel = 1;
         }
     }
 
-    public UnitData[] GetHasUnitDatas()
+    public CardData[] GetHasUnitDatas()
     {
-        List<UnitData> unitDatas = new List<UnitData>();
+        List<CardData> unitDatas = new List<CardData>();
 
         for (int i=0; i<UnitDatas.Length; i++)
         {
-            if (UnitDatas[i].HasUnit)
+            if (UnitDatas[i].HaveCard)
             {
                 unitDatas.Add(UnitDatas[i]);
             }
@@ -40,11 +40,11 @@ public class UnitManager : MonoBehaviour
         return unitDatas.ToArray();
     }
 
-    public UnitData GetUnitDataViaName(string unitName)
+    public CardData GetUnitDataViaName(string unitName)
     {
         for (int i=0; i<UnitDatas.Length;i++)
         {
-            if (UnitDatas[i].UnitName == unitName)
+            if (UnitDatas[i].CardName == unitName)
             {
                 return UnitDatas[i];
             }

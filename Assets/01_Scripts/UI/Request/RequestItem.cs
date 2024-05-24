@@ -24,7 +24,7 @@ public class RequestItem : MonoBehaviour
         {
             if (i < stageData.RewardUnits.Length)
             {
-                _requestRewardUnitImages[i].sprite = stageData.RewardUnits[i].UnitImage;
+                _requestRewardUnitImages[i].sprite = stageData.RewardUnits[i].CardImage;
             }
             else
             {

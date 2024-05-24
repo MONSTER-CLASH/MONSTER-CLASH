@@ -47,7 +47,7 @@ public class StageManager : MonoBehaviour
                 {
                     if (StageData.RewardUnits[i] == UnitManager.Instance.UnitDatas[j])
                     {
-                        UnitManager.Instance.UnitDatas[j].HasUnit = true;
+                        UnitManager.Instance.UnitDatas[j].HaveCard = true;
                     }
                 }
             }

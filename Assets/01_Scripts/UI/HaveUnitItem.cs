@@ -12,7 +12,7 @@ public class HaveUnitItem : MonoBehaviour
     [SerializeField] private GameObject _equipSelectBtn;
     [SerializeField] private GameObject _selectedImage;
 
-    private UnitData _unitData;
+    private CardData _unitData;
 
     private void Awake()
     {
@@ -24,13 +24,13 @@ public class HaveUnitItem : MonoBehaviour
         });
     }
 
-    public void SetItemData(UnitData unitData)
+    public void SetItemData(CardData unitData)
     {
         _unitData = unitData;
 
-        _unitImage.sprite = _unitData.UnitImage;
-        _unitNameText.text = _unitData.UnitName;
-        _unitLevelText.text = _unitData.UnitLevel.ToString();
+        _unitImage.sprite = _unitData.CardImage;
+        _unitNameText.text = _unitData.CardName;
+        _unitLevelText.text = _unitData.CardLevel.ToString();
         _unitCostText.text = _unitData.SpawnCost.ToString();
     }
 
@@ -42,7 +42,7 @@ public class HaveUnitItem : MonoBehaviour
 
     public void UpdateUnitItem()
     {
-        _unitLevelText.text = _unitData.UnitLevel.ToString();
+        _unitLevelText.text = _unitData.CardLevel.ToString();
     }
 
     public void HideSelectedImage()

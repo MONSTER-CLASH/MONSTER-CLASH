@@ -53,6 +53,11 @@ public abstract class CardData : ScriptableObject
     }
 
     public abstract void UpgradeCard();
+
+    public virtual HaveCardInfoData[] GetCardInfoData()
+    {
+        return UnitManager.Instance.GetUnitCardInfoData(GetUnitStatusData(), GetUnitStatusData(Mathf.Min(CardLevel + 1, MaxCardLevel)));
+    }
 }
 
 public enum CardType
@@ -132,4 +137,13 @@ public struct UnitUpgradeData
             MoveSpeed = moveSpeed,
         };
     }
+}
+
+[Serializable]
+public struct HaveCardInfoData
+{
+    public Sprite InfoImage;
+    public string InfoName;
+    public float InfoValue;
+    public float NextLevelInfoValue;
 }

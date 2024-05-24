@@ -15,7 +15,7 @@ MonoBehaviour:
   CardName: "\uBC84\uC12F"
   CardImage: {fileID: 21300000, guid: a03938d7c9ed2db4f8f78d0fa7e1d30e, type: 3}
   CardDescription: "\uBC84\uC12F\uC774\uB2E4. \uC6C0\uC9C1\uC778\uB2E4. \uACF5\uACA9\uD55C\uB2E4."
-  CardLevel: 1
+  CardLevel: 2
   UpgradeCosts: 0a000000140000003200000064000000c8000000
   CardModel: {fileID: 6005971452490253276, guid: 82467876ef651014e8b3d24da89f18a5, type: 3}
   CardPrefab: {fileID: 5711287239404712445, guid: a85be2793141c224d84faa8c63892c6f, type: 3}
@@ -32,8 +32,8 @@ MonoBehaviour:
     _attackSpeed: 1
     _attackSpeedUpgradeRatio: 1.05
     _attackRange: 2
-    _attackRangeUpgradeRatio: 0
+    _attackRangeUpgradeRatio: 1
     _attackDetectRange: 4
-    _attackDetectRangeUpgradeRatio: 0
+    _attackDetectRangeUpgradeRatio: 1
     _moveSpeed: 2
-    _moveSpeedUpgradeRatio: 0
+    _moveSpeedUpgradeRatio: 1

@@ -870,6 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDatas:
   - {fileID: 11400000, guid: 56ddff53ce93cd64da0538d175893532, type: 2}
+  - {fileID: 11400000, guid: 5c8f65382ea83ba4b8c689f400ea2cd4, type: 2}
   _healthImage: {fileID: 21300000, guid: e0266ff4642e1434b8892e8ce3a80632, type: 3}
   _healthName: "\uCCB4\uB825"
   _attackDamageImage: {fileID: 21300000, guid: a5d9129824ee64fbdbfd416e7efa59f2, type: 3}

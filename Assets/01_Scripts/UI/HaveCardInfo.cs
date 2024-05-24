@@ -50,6 +50,9 @@ public class HaveCardInfo : MonoBehaviour
             case CardType.Tank:
                 _cardTypeText.text = "ейд©";
                 break;
+            case CardType.Skill:
+                _cardTypeText.text = "╫╨еЁ";
+                break;
         }
         _cardCostText.text = _cardData.SpawnCost.ToString();
         _cardDescriptionText.text = _cardData.CardDescription;

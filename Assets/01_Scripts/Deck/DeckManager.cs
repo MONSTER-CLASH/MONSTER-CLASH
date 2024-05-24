@@ -10,55 +10,34 @@ public class DeckManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _currentGoldText;
 
-    [Header("Have Unit and Skill")]
+    [Header("Have Cards")]
 
     [Space()]
-    [SerializeField] private Transform _haveUnitItemParent;
-    [SerializeField] private GameObject _haveUnitItem;
+    [SerializeField] private Transform _haveCardItemParent;
+    [SerializeField] private GameObject _haveCardItem;
 
-    [Space()]
-    [SerializeField] private Transform _haveSkillItemParent;
-    [SerializeField] private GameObject _haveSkillItem;
-
-    [Header("Equipped Unit and Skill")]
-    public static CardData[] EquipUnitDatas = new CardData[6]; // 장착된 유닛 정보, 스테이지 시작 시 자동으로 업데이트
-    public CardData SelectedHaveUnitData;
-    [SerializeField] private EquipUnitItem[] _equipUnitItems = new EquipUnitItem[6];
-
-    [Space()]
-    public static SkillData EquipSkillData;
-    public SkillData SelectedHaveSkillData;
-    [SerializeField] private EquipSkillItem _equipSkillItem; // 장착된 스킬 정보, 스테이지 시작 시 자동으로 업데이트
+    [Header("Equipped Cards")]
+    public static CardData[] EquipCardDatas = new CardData[9]; // 장착된 유닛 정보, 스테이지 시작 시 자동으로 업데이트
+    public CardData SelectedHaveCardData;
+    [SerializeField] private EquipCardItem[] _equipCardItems = new EquipCardItem[9];
 
     private void Awake()
     {
         Instance = this;
 
         Gold += 10000;
-        ShowHaveUnitItem();
-        ShowHaveSkillItem();
+        ShowHaveCardItem();
 
-        UpdateEquipUnitItem();
-        _equipSkillItem.UpdateEquipSkillData();
+        UpdateEquipCardItem();
     }
 
-    private void ShowHaveUnitItem()
+    private void ShowHaveCardItem()
     {
-        CardData[] unitDatas = UnitManager.Instance.GetHasUnitDatas();
+        CardData[] cardDatas = CardManager.Instance.GetHaveCardDatas();
 
-        for (int i=0; i<unitDatas.Length; i++)
+        for (int i=0; i<cardDatas.Length; i++)
         {
-            Instantiate(_haveUnitItem, _haveUnitItemParent).GetComponent<HaveUnitItem>().SetItemData(unitDatas[i]);
-        }
-    }
-
-    private void ShowHaveSkillItem()
-    {
-        SkillData[] skillDatas = SkillManager.Instance.GetHasSkillDatas();
-
-        for (int i=0; i<skillDatas.Length;i++)
-        {
-            Instantiate(_haveSkillItem, _haveSkillItemParent).GetComponent<HaveSkillItem>().SetItemData(skillDatas[i]);
+            Instantiate(_haveCardItem, _haveCardItemParent).GetComponent<HaveCardItem>().SetItemData(cardDatas[i]);
         }
     }
 
@@ -67,56 +46,39 @@ public class DeckManager : MonoBehaviour
         _currentGoldText.text = Gold.ToString();
     }
 
-    public void EquipUnit(int index)
+    public void EquipCard(int index)
     {
-
-        if (SelectedHaveUnitData != null)
+        if (SelectedHaveCardData != null)
         {
-            for (int i=0; i<_equipUnitItems.Length; i++)
+            for (int i=0; i<_equipCardItems.Length; i++)
             {
-                if (_equipUnitItems[i].UnitData == SelectedHaveUnitData)
+                if (_equipCardItems[i].CardData == SelectedHaveCardData)
                 {
-                    _equipUnitItems[i].UnitData = _equipUnitItems[index].UnitData;
+                    _equipCardItems[i].CardData = _equipCardItems[index].CardData;
                 }
             }
 
-            _equipUnitItems[index].UnitData = SelectedHaveUnitData;
-            UpdateEquipUnitItem();
+            _equipCardItems[index].CardData = SelectedHaveCardData;
+            UpdateEquipCardItem();
             HideAllSelectedImage();
 
-            SelectedHaveUnitData = null;
+            SelectedHaveCardData = null;
         }
     }
 
-    public void UpdateEquipUnitItem()
+    public void UpdateEquipCardItem()
     {
-        foreach (EquipUnitItem item in _equipUnitItems)
+        foreach (EquipCardItem item in _equipCardItems)
         {
-            item.UpdateEquipUnitData();
+            item.UpdateEquipCardData();
         }
     }
 
     public void HideAllSelectedImage()
     {
-        foreach(HaveUnitItem item in _haveUnitItemParent.GetComponentsInChildren<HaveUnitItem>())
+        foreach(HaveCardItem item in _haveCardItemParent.GetComponentsInChildren<HaveCardItem>())
         {
             item.HideSelectedImage();
-        }
-
-        foreach(HaveSkillItem item in _haveSkillItemParent.GetComponentsInChildren<HaveSkillItem>())
-        {
-            item.HideSelectedImage();
-        }
-    }
-
-    public void EquipSkill()
-    {
-        if (SelectedHaveSkillData != null)
-        {
-            _equipSkillItem.SkillData = SelectedHaveSkillData;
-            _equipSkillItem.UpdateEquipSkillData();
-            HideAllSelectedImage();
-            SelectedHaveSkillData = null;
         }
     }
 
@@ -124,9 +86,7 @@ public class DeckManager : MonoBehaviour
     {
         for (int i=0; i<6; i++)
         {
-            EquipUnitDatas[i] = _equipUnitItems[i].UnitData;
+            EquipCardDatas[i] = _equipCardItems[i].CardData;
         }
-
-        EquipSkillData = _equipSkillItem.SkillData;
     }
 }

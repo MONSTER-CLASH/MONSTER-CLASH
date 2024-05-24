@@ -8,7 +8,7 @@ public class UnitStatusSystem : StatusSystem
 
     private void Awake()
     {
-        CardData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
+        CardData unitData = CardManager.Instance.GetCardDataViaName(Name);
 
         if (gameObject.layer == LayerMask.NameToLayer("Player"))
         {
@@ -27,7 +27,7 @@ public class UnitStatusSystem : StatusSystem
 
     public void SetUnitStatusForEnemyUnit(int unitLevel)
     {
-        CardData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
+        CardData unitData = CardManager.Instance.GetCardDataViaName(Name);
 
         Name = unitData.CardName;
         MaxHealth = unitData.GetUnitStatusData(unitLevel).Health;

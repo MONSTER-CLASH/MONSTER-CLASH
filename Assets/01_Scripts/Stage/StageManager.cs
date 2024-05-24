@@ -43,11 +43,11 @@ public class StageManager : MonoBehaviour
 
             for (int i = 0; i < StageData.RewardUnits.Length; i++)
             {
-                for (int j = 0; j < UnitManager.Instance.UnitDatas.Length; j++)
+                for (int j = 0; j < CardManager.Instance.CardDatas.Length; j++)
                 {
-                    if (StageData.RewardUnits[i] == UnitManager.Instance.UnitDatas[j])
+                    if (StageData.RewardUnits[i] == CardManager.Instance.CardDatas[j])
                     {
-                        UnitManager.Instance.UnitDatas[j].HaveCard = true;
+                        CardManager.Instance.CardDatas[j].HaveCard = true;
                     }
                 }
             }

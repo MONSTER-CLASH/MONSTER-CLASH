@@ -56,7 +56,7 @@ public abstract class CardData : ScriptableObject
 
     public virtual HaveCardInfoData[] GetCardInfoData()
     {
-        return UnitManager.Instance.GetUnitCardInfoData(GetUnitStatusData(), GetUnitStatusData(Mathf.Min(CardLevel + 1, MaxCardLevel)));
+        return CardManager.Instance.GetUnitCardInfoData(GetUnitStatusData(), GetUnitStatusData(Mathf.Min(CardLevel + 1, MaxCardLevel)));
     }
 }
 

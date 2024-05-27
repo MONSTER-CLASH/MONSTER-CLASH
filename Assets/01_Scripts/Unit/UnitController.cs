@@ -122,7 +122,10 @@ public class UnitController : MonoBehaviour
 
     protected void Move()
     {
-        _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || _healthSystem.IsDead;
+        List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackRange, _oppositeLayer).ToList();
+        bool isEnemyExistInAttackRange = enemys.Contains(_attackTarget?.GetComponent<Collider>());
+
+        _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || _healthSystem.IsDead || isEnemyExistInAttackRange;
         _animator.SetInteger("Move", _canMove ? 1 : 0);
 
         if (_attackTarget)

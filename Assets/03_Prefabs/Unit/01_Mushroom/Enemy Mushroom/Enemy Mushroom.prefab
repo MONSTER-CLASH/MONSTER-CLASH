@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef3eba8aa245ba48bac3a2c9b60fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Mushroom
+  Name: "\uBC84\uC12F"
   MaxHealth: 0
   CurrentHealth: 0
   AttackDamage: 0

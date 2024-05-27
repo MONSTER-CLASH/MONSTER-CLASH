@@ -18,12 +18,14 @@ public class HaveCardInfo : MonoBehaviour
 
     [Space()]
     [SerializeField] private TextMeshProUGUI _upgradeCostText;
+    [SerializeField] private Button _closeBtn;
 
     private CardData _cardData;
     private HaveCardItem _parentCardItem;
 
     private void Awake()
     {
+        _closeBtn.onClick.AddListener(CloseHaveCardItem);
         transform.position = transform.parent.parent.parent.parent.position;
         _upgradeCostText.transform.parent.GetComponent<Button>().onClick.AddListener(UpgradeCard);
     }
@@ -68,6 +70,8 @@ public class HaveCardInfo : MonoBehaviour
         }
 
         _upgradeCostText.text = _cardData.CardLevel < _cardData.MaxCardLevel ? _cardData.GetUpgradeCost().ToString() : "최대 레벨";
+
+        transform.SetParent(_parentCardItem.transform.parent.parent, true);
     }
 
     public void UpgradeCard()
@@ -81,5 +85,11 @@ public class HaveCardInfo : MonoBehaviour
             _parentCardItem.UpdateCardItem();
             DeckManager.Instance.UpdateEquipCardItem();
         }
+    }
+
+    private void CloseHaveCardItem()
+    {
+        transform.SetParent(_parentCardItem.transform, true);
+        gameObject.SetActive(false);
     }
 }

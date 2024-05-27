@@ -623,6 +623,7 @@ MonoBehaviour:
   _haveCardInfoItemParent: {fileID: 5969656891315908419}
   _haveCardInfoItem: {fileID: 6811762370996172699, guid: ecc287cf93b211f44afe54225c113d7e, type: 3}
   _upgradeCostText: {fileID: 6746253379494471510}
+  _closeBtn: {fileID: 8606628298566056283}
 --- !u!1 &669146450036734968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,19 +3407,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7311945998776759465}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 669146449726046224}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &7063757195121400746
 GameObject:
   m_ObjectHideFlags: 0

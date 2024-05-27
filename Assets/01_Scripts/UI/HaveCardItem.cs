@@ -42,7 +42,7 @@ public class HaveCardItem : MonoBehaviour
 
     public void UpdateCardItem()
     {
-        _cardLevelText.text = _cardData.CardLevel.ToString();
+        _cardLevelText.text = "·¹º§ " + _cardData.CardLevel.ToString();
     }
 
     public void HideSelectedImage()

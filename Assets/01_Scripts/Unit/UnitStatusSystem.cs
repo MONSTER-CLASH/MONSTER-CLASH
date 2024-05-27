@@ -37,5 +37,7 @@ public class UnitStatusSystem : StatusSystem
         AttackRange = unitData.GetUnitStatusData(unitLevel).AttackRange;
         AttackDetectRange = unitData.GetUnitStatusData(unitLevel).AttackDetectRange;
         MoveSpeed = unitData.GetUnitStatusData(unitLevel).MoveSpeed;
+
+        UnitLevel = unitLevel;
     }
 }

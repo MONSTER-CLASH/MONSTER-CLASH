@@ -47,6 +47,13 @@ public class UnitController : MonoBehaviour
         _agent.speed = _unitStatusSystem.MoveSpeed;
     }
 
+    protected virtual void Update()
+    {
+        Move();
+        DetectAttackTarget();
+        Attack();
+    }
+
     protected void SetOppositeBase()
     {
         if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");

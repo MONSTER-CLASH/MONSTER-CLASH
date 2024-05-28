@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class UnitStatusUIController : MonoBehaviour
 {
-    [SerializeField] private Transform _unitStatusUIParent;
     [SerializeField] private TextMeshProUGUI _unitLevelText;
     [SerializeField] private Image _unitHealthImage;
 
@@ -12,8 +11,8 @@ public class UnitStatusUIController : MonoBehaviour
 
     private void Awake()
     {
-        _unitStatusSystem = GetComponent<UnitStatusSystem>();
-        GetComponent<HealthSystem>().OnDamaged += UpdateUnitStatusUI;
+        _unitStatusSystem = GetComponentInParent<UnitStatusSystem>();
+        GetComponentInParent<HealthSystem>().OnDamaged += UpdateUnitStatusUI;
     }
 
     private void Start()
@@ -24,7 +23,7 @@ public class UnitStatusUIController : MonoBehaviour
 
     private void Update()
     {
-        _unitStatusUIParent.LookAt(Camera.main.transform);
+        transform.LookAt(Camera.main.transform);
     }
 
     private void UpdateUnitStatusUI(float damage, GameObject attacker)

@@ -473,6 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4143501362021183825}
+  - component: {fileID: 761314900242169913}
   m_Layer: 6
   m_Name: Player Unit Status UI Parent
   m_TagString: Untagged
@@ -496,3 +497,17 @@ Transform:
   - {fileID: 2169899172387422827}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761314900242169913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193341318656386845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c471bbbf8ca3b0459e37493add1eafb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitLevelText: {fileID: 5716432497294863990}
+  _unitHealthImage: {fileID: 6263178575556028471}

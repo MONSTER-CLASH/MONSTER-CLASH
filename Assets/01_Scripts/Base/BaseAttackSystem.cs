@@ -31,7 +31,7 @@ public class BaseAttackSystem : MonoBehaviour
 
     private void Attack()
     {
-        if (!_canAttack || _healthSystem.IsDead) return;
+        if (!_canAttack || _healthSystem.IsDead || StageManager.Instance.IsStageEnd) return;
 
         Collider[] enemys = Physics.OverlapSphere(transform.position, _baseStatusSystem.AttackRange, _oppositeLayer);
         enemys = enemys.ToList().OrderByDescending(i => Vector3.Distance(transform.position, i.transform.position)).ToArray();

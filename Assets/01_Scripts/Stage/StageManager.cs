@@ -8,6 +8,8 @@ public class StageManager : MonoBehaviour
     public static StageData StageData;
     public int MercenaryCoin;
 
+    public bool IsStageEnd { get => _isStageEnd; }
+
     [Header("Result UI")]
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219dc7528b839a54db98a74131a52e1b, type: 3}
+  m_Name: Turtle Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uAC70\uBD81"
+  CardImage: {fileID: 21300000, guid: 9ef044cf0c07d425bbd162daa7d97a2d, type: 3}
+  CardDescription: "\uAC70\uBD81. \uBCF4\uAE30 \uAC70\uBD81\uD558\uB2E4."
+  CardLevel: 1
+  UpgradeCosts: 
+  CardModel: {fileID: 4103783835016482686, guid: ee5534a4dcb7ca847999e1145fb4f82b, type: 3}
+  CardPrefab: {fileID: 4251644086444118725, guid: a33f3b3d1e1b2614893d9930319c1519, type: 3}
+  SpawnCost: 0
+  SpawnCoolTime: 0
+  StorePrice: 0
+  CardType: 3
+  HaveCard: 0
+  UnitUpgradeData:
+    _health: 0
+    _healthUpgradeRatio: 0
+    _attackDamage: 0
+    _attackDamageUpgradeRatio: 0
+    _attackSpeed: 0
+    _attackSpeedUpgradeRatio: 0
+    _attackRange: 0
+    _attackRangeUpgradeRatio: 0
+    _attackDetectRange: 0
+    _attackDetectRangeUpgradeRatio: 0
+    _moveSpeed: 0
+    _moveSpeedUpgradeRatio: 0

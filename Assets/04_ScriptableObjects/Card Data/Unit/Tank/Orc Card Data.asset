@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c31ea7beebf2b418cc6f107c928df3, type: 3}
+  m_Name: Orc Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uC624\uD06C"
+  CardImage: {fileID: 21300000, guid: eb53a39c18c0348bcad8accfc04b8fee, type: 3}
+  CardDescription: "\uC624\uD06C. \uBABB\uC0DD\uACBC\uB2E4."
+  CardLevel: 1
+  UpgradeCosts: 
+  CardModel: {fileID: 2322021542073992021, guid: 6295fd2162ab3824d85aae4bc76b5496, type: 3}
+  CardPrefab: {fileID: 2318143311973830366, guid: 4cacbe07af08e2140a7caff9828014ad, type: 3}
+  SpawnCost: 0
+  SpawnCoolTime: 0
+  StorePrice: 0
+  CardType: 3
+  HaveCard: 0
+  UnitUpgradeData:
+    _health: 0
+    _healthUpgradeRatio: 0
+    _attackDamage: 0
+    _attackDamageUpgradeRatio: 0
+    _attackSpeed: 0
+    _attackSpeedUpgradeRatio: 0
+    _attackRange: 0
+    _attackRangeUpgradeRatio: 0
+    _attackDetectRange: 0
+    _attackDetectRangeUpgradeRatio: 0
+    _moveSpeed: 0
+    _moveSpeedUpgradeRatio: 0

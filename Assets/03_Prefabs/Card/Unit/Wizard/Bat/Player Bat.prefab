@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d82969d03e6354eaac07a4d1d7a9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackProjectileSpawnPos: {fileID: 3283283759115816132}
+  _attackProjectilePrefab: {fileID: 5368602506785596673, guid: eef46e74997c40b4dbd350ccc4c98d54, type: 3}
 --- !u!195 &1726304999499966105
 NavMeshAgent:
   m_ObjectHideFlags: 0

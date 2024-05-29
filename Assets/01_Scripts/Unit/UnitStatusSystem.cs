@@ -8,11 +8,11 @@ public class UnitStatusSystem : StatusSystem
 
     private void Awake()
     {
-        UnitData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
+        CardData unitData = CardManager.Instance.GetCardDataViaName(Name);
 
         if (gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Name = unitData.UnitName;
+            Name = unitData.CardName;
             MaxHealth = unitData.GetUnitStatusData().Health;
             CurrentHealth = MaxHealth;
             AttackDamage = unitData.GetUnitStatusData().AttackDamage;
@@ -21,15 +21,15 @@ public class UnitStatusSystem : StatusSystem
             AttackDetectRange = unitData.GetUnitStatusData().AttackDetectRange;
             MoveSpeed = unitData.GetUnitStatusData().MoveSpeed;
 
-            UnitLevel = unitData.UnitLevel;
+            UnitLevel = unitData.CardLevel;
         }
     }
 
     public void SetUnitStatusForEnemyUnit(int unitLevel)
     {
-        UnitData unitData = UnitManager.Instance.GetUnitDataViaName(Name);
+        CardData unitData = CardManager.Instance.GetCardDataViaName(Name);
 
-        Name = unitData.UnitName;
+        Name = unitData.CardName;
         MaxHealth = unitData.GetUnitStatusData(unitLevel).Health;
         CurrentHealth = MaxHealth;
         AttackDamage = unitData.GetUnitStatusData(unitLevel).AttackDamage;
@@ -37,5 +37,7 @@ public class UnitStatusSystem : StatusSystem
         AttackRange = unitData.GetUnitStatusData(unitLevel).AttackRange;
         AttackDetectRange = unitData.GetUnitStatusData(unitLevel).AttackDetectRange;
         MoveSpeed = unitData.GetUnitStatusData(unitLevel).MoveSpeed;
+
+        UnitLevel = unitLevel;
     }
 }

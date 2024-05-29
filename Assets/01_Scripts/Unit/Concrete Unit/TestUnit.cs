@@ -4,10 +4,4 @@ using UnityEngine;
 
 public class TestUnit : UnitController
 {
-    private void Update()
-    {
-        Move();
-        DetectAttackTarget();
-        Attack();
-    }
 }

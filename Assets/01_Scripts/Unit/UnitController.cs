@@ -47,6 +47,13 @@ public class UnitController : MonoBehaviour
         _agent.speed = _unitStatusSystem.MoveSpeed;
     }
 
+    protected virtual void Update()
+    {
+        Move();
+        DetectAttackTarget();
+        Attack();
+    }
+
     protected void SetOppositeBase()
     {
         if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
@@ -74,7 +81,7 @@ public class UnitController : MonoBehaviour
             _attackTarget = null;
         }
 
-        if (_attackTarget || !_canMove || _healthSystem.IsDead) return;
+        if (_attackTarget || !_canMove || _healthSystem.IsDead || StageManager.Instance.IsStageEnd) return;
 
         List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackDetectRange, _oppositeLayer).ToList();
         enemys = enemys.OrderByDescending(i => Vector3.Distance(transform.position, i.transform.position)).ToList();
@@ -94,7 +101,7 @@ public class UnitController : MonoBehaviour
 
     protected void Attack()
     {
-        if (!_canAttack || !_attackTarget || _healthSystem.IsDead) return;
+        if (!_canAttack || !_attackTarget || _healthSystem.IsDead || StageManager.Instance.IsStageEnd) return;
 
         Collider[] enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackRange, _oppositeLayer);
 
@@ -122,8 +129,13 @@ public class UnitController : MonoBehaviour
 
     protected void Move()
     {
-        _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || _healthSystem.IsDead;
-        _animator.SetInteger("Move", _canMove ? 1 : 0);
+        List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackRange, _oppositeLayer).ToList();
+        bool isEnemyExistInAttackRange = enemys.Contains(_attackTarget?.GetComponent<Collider>());
+
+        _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || 
+            _healthSystem.IsDead || isEnemyExistInAttackRange || StageManager.Instance.IsStageEnd;
+
+        _animator.SetInteger("Move", _canMove && !StageManager.Instance.IsStageEnd ? 1 : 0);
 
         if (_attackTarget)
         {

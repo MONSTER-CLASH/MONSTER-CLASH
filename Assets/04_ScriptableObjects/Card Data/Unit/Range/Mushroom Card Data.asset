@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fe165d78188744db36d736443d666e, type: 3}
+  m_Name: Mushroom Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uBC84\uC12F"
+  CardImage: {fileID: 21300000, guid: a03938d7c9ed2db4f8f78d0fa7e1d30e, type: 3}
+  CardDescription: "\uBC84\uC12F\uC774\uB2E4. \uBC84\uC11C\uC11C\uC11C\uC12F\uC12F\uC12F"
+  CardLevel: 1
+  UpgradeCosts: 0a000000140000003200000064000000c8000000
+  CardModel: {fileID: 2872010471344743042, guid: d641ffc80b0b66a4db49019647af389f, type: 3}
+  CardPrefab: {fileID: 8381447297638287046, guid: b36eb1b2aec19854ab8790e2f31fc39f, type: 3}
+  SpawnCost: 2
+  SpawnCoolTime: 5
+  StorePrice: 30
+  CardType: 2
+  HaveCard: 1
+  UnitUpgradeData:
+    _health: 100
+    _healthUpgradeRatio: 1.1
+    _attackDamage: 15
+    _attackDamageUpgradeRatio: 1.25
+    _attackSpeed: 1.5
+    _attackSpeedUpgradeRatio: 1
+    _attackRange: 4
+    _attackRangeUpgradeRatio: 1
+    _attackDetectRange: 6
+    _attackDetectRangeUpgradeRatio: 1
+    _moveSpeed: 2
+    _moveSpeedUpgradeRatio: 1

@@ -8,6 +8,8 @@ public class StageManager : MonoBehaviour
     public static StageData StageData;
     public int MercenaryCoin;
 
+    public bool IsStageEnd { get => _isStageEnd; }
+
     [Header("Result UI")]
     [SerializeField] private GameObject _stageResultUIPrefab;
     [SerializeField] private Transform _stageResultUIParent;
@@ -37,17 +39,17 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData.StageLevel, _stageTime, StageData.StageWinGold, true);
+            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, true);
             DeckManager.Gold += StageData.StageWinGold;
             if (!StageData.IsSubStage) StageDataManager.LastClearStageLevel = StageData.StageLevel;
 
             for (int i = 0; i < StageData.RewardUnits.Length; i++)
             {
-                for (int j = 0; j < UnitManager.Instance.UnitDatas.Length; j++)
+                for (int j = 0; j < CardManager.Instance.CardDatas.Length; j++)
                 {
-                    if (StageData.RewardUnits[i] == UnitManager.Instance.UnitDatas[j])
+                    if (StageData.RewardUnits[i] == CardManager.Instance.CardDatas[j])
                     {
-                        UnitManager.Instance.UnitDatas[j].HasUnit = true;
+                        CardManager.Instance.CardDatas[j].HaveCard = true;
                     }
                 }
             }
@@ -60,7 +62,7 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData.StageLevel, _stageTime, StageData.StageDefeatGold, false);
+            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, false);
             DeckManager.Gold += StageData.StageDefeatGold;
 
             _isStageEnd=true;

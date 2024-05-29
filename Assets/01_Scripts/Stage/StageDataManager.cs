@@ -30,7 +30,7 @@ public class StageDataManager : MonoBehaviour
     /// </summary>
     public StageData GetNextMainStageData()
     {
-        return _mainStageDatas[LastClearStageLevel];
+        return _mainStageDatas.Length > LastClearStageLevel ? _mainStageDatas[LastClearStageLevel] : null;
     }
 
     /// <summary>

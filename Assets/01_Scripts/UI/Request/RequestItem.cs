@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class RequestItem : MonoBehaviour
 {
+    [Header("Title UI")]
+    [SerializeField] private GameObject _requestTitleUI;
+    [SerializeField] private TextMeshProUGUI _requestNameTitleText;
+
+    [Header("Detail UI")]
+    [SerializeField] private GameObject _requestDetailUI;
     [SerializeField] private TextMeshProUGUI _requestNameText;
     [SerializeField] private TextMeshProUGUI _requestDescriptionText;
     [SerializeField] private TextMeshProUGUI _requestRewardGoldText;
@@ -16,6 +22,8 @@ public class RequestItem : MonoBehaviour
     {
         _stageData = stageData;
 
+        _requestNameTitleText.text = stageData.StageName;
+
         _requestNameText.text = stageData.StageName;
         _requestDescriptionText.text = stageData.StageDescription;
         _requestRewardGoldText.text = stageData.StageWinGold.ToString();
@@ -24,7 +32,7 @@ public class RequestItem : MonoBehaviour
         {
             if (i < stageData.RewardUnits.Length)
             {
-                _requestRewardUnitImages[i].sprite = stageData.RewardUnits[i].UnitImage;
+                _requestRewardUnitImages[i].sprite = stageData.RewardUnits[i].CardImage;
             }
             else
             {
@@ -36,5 +44,17 @@ public class RequestItem : MonoBehaviour
     public void StartRequest()
     {
         StageDataManager.Instance.StartStage(_stageData);
+    }
+
+    public void EnableDetatilUI()
+    {
+        _requestTitleUI.SetActive(false);
+        _requestDetailUI.SetActive(true);
+    }
+
+    public void DisableDetatilUI()
+    {
+        _requestTitleUI.SetActive(true);
+        _requestDetailUI.SetActive(false);
     }
 }

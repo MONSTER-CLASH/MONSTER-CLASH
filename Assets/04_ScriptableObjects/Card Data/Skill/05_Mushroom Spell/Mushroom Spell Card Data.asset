@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c308413833724594c937aa46fb5d6ff1, type: 3}
+  m_Name: Mushroom Spell Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uBC84\uC12F \uD3EC\uC790 \uBB49\uCE58"
+  CardImage: {fileID: 21300000, guid: 2084b83ba5d2d409e80adb120060500f, type: 3}
+  CardDescription: "\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F"
+  CardLevel: 1
+  UpgradeCosts: 
+  CardModel: {fileID: 8303603045535773499, guid: d0474a330f383ec4cbf60b4b7f61fc1b, type: 3}
+  CardPrefab: {fileID: 7400518066065967963, guid: bb1e351b642d5c449a2c35760a81e122, type: 3}
+  SpawnCost: 0
+  SpawnCoolTime: 0
+  StorePrice: 0
+  CardType: 4
+  HaveCard: 0
+  UnitUpgradeData:
+    _health: 0
+    _healthUpgradeRatio: 0
+    _attackDamage: 0
+    _attackDamageUpgradeRatio: 0
+    _attackSpeed: 0
+    _attackSpeedUpgradeRatio: 0
+    _attackRange: 0
+    _attackRangeUpgradeRatio: 0
+    _attackDetectRange: 0
+    _attackDetectRangeUpgradeRatio: 0
+    _moveSpeed: 0
+    _moveSpeedUpgradeRatio: 0
+  MushroomPrefab: {fileID: 8381447297638287046, guid: b36eb1b2aec19854ab8790e2f31fc39f, type: 3}
+  TickTime: 1
+  TickTimeUpgradeRatio: 1
+  TickTimeImage: {fileID: 21300000, guid: c77ad61f368844785a535affeecaae18, type: 3}
+  TickTimeName: "\uC18C\uD658 \uC18D\uB3C4"
+  DurationTime: 5
+  DurationTimeUpgradeRatio: 1.1
+  DurationTimeImage: {fileID: 21300000, guid: 71bba2cfb56f141d68b7699984127ce7, type: 3}
+  DurationTimeName: "\uC9C0\uC18D\uC2DC\uAC04"

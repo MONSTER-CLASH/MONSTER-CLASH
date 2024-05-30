@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf1803ede8ea264ca4aea33e33f9da4, type: 3}
+  m_Name: Fire Area Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uD654\uC5FC \uB9C8\uBC95"
+  CardImage: {fileID: 21300000, guid: be12e47af513c445988d2817f8daf0f6, type: 3}
+  CardDescription: "\uC138\uC0C1\uC744 \uBD88\uD0DC\uC6B8 \uC900\uBE44\uB294 \uB418\uC5C8\uB098?
+    \uC73C\uD750\uD750\uD558\uD558\uD558"
+  CardLevel: 1
+  UpgradeCosts: 
+  CardModel: {fileID: 383036057251238456, guid: ce83f111e53548541b56334d2ce802bb, type: 3}
+  CardPrefab: {fileID: 4464565741301224143, guid: ca527bbe2d1611b44b431e61d77e319d, type: 3}
+  SpawnCost: 0
+  SpawnCoolTime: 0
+  StorePrice: 0
+  CardType: 4
+  HaveCard: 0
+  UnitUpgradeData:
+    _health: 0
+    _healthUpgradeRatio: 0
+    _attackDamage: 0
+    _attackDamageUpgradeRatio: 0
+    _attackSpeed: 0
+    _attackSpeedUpgradeRatio: 0
+    _attackRange: 0
+    _attackRangeUpgradeRatio: 0
+    _attackDetectRange: 0
+    _attackDetectRangeUpgradeRatio: 0
+    _moveSpeed: 0
+    _moveSpeedUpgradeRatio: 0
+  Damage: 10
+  DamageUpgradeRatio: 1.1
+  DamageImage: {fileID: 21300000, guid: 4574f1ebea9e14588a88aed1815dca2d, type: 3}
+  DamageName: "\uACF5\uACA9\uB825"
+  TickTime: 1
+  TickTimeUpgradeRatio: 1
+  TickTimeImage: {fileID: 21300000, guid: c77ad61f368844785a535affeecaae18, type: 3}
+  TickTimeName: "\uD2F1 \uC2DC\uAC04"
+  DurationTime: 5
+  DurationTimeUpgradeRatio: 1.1
+  DurationTimeImage: {fileID: 21300000, guid: 71bba2cfb56f141d68b7699984127ce7, type: 3}
+  DurationTimeName: "\uC9C0\uC18D\uC2DC\uAC04"

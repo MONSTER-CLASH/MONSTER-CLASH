@@ -23,7 +23,7 @@ public class FireArea : MonoBehaviour
     {
         while (true)
         {
-            Collider[] enemys = Physics.OverlapSphere(transform.position, 5, 1 << LayerMask.NameToLayer("Enemy"));
+            Collider[] enemys = Physics.OverlapSphere(transform.position, 2.5f, 1 << LayerMask.NameToLayer("Enemy"));
 
             foreach (Collider enemy in enemys)
             {
@@ -35,5 +35,11 @@ public class FireArea : MonoBehaviour
 
             yield return new WaitForSeconds(_tickTime);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0.5f, 0, 0, 0.15f);
+        Gizmos.DrawSphere(transform.position, 2.5f);
     }
 }

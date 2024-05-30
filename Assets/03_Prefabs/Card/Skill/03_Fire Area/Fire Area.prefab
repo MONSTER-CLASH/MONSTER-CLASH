@@ -4875,4 +4875,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736ab167bb9f3934990a0be2f4b28ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireAreaCardData: {fileID: 0}
+  _fireAreaCardData: {fileID: 11400000, guid: 07f27854b2fc9d547be4b02005bbdb8f, type: 2}

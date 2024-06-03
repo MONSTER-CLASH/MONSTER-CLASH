@@ -13,16 +13,13 @@ public class Ball : MonoBehaviour
         Drop,
     }
 
-    public float coolTime;
+    public int cardIndex;
 
+    public bool isSpawn;
     private State state;
 
     public UnityEvent OnRecycle;
     public UnityEvent OnSpawn;
-
-    public GameObject Base;
-    public GameObject SpawnUnit;
-        
 
     private void Update()
     {
@@ -53,7 +50,7 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state != State.Drop || other.CompareTag("GameController") || other.CompareTag("Enemy") || other.CompareTag("Player"))
+        if (state != State.Drop || other.CompareTag("GameController"))
             return;
 
         if (other.gameObject.CompareTag("SpawnZone"))
@@ -66,9 +63,9 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public void SpawnMesh()
+    public void SpawnPrefab()
     {
-        Instantiate(SpawnUnit, transform.position, Quaternion.identity);
+        Instantiate(DeckManager.EquipCardDatas[cardIndex].CardPrefab, transform.position, Quaternion.identity);
     }
 
     public void Spawn()
@@ -85,7 +82,7 @@ public class Ball : MonoBehaviour
     {
         if (state != State.Drop)
         {
-            gameObject.transform.position = Base.transform.position;
+            gameObject.transform.position = StageDeckController.Instance.SpawnBases[cardIndex].position;
         }
     }
 
@@ -98,7 +95,8 @@ public class Ball : MonoBehaviour
     {
         var xrGrabInteractable = GetComponent<XRGrabInteractable>();
         xrGrabInteractable.enabled = false;
-        yield return new WaitForSeconds(coolTime);
+        StageDeckController.Instance.coolTime[cardIndex] = DeckManager.EquipCardDatas[cardIndex].SpawnCoolTime;
+        yield return new WaitForSeconds(DeckManager.EquipCardDatas[cardIndex].SpawnCoolTime);
         xrGrabInteractable.enabled = true;
     }
 }

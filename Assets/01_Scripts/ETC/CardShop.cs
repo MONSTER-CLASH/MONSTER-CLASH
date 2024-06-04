@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CardShop : MonoBehaviour
 {
-    [SerializeField] private Transform _shopItemParent;
-    [SerializeField] private GameObject _shopItem;
+    [SerializeField] private Transform _cardShopItemParent;
+    [SerializeField] private GameObject _cardShopItem;
 
     private void Awake()
     {
@@ -20,12 +20,16 @@ public class CardShop : MonoBehaviour
         while (rand.Count == 3)
         {
             index = Random.Range(0, CardManager.Instance.CardDatas.Length);
-            if (!rand.Contains(index)) rand.Add(index);
+            if (!rand.Contains(index) && !CardManager.Instance.CardDatas[index].HaveCard)
+            {
+                rand.Add(index);
+            }
         }
 
         for (int i=0; i<rand.Count; i++)
         {
-            Instantiate(_shopItem, _shopItemParent);
+            CardShopItem cardShopItem = Instantiate(_cardShopItem, _cardShopItemParent).GetComponent<CardShopItem>();
+            cardShopItem.SetCardShopItemInfo(CardManager.Instance.CardDatas[rand[i]]);
         }
     }
 }

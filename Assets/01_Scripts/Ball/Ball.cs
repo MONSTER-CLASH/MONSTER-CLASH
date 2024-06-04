@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour
         if (state != State.Drop || other.CompareTag("GameController"))
             return;
 
-        if (other.gameObject.CompareTag("SpawnZone"))
+        if (other.gameObject.CompareTag("SpawnZone") && StageDeckController.Instance.mercenaryCoin > DeckManager.EquipCardDatas[cardIndex].SpawnCost)
         {
             Spawn();
         }
@@ -96,6 +96,7 @@ public class Ball : MonoBehaviour
         var xrGrabInteractable = GetComponent<XRGrabInteractable>();
         xrGrabInteractable.enabled = false;
         StageDeckController.Instance.coolTime[cardIndex] = DeckManager.EquipCardDatas[cardIndex].SpawnCoolTime;
+        StageDeckController.Instance.UseMerceneryCoin(DeckManager.EquipCardDatas[cardIndex].SpawnCost);
         yield return new WaitForSeconds(DeckManager.EquipCardDatas[cardIndex].SpawnCoolTime);
         xrGrabInteractable.enabled = true;
     }

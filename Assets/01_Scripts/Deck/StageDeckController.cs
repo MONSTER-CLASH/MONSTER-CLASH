@@ -7,10 +7,12 @@ public class StageDeckController : MonoBehaviour
 {
     public Transform[] SpawnBases;
     public TMP_Text[] SpawnCoolTimeText;
+    public TMP_Text MerceneryCoinText;
     
     public float[] coolTime;
 
-    public int mercenaryCoin;
+    public float mercenaryCoin;
+    public float mercenartCoinPerSecond;
 
 
     public static StageDeckController Instance = null;
@@ -24,7 +26,9 @@ public class StageDeckController : MonoBehaviour
 
     private void Update()
     {
+        GetMerceneryCoin();
         UpdateCoolTimeText();
+        SetMerceneryCoin();
     }
 
     private void SpawnDeck()
@@ -53,5 +57,20 @@ public class StageDeckController : MonoBehaviour
                 SpawnCoolTimeText[i].enabled = false;
             }
         }
+    }
+
+    private void GetMerceneryCoin()
+    {
+        mercenaryCoin += (Time.deltaTime * mercenartCoinPerSecond);
+    }
+
+    public void UseMerceneryCoin(int cost)
+    {
+        mercenaryCoin -= cost;
+    }
+
+    private void SetMerceneryCoin()
+    {
+        MerceneryCoinText.text = ((int)mercenaryCoin).ToString();
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Turtle Card Data
   m_EditorClassIdentifier: 
   CardName: "\uAC70\uBD81"
-  CardImage: {fileID: 21300000, guid: 9ef044cf0c07d425bbd162daa7d97a2d, type: 3}
+  CardImage: {fileID: 21300000, guid: ecc3c60910a41c948bf730c689579877, type: 3}
   CardDescription: "\uAC70\uBD81. \uBCF4\uAE30 \uAC70\uBD81\uD558\uB2E4."
   CardLevel: 1
   UpgradeCosts: 

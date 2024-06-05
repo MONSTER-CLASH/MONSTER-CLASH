@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bat Card Data
   m_EditorClassIdentifier: 
   CardName: "\uBC15\uC950"
-  CardImage: {fileID: 21300000, guid: 420c55d2bb685463c94842907f41055e, type: 3}
+  CardImage: {fileID: 21300000, guid: 0b2c264a8ca8b7a41b602bb8144e0638, type: 3}
   CardDescription: "\uBC15\uC950. \uB354\uB7FD\uB2E4. \uBCD1\uADE0\uC744 \uC62E\uAE34\uB2E4."
   CardLevel: 1
   UpgradeCosts: 

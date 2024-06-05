@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lightning Card Data
   m_EditorClassIdentifier: 
   CardName: "\uBC88\uAC1C"
-  CardImage: {fileID: 21300000, guid: f9423aa2e089845cda2f0c1d0384187f, type: 3}
+  CardImage: {fileID: 21300000, guid: ea293075394d9f74e83caacb384326ce, type: 3}
   CardDescription: "\uBC88\uAC1C\uB2E4. \uCC0C\uB9BF\uD560\uAC70\uB2E4. \uC804\uAE30\uCDA9\uACA9. "
   CardLevel: 1
   UpgradeCosts: 

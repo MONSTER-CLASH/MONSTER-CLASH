@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chest Monster Card Data
   m_EditorClassIdentifier: 
   CardName: "\uC0C1\uC790\uAD34\uBB3C"
-  CardImage: {fileID: 21300000, guid: 0f6e605fc957b4a19b190f0d72cddbbb, type: 3}
+  CardImage: {fileID: 21300000, guid: d2a21348cafdff64aacd8cd81aea5f24, type: 3}
   CardDescription: "\uC0C1\uC790\uAD34\uBB3C. \uAD34\uBB3C\uC774\uB2E4."
   CardLevel: 1
   UpgradeCosts: 

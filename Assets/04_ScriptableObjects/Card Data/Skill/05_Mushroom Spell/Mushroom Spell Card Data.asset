@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mushroom Spell Card Data
   m_EditorClassIdentifier: 
   CardName: "\uBC84\uC12F \uD3EC\uC790 \uBB49\uCE58"
-  CardImage: {fileID: 21300000, guid: 2084b83ba5d2d409e80adb120060500f, type: 3}
+  CardImage: {fileID: 21300000, guid: 324e1c9333c76904d958806642698840, type: 3}
   CardDescription: "\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F\uBC84\uC12F"
   CardLevel: 1
   UpgradeCosts: 

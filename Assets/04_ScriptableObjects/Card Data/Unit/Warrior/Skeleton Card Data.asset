@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skeleton Card Data
   m_EditorClassIdentifier: 
   CardName: "\uC2A4\uCF08\uB808\uD1A4"
-  CardImage: {fileID: 21300000, guid: df26ee291db4e485b85555149ea07290, type: 3}
+  CardImage: {fileID: 21300000, guid: 72ba6c00abde3ec4a907e5aec146925c, type: 3}
   CardDescription: "\uC2A4\uCF08\uB808\uD1A4. \uBF08\uB2E4\uADC0. \uB053\uC774\uBA74
     \uACF0\uD0D5\uC774\uB41C\uB2E4."
   CardLevel: 1

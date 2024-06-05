@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon Card Data
   m_EditorClassIdentifier: 
   CardName: "\uB4DC\uB798\uACE4"
-  CardImage: {fileID: 21300000, guid: f08d18ca255384aea8db720c9f4bedf0, type: 3}
+  CardImage: {fileID: 21300000, guid: cea7e9cc3f496fe48b3477c92cd1d9fc, type: 3}
   CardDescription: "\uB4DC\uB798\uACE4. \uB4DC\uB798\uACE4\uC774\uC9C0\uB9CC \uC880
     \uB6B1\uB6B1\uD558\uB2E4."
   CardLevel: 1

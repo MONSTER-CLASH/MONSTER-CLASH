@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slime Card Data
   m_EditorClassIdentifier: 
   CardName: "\uC2AC\uB77C\uC784"
-  CardImage: {fileID: 21300000, guid: c83a63035e27c4e87947b65b38c06bf5, type: 3}
+  CardImage: {fileID: 21300000, guid: 2dfc65943b39dfd429b2600be2767390, type: 3}
   CardDescription: "\uC2AC\uB77C\uC784. \uB048\uC801\uD558\uB2E4."
   CardLevel: 1
   UpgradeCosts: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cactus Card Data
   m_EditorClassIdentifier: 
   CardName: "\uC120\uC778\uC7A5"
-  CardImage: {fileID: 21300000, guid: cac7378ef8cdd4a088297fe84fb3f7bc, type: 3}
+  CardImage: {fileID: 21300000, guid: cfda2dbba7460204fbfc502a9a316db7, type: 3}
   CardDescription: "\uC120\uC778\uC7A5. \uAC00\uC2DC\uAC00 \uB9CE\uB2E4. \uB180\uB78D\uAC8C\uB3C4
     \uC6D0\uAC70\uB9AC \uC720\uB2DB."
   CardLevel: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spider Card Data
   m_EditorClassIdentifier: 
   CardName: "\uAC70\uBBF8"
-  CardImage: {fileID: 21300000, guid: a9beaf3da712d4552839a555b5a4f5db, type: 3}
+  CardImage: {fileID: 21300000, guid: 10adcb977f4bdce4e8843166043ad915, type: 3}
   CardDescription: "\uAC70\uBBF8. \uACC4\uC18D \uBCF4\uB2C8 \uC880 \uADC0\uC5EC\uC6B8\uC9C0\uB3C4?"
   CardLevel: 1
   UpgradeCosts: 

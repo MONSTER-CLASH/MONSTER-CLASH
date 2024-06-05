@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Golem Card Data
   m_EditorClassIdentifier: 
   CardName: "\uB85C\uBD07"
-  CardImage: {fileID: 21300000, guid: 45ea580ae24ae448a8e85e129c0075c3, type: 3}
+  CardImage: {fileID: 21300000, guid: fb77a8b10f6be2f499bc6c3e60282ca5, type: 3}
   CardDescription: "\uB85C\uBD07. \uC778\uAC04\uC2DC\uB300\uC758 \uB05D\uC774 \uB3C4\uB798\uD588\uB2E4."
   CardLevel: 1
   UpgradeCosts: 

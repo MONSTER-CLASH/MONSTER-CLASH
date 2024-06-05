@@ -24,7 +24,7 @@ MonoBehaviour:
   SpawnCoolTime: 0
   StorePrice: 0
   CardType: 4
-  HaveCard: 0
+  HaveCard: 1
   UnitUpgradeData:
     _health: 0
     _healthUpgradeRatio: 0

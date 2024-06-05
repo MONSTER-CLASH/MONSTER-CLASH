@@ -54,9 +54,9 @@ MonoBehaviour:
   StageWinGold: 1500
   StageDefeatGold: 20
   RewardUnits:
-  - {fileID: 11400000, guid: 93309c74cce1cf94280ea28e7a64b142, type: 2}
-  - {fileID: 11400000, guid: 5fe7b689d22bc0e41a83483334ccac5f, type: 2}
-  - {fileID: 11400000, guid: fe841323cf6b81f42948be761e37d0eb, type: 2}
+  - {fileID: 11400000, guid: 74ab2add145446148ab108284dda4036, type: 2}
+  - {fileID: 11400000, guid: 33b2d22b955f91c4997a2fa00b1cc8ce, type: 2}
+  - {fileID: 11400000, guid: ef45048c9cfc14d419ae18d8ebe3cb33, type: 2}
   IsSubStage: 0
   RequiredMinMainStage: 0
   RequiredMaxMainStage: 0

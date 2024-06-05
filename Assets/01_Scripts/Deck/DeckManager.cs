@@ -31,8 +31,13 @@ public class DeckManager : MonoBehaviour
         UpdateEquipCardItem();
     }
 
-    private void ShowHaveCardItem()
+    public void ShowHaveCardItem()
     {
+        foreach(Transform child in _haveCardItemParent)
+        {
+            Destroy(child.gameObject);
+        }
+
         CardData[] cardDatas = CardManager.Instance.GetHaveCardDatas();
 
         for (int i=0; i<cardDatas.Length; i++)

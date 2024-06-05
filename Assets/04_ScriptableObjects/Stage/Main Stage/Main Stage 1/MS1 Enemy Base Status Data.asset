@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uC801\uAD70 \uAE30\uC9C0"
   Health: 1000
-  AttackDamage: 15
-  AttackSpeed: 1
-  AttackRange: 10
+  AttackDamage: 100
+  AttackSpeed: 1.5
+  AttackRange: 12.5

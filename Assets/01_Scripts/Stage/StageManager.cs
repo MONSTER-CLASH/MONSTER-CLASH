@@ -15,7 +15,10 @@ public class StageManager : MonoBehaviour
     [SerializeField] private Transform _stageResultUIParent;
 
     [Space()]
-    [SerializeField] private int _getMercenaryCoinValuePerSecond; // 초당 용병주화 생성량
+    [SerializeField] private GameObject _leftRayController;
+    [SerializeField] private GameObject _rightRayController;
+    [SerializeField] private GameObject _leftDirectController;
+    [SerializeField] private GameObject _rightDirectController;
 
     private float _stageTime;
     private bool _isStageEnd;
@@ -26,8 +29,6 @@ public class StageManager : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("PlayerBase").GetComponent<HealthSystem>().OnDead += PlayerDefeat;
         GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
-
-        StartCoroutine(GetMercenaryCostCoroutine());
     }
 
     private void Update()
@@ -39,6 +40,11 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
+            _leftDirectController.SetActive(false);
+            _rightDirectController.SetActive(false);
+            _leftRayController.SetActive(true);
+            _rightRayController.SetActive(true);
+
             Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, true);
             DeckManager.Gold += StageData.StageWinGold;
             if (!StageData.IsSubStage) StageDataManager.LastClearStageLevel = StageData.StageLevel;
@@ -62,22 +68,15 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
+            _leftDirectController.SetActive(false);
+            _rightDirectController.SetActive(false);
+            _leftRayController.SetActive(true);
+            _rightRayController.SetActive(true);
+
             Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, false);
             DeckManager.Gold += StageData.StageDefeatGold;
 
             _isStageEnd=true;
         }
-    }
-
-    private IEnumerator GetMercenaryCostCoroutine()
-    {
-        while (!_isStageEnd)
-        {
-            MercenaryCoin += _getMercenaryCoinValuePerSecond;
-
-            yield return new WaitForSeconds(1);
-        }
-
-        yield break;
     }
 }

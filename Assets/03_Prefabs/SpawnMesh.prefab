@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e4ffd6713d3be0943aa8d5592c0411b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9aa23087f7f6e44bef25abedfee1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolTime: 5
+  cardIndex: 0
   OnRecycle:
     m_PersistentCalls:
       m_Calls:
@@ -180,7 +180,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 396442020724122113}
         m_TargetAssemblyTypeName: Ball, Assembly-CSharp
-        m_MethodName: SpawnMesh
+        m_MethodName: SpawnPrefab
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -214,8 +214,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Base: {fileID: 0}
-  SpawnUnit: {fileID: 7020396986130054042, guid: a85be2793141c224d84faa8c63892c6f, type: 3}
 --- !u!114 &-2487061158152109927
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ MonoBehaviour:
   UpgradeCosts: 64000000c80000005e01000058020000e8030000
   CardModel: {fileID: 4574100063969645140, guid: f7c4e72f623e9fa49acc609f07d6da72, type: 3}
   CardPrefab: {fileID: 6520201360484417519, guid: 86c94c272a68288498db5d6b852b6c41, type: 3}
-  SpawnCost: 8
+  SpawnCost: 4
   SpawnCoolTime: 8
   StorePrice: 0
   CardType: 4

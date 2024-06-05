@@ -14,26 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: "\uC624\uD06C"
   CardImage: {fileID: 21300000, guid: 0205d24e71e2f4d4794755663dae74dc, type: 3}
-  CardDescription: "\uC624\uD06C. \uBABB\uC0DD\uACBC\uB2E4."
+  CardDescription: "\uBABB\uC0DD\uACBC\uC9C0\uB9CC \uC758\uC678\uB85C \uC624\uD06C
+    \uC911\uC5D0\uC120 \uAF64 \uC798\uC0DD\uAE34 \uD3B8\uC774\uB2E4. \uBBF8\uB0A8
+    \uC624\uD06C."
   CardLevel: 1
-  UpgradeCosts: 
+  UpgradeCosts: 4b000000960000002c010000f401000020030000
   CardModel: {fileID: 2322021542073992021, guid: 6295fd2162ab3824d85aae4bc76b5496, type: 3}
   CardPrefab: {fileID: 2318143311973830366, guid: 4cacbe07af08e2140a7caff9828014ad, type: 3}
-  SpawnCost: 0
-  SpawnCoolTime: 0
+  SpawnCost: 5
+  SpawnCoolTime: 7
   StorePrice: 0
   CardType: 3
   HaveCard: 0
   UnitUpgradeData:
-    _health: 0
-    _healthUpgradeRatio: 0
-    _attackDamage: 0
-    _attackDamageUpgradeRatio: 0
-    _attackSpeed: 0
-    _attackSpeedUpgradeRatio: 0
-    _attackRange: 0
-    _attackRangeUpgradeRatio: 0
-    _attackDetectRange: 0
-    _attackDetectRangeUpgradeRatio: 0
-    _moveSpeed: 0
-    _moveSpeedUpgradeRatio: 0
+    _health: 2000
+    _healthUpgradeRatio: 1.15
+    _attackDamage: 70
+    _attackDamageUpgradeRatio: 1.15
+    _attackSpeed: 0.8
+    _attackSpeedUpgradeRatio: 1
+    _attackRange: 2
+    _attackRangeUpgradeRatio: 1
+    _attackDetectRange: 5
+    _attackDetectRangeUpgradeRatio: 1
+    _moveSpeed: 3
+    _moveSpeedUpgradeRatio: 1

@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: "\uBC88\uAC1C"
   CardImage: {fileID: 21300000, guid: ea293075394d9f74e83caacb384326ce, type: 3}
-  CardDescription: "\uBC88\uAC1C\uB2E4. \uCC0C\uB9BF\uD560\uAC70\uB2E4. \uC804\uAE30\uCDA9\uACA9. "
+  CardDescription: "\uC801\uC5D0\uAC8C \uBC88\uAC1C\uB97C \uB0A0\uB824 \uC881\uC740
+    \uBC94\uC704\uC5D0 \uAC15\uB825\uD55C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
   CardLevel: 1
-  UpgradeCosts: 
+  UpgradeCosts: 320000004b00000064000000c80000005e010000
   CardModel: {fileID: 5374318461119302072, guid: 1bf31f56ca3365b4580b4316b16c7c56, type: 3}
   CardPrefab: {fileID: 1095515510598017859, guid: 31a9b7f59892c584083e6eec91c00c55, type: 3}
-  SpawnCost: 0
-  SpawnCoolTime: 0
+  SpawnCost: 5
+  SpawnCoolTime: 6
   StorePrice: 0
   CardType: 4
   HaveCard: 1
@@ -40,5 +41,5 @@ MonoBehaviour:
   Damage: 100
   DamageUpgradeRatio: 1.2
   DestroyTime: 5
-  LightningImage: {fileID: 21300000, guid: f9423aa2e089845cda2f0c1d0384187f, type: 3}
+  LightningImage: {fileID: 21300000, guid: a5d9129824ee64fbdbfd416e7efa59f2, type: 3}
   LightningName: "\uACF5\uACA9\uB825"

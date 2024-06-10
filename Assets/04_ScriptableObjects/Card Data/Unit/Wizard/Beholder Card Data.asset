@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beholder Card Data
   m_EditorClassIdentifier: 
   CardName: "\uB208\uAE54\uC774"
-  CardImage: {fileID: 21300000, guid: 3c02e19edc8894354932d8c3da6481e9, type: 3}
+  CardImage: {fileID: 21300000, guid: 5fcdcf038f1ae0c4dae3b78b3fa5a43d, type: 3}
   CardDescription: "\uB208 \uAE54\uC544. \uC774 \uB140\uC11D\uC544."
   CardLevel: 1
   UpgradeCosts: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monster Plant Card Data
   m_EditorClassIdentifier: 
   CardName: "\uC2DD\uBB3C\uC774"
-  CardImage: {fileID: 21300000, guid: 0d608ae90e5074008b1cca7d63003c01, type: 3}
+  CardImage: {fileID: 21300000, guid: 42f7a85d9ba51d94ba12cb6366d6178a, type: 3}
   CardDescription: "\uC2DD\uBB3C\uC774. \uC0BD\uACB9\uC0B4\uACFC \uAC19\uC774 \uBA39\uC73C\uBA74
     \uB9DB\uC788\uB2E4."
   CardLevel: 0

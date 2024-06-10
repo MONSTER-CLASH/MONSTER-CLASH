@@ -13,28 +13,29 @@ MonoBehaviour:
   m_Name: Cactus Card Data
   m_EditorClassIdentifier: 
   CardName: "\uC120\uC778\uC7A5"
-  CardImage: {fileID: 21300000, guid: cac7378ef8cdd4a088297fe84fb3f7bc, type: 3}
-  CardDescription: "\uC120\uC778\uC7A5. \uAC00\uC2DC\uAC00 \uB9CE\uB2E4. \uB180\uB78D\uAC8C\uB3C4
-    \uC6D0\uAC70\uB9AC \uC720\uB2DB."
+  CardImage: {fileID: 21300000, guid: cfda2dbba7460204fbfc502a9a316db7, type: 3}
+  CardDescription: "\uAC89\uBAA8\uC2B5\uB9CC \uBCF4\uACE0 \uD0F1\uCEE4\uB85C \uC624\uD574
+    \uBC1B\uB294 \uACBD\uC6B0\uB3C4 \uC788\uB2E4. \uB180\uB78D\uAC8C\uB3C4 \uC6D0\uAC70\uB9AC
+    \uC720\uB2DB."
   CardLevel: 1
-  UpgradeCosts: 
+  UpgradeCosts: 3200000064000000c80000005e010000f4010000
   CardModel: {fileID: 2202662579194564764, guid: 0540591aee8242245b54bb182a2ce470, type: 3}
   CardPrefab: {fileID: 7104173531795261979, guid: fa2d85cff16df854bb2c78b2a5c72bb0, type: 3}
-  SpawnCost: 0
-  SpawnCoolTime: 0
+  SpawnCost: 5
+  SpawnCoolTime: 5
   StorePrice: 0
   CardType: 2
   HaveCard: 0
   UnitUpgradeData:
-    _health: 0
-    _healthUpgradeRatio: 0
-    _attackDamage: 0
-    _attackDamageUpgradeRatio: 0
-    _attackSpeed: 0
-    _attackSpeedUpgradeRatio: 0
-    _attackRange: 0
-    _attackRangeUpgradeRatio: 0
-    _attackDetectRange: 0
-    _attackDetectRangeUpgradeRatio: 0
-    _moveSpeed: 0
-    _moveSpeedUpgradeRatio: 0
+    _health: 1200
+    _healthUpgradeRatio: 1.15
+    _attackDamage: 180
+    _attackDamageUpgradeRatio: 1.15
+    _attackSpeed: 1
+    _attackSpeedUpgradeRatio: 1
+    _attackRange: 7
+    _attackRangeUpgradeRatio: 1
+    _attackDetectRange: 10
+    _attackDetectRangeUpgradeRatio: 1
+    _moveSpeed: 4
+    _moveSpeedUpgradeRatio: 1

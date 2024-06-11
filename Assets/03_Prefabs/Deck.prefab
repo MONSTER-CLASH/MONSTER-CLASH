@@ -654,7 +654,7 @@ MonoBehaviour:
   - 0
   - 0
   mercenaryCoin: 0
-  mercenartCoinPerSecond: 1
+  mercenartCoinPerSecond: 3
 --- !u!1001 &325755465279990538
 PrefabInstance:
   m_ObjectHideFlags: 0

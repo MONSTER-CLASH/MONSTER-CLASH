@@ -9,7 +9,6 @@ public class VFXDataManager : MonoBehaviour
     [Header("Common VFX Prefabs")]
     public GameObject UnitHitVFX;
     public GameObject UnitDieVFX;
-    public GameObject StageClearVFX;
 
     private void Awake()
     {

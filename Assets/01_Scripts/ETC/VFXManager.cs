@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VFXDataManager : MonoBehaviour
+public class VFXManager : MonoBehaviour
 {
-    public static VFXDataManager Instance;
+    public static VFXManager Instance;
 
     [Header("Common VFX Prefabs")]
     public GameObject UnitHitVFX;
@@ -21,5 +21,15 @@ public class VFXDataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void InstantiateUnitHitVFX(Transform hittedUnit, GameObject vfx = null)
+    {
+        GameObject go = null;
+
+        if (vfx) go = Instantiate(vfx, hittedUnit);
+        else go = Instantiate(UnitHitVFX, hittedUnit);
+
+        go.transform.localPosition = Vector3.zero;
     }
 }

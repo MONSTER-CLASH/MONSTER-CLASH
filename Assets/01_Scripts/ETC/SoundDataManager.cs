@@ -6,6 +6,9 @@ public class SoundDataManager : MonoBehaviour
 {
     public static SoundDataManager Instance;
 
+    public AudioClip StageSelectSceneBGM;
+    public AudioClip StageSceneBGM;
+
     private void Awake()
     {
         if (Instance == null)

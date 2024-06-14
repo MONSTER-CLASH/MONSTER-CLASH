@@ -17,6 +17,11 @@ public class StageDataManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        SoundManager.Instance.SoundPlay(SoundDataManager.Instance.StageSelectSceneBGM, SoundType.BGM);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

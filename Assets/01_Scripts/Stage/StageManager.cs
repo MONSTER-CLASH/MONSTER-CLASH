@@ -31,6 +31,11 @@ public class StageManager : MonoBehaviour
         GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
     }
 
+    private void Start()
+    {
+        SoundManager.Instance.SoundPlay(SoundDataManager.Instance.StageSceneBGM, SoundType.BGM);
+    }
+
     private void Update()
     {
         _stageTime += Time.deltaTime;

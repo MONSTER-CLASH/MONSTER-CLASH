@@ -8,6 +8,7 @@ public class BuffDataManager : MonoBehaviour
 
     [Header("Negative Buff")]
     public BuffData StunBuffData;
+    public BuffData MoveSpeedDecreaseBuffData;
 
     private void Awake()
     {

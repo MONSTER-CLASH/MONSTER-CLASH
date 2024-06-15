@@ -5,8 +5,7 @@ using UnityEngine;
 public class Lightning : MonoBehaviour
 {
     [SerializeField] private LightningCardData _lightningCardData;
-    [SerializeField] private ParticleSystem _lightningParticleSystem;
-    [SerializeField] private ParticleSystem _explosionParticleSystem;
+    [SerializeField] private float _attackRange;
     private float _damage;
     private float _destroyTime;
 
@@ -15,19 +14,7 @@ public class Lightning : MonoBehaviour
         _damage = _lightningCardData.Damage;
         _destroyTime = _lightningCardData.DestroyTime;
 
-        StartCoroutine(LightningCoroutine());
-
-        Destroy(gameObject, _destroyTime);
-    }
-
-    private IEnumerator LightningCoroutine()
-    {
-        float explosionTime = _lightningParticleSystem.transform.localPosition.y / _lightningParticleSystem.main.startSpeed.constant;
-        yield return new WaitForSeconds(explosionTime);
-        
-        _explosionParticleSystem.Play();
-
-        Collider[] enemys = Physics.OverlapSphere(transform.position, 2, 1 << LayerMask.NameToLayer("Enemy"));
+        Collider[] enemys = Physics.OverlapSphere(transform.position, _attackRange, 1 << LayerMask.NameToLayer("Enemy"));
 
         foreach (Collider enemy in enemys)
         {
@@ -37,6 +24,12 @@ public class Lightning : MonoBehaviour
             }
         }
 
-        yield break;
+        Destroy(gameObject, _destroyTime);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 0, 0.75f, 0.25f);
+        Gizmos.DrawSphere(transform.position, _attackRange);
     }
 }

@@ -6,6 +6,9 @@ public class BuffDataManager : MonoBehaviour
 {
     public static BuffDataManager Instance;
 
+    [Header("Negative Buff")]
+    public BuffData StunBuffData;
+
     private void Awake()
     {
         if (Instance == null)

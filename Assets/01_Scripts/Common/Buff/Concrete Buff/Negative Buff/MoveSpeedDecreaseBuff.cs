@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSpeedDecreaseBuff : TimerBuff<MoveSpeedDecreaseBuff>
+public class MoveSpeedDecreaseBuff : Buff<MoveSpeedDecreaseBuff>
 {
     protected override BuffData _buffData => BuffDataManager.Instance.MoveSpeedDecreaseBuffData;
 
-    public MoveSpeedDecreaseBuff(float remainingTime) : base(remainingTime)
+    public MoveSpeedDecreaseBuff(float remainingTime)
     {
         
     }
@@ -16,6 +16,10 @@ public class MoveSpeedDecreaseBuff : TimerBuff<MoveSpeedDecreaseBuff>
     }
 
     public override void OnAdded(BuffSystem manager)
+    {
+    }
+
+    public override void OnUpdate(BuffSystem manager)
     {
     }
 

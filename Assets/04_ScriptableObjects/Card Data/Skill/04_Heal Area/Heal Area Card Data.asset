@@ -17,7 +17,7 @@ MonoBehaviour:
   CardDescription: "\uC544\uAD70 \uC720\uB2DB\uC758 \uCCB4\uB825\uC744 \uC9C0\uC18D\uC801\uC73C\uB85C
     \uD68C\uBCF5\uC2DC\uD0A4\uB294 \uD68C\uBCF5 \uC9C0\uC5ED\uC744 \uC0DD\uC131\uD569\uB2C8\uB2E4."
   CardLevel: 1
-  UpgradeCosts: 64000000c80000005e01000058020000e8030000
+  UpgradeCosts: 
   CardModel: {fileID: 4574100063969645140, guid: f7c4e72f623e9fa49acc609f07d6da72, type: 3}
   CardPrefab: {fileID: 6520201360484417519, guid: 86c94c272a68288498db5d6b852b6c41, type: 3}
   SpawnCost: 4
@@ -38,7 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 0
     _moveSpeed: 0
     _moveSpeedUpgradeRatio: 0
-  Heal: 100
+  Heal: 150
   HealUpgradeRatio: 1.1
   HealImage: {fileID: 21300000, guid: 1f0a5101f046446228923d050008f777, type: 3}
   HealName: "\uD68C\uBCF5\uB7C9"

@@ -17,7 +17,7 @@ MonoBehaviour:
   CardDescription: "\uC801\uAD70 \uC720\uB2DB\uC5D0\uAC8C \uC9C0\uC18D\uC801\uC73C\uB85C
     \uD53C\uD574\uB97C \uC785\uD788\uB294 \uD654\uC5FC \uC9C0\uC5ED\uC744 \uC0DD\uC131\uD569\uB2C8\uB2E4."
   CardLevel: 1
-  UpgradeCosts: 190000003200000064000000c800000090010000
+  UpgradeCosts: 
   CardModel: {fileID: 383036057251238456, guid: ce83f111e53548541b56334d2ce802bb, type: 3}
   CardPrefab: {fileID: 4464565741301224143, guid: ca527bbe2d1611b44b431e61d77e319d, type: 3}
   SpawnCost: 3
@@ -38,7 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 0
     _moveSpeed: 0
     _moveSpeedUpgradeRatio: 0
-  Damage: 10
+  Damage: 100
   DamageUpgradeRatio: 1.15
   DamageImage: {fileID: 21300000, guid: 4574f1ebea9e14588a88aed1815dca2d, type: 3}
   DamageName: "\uACF5\uACA9\uB825"

@@ -11,6 +11,8 @@ public class FireArea : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.HealAreaSFX);
+
         _damage = _fireAreaCardData.Damage;
         _tickTime = _fireAreaCardData.TickTime;
         _destoryTime = _fireAreaCardData.DurationTime;
@@ -40,6 +42,6 @@ public class FireArea : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0.5f, 0, 0, 0.15f);
-        Gizmos.DrawSphere(transform.position, 2.5f);
+        //Gizmos.DrawSphere(transform.position, 2.5f);
     }
 }

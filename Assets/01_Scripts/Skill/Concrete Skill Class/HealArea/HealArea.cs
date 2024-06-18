@@ -11,6 +11,8 @@ public class HealArea : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.HealAreaSFX);
+
         _heal = _healAreaCardData.Heal;
         _tickTime = _healAreaCardData.TickTime;
         _destoryTime = _healAreaCardData.DurationTime;

@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: "\uC2AC\uB77C\uC784"
   CardImage: {fileID: 21300000, guid: 2dfc65943b39dfd429b2600be2767390, type: 3}
-  CardDescription: "\uB048\uC801\uD55C \uCCAD\uB144."
+  CardDescription: "\uAC00\uC7A5 \uBCF4\uD3B8\uC801\uC778 \uC804\uC790 \uC720\uB2DB."
   CardLevel: 1
-  UpgradeCosts: 0a000000140000003200000064000000c8000000
+  UpgradeCosts: 64000000c8000000f4010000e8030000d0070000
   CardModel: {fileID: 6023488376491088715, guid: c542b46d5967ff34aa907eb5f16c15bb, type: 3}
   CardPrefab: {fileID: 7164601812322574416, guid: ec8d2b285cf5b3d419a0fd2347190c7c, type: 3}
-  SpawnCost: 1
-  SpawnCoolTime: 3
+  SpawnCost: 4
+  SpawnCoolTime: 7
   StorePrice: 10
   CardType: 0
   HaveCard: 1
@@ -35,5 +35,5 @@ MonoBehaviour:
     _attackRangeUpgradeRatio: 1
     _attackDetectRange: 5
     _attackDetectRangeUpgradeRatio: 1
-    _moveSpeed: 3
+    _moveSpeed: 2
     _moveSpeedUpgradeRatio: 1

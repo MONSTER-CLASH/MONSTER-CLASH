@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: "\uB4DC\uB798\uACE4"
   CardImage: {fileID: 21300000, guid: cea7e9cc3f496fe48b3477c92cd1d9fc, type: 3}
-  CardDescription: "\uB4DC\uB798\uACE4\uC774\uC9C0\uB9CC \uC880 \uB6B1\uB6B1\uD558\uB2E4.
-    \uD558\uC9C0\uB9CC \uB6B1\uB6B1\uD558\uB2E4\uACE0 \uB180\uB9B0\uB2E4\uBA74 \uD1B5\uAD6C\uC774\uAC00
-    \uB420 \uAC83\uC774\uB2E4."
+  CardDescription: "\uC6B0\uB9AC\uAC00 \uC544\uB294 \uB4DC\uB798\uACE4\uACFC\uB294
+    \uB2E4\uB974\uAC8C \uB6B1\uB6B1\uD558\uB2E4. \uD558\uC9C0\uB9CC \uB6B1\uB6B1\uD558\uB2E4\uACE0
+    \uD560 \uACBD\uC6B0 \uD1B5\uAD6C\uC774\uAC00 \uB420 \uC218\uB3C4 \uC788\uC73C\uB2C8
+    \uC8FC\uC758\uD558\uB3C4\uB85D."
   CardLevel: 1
-  UpgradeCosts: 4b000000960000002c010000f4010000e8030000
+  UpgradeCosts: 64000000c8000000f4010000e8030000d0070000
   CardModel: {fileID: 1715076748565410953, guid: 43868428771d18b43be280ddd795646a, type: 3}
   CardPrefab: {fileID: 337252649637521631, guid: 8609da8ad2d9eca49ac3f9a3b92a70d6, type: 3}
   SpawnCost: 6
-  SpawnCoolTime: 7
+  SpawnCoolTime: 8
   StorePrice: 0
   CardType: 2
   HaveCard: 0
@@ -33,9 +34,9 @@ MonoBehaviour:
     _attackDamageUpgradeRatio: 1.15
     _attackSpeed: 1
     _attackSpeedUpgradeRatio: 1
-    _attackRange: 7
+    _attackRange: 5
     _attackRangeUpgradeRatio: 1
-    _attackDetectRange: 8
+    _attackDetectRange: 6
     _attackDetectRangeUpgradeRatio: 1
-    _moveSpeed: 3
+    _moveSpeed: 2
     _moveSpeedUpgradeRatio: 1

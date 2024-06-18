@@ -8,11 +8,13 @@ using UnityEngine.AI;
 [RequireComponent(typeof(UnitStatusSystem))]
 [RequireComponent(typeof(HealthSystem))]
 [RequireComponent(typeof(AttackSystem))]
+[RequireComponent(typeof(BuffSystem))]
 public class UnitController : MonoBehaviour
 {
     protected UnitStatusSystem _unitStatusSystem;
     private HealthSystem _healthSystem;
     protected AttackSystem _attackSystem;
+    protected BuffSystem _buffSystem;
 
     private NavMeshAgent _agent;
     private Animator _animator;
@@ -101,7 +103,8 @@ public class UnitController : MonoBehaviour
 
     protected void Attack()
     {
-        if (!_canAttack || !_attackTarget || _healthSystem.IsDead || StageManager.Instance.IsStageEnd) return;
+        if (!_canAttack || !_attackTarget || _healthSystem.IsDead || 
+            StageManager.Instance.IsStageEnd || _buffSystem.ContainsBuff<StunBuff>()) return;
 
         Collider[] enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackRange, _oppositeLayer);
 
@@ -133,7 +136,7 @@ public class UnitController : MonoBehaviour
         bool isEnemyExistInAttackRange = enemys.Contains(_attackTarget?.GetComponent<Collider>());
 
         _agent.isStopped = !_canMove || (_oppositeBasePos.GetComponent<HealthSystem>().IsDead) || 
-            _healthSystem.IsDead || isEnemyExistInAttackRange || StageManager.Instance.IsStageEnd;
+            _healthSystem.IsDead || isEnemyExistInAttackRange || StageManager.Instance.IsStageEnd || _buffSystem.ContainsBuff<StunBuff>();
 
         _animator.SetInteger("Move", _canMove && !StageManager.Instance.IsStageEnd ? 1 : 0);
 
@@ -158,6 +161,7 @@ public class UnitController : MonoBehaviour
 
         yield return null;
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
+        Instantiate(VFXManager.Instance.UnitDieVFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
 
         yield break;

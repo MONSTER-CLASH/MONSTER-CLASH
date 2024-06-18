@@ -13,10 +13,21 @@ public class StageResultUIController : MonoBehaviour
     [SerializeField] private Image[] _stageRewardUnitImages;
     [SerializeField] private Button _stageSelectSceneBtn;
     [SerializeField] private Button _stageRetryBtn;
+    [SerializeField] private GameObject _stageWinParticle;
 
     private void Awake()
     {
-        _stageSelectSceneBtn.onClick.AddListener(() => { SceneManager.LoadScene("Stage Select Scene"); });
+        _stageSelectSceneBtn.onClick.AddListener(() =>
+        {
+            if (StageDataManager.LastClearStageLevel == 3)
+            {
+                SceneManager.LoadScene("Ending Scene");
+            }
+            else
+            {
+                SceneManager.LoadScene("Stage Select Scene");
+            }
+        });
         _stageRetryBtn.onClick.AddListener(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
     }
 
@@ -30,6 +41,7 @@ public class StageResultUIController : MonoBehaviour
             _stageWinResultUI.SetActive(true);
             _stageRewardGoldText.text = stageData.StageWinGold.ToString();
             _stageSelectSceneBtn.gameObject.SetActive(true);
+            _stageWinParticle.SetActive(true);
 
             for (int i=0; i < _stageRewardUnitImages.Length; i++)
             {

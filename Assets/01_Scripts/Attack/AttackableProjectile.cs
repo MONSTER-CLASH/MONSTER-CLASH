@@ -35,6 +35,7 @@ public class AttackableProjectile : AttackSystem
     {
         if (_target != null && other.gameObject == _target)
         {
+            VFXManager.Instance.InstantiateUnitHitVFX(other.transform);
             SendDamage(_target, _damage, _attacker);
             Destroy(gameObject);
         }

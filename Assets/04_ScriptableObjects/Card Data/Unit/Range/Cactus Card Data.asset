@@ -18,24 +18,24 @@ MonoBehaviour:
     \uBC1B\uB294 \uACBD\uC6B0\uB3C4 \uC788\uB2E4. \uB180\uB78D\uAC8C\uB3C4 \uC6D0\uAC70\uB9AC
     \uC720\uB2DB."
   CardLevel: 1
-  UpgradeCosts: 3200000064000000c80000005e010000f4010000
+  UpgradeCosts: 64000000c8000000f4010000e8030000d0070000
   CardModel: {fileID: 2202662579194564764, guid: 0540591aee8242245b54bb182a2ce470, type: 3}
   CardPrefab: {fileID: 7104173531795261979, guid: fa2d85cff16df854bb2c78b2a5c72bb0, type: 3}
   SpawnCost: 5
-  SpawnCoolTime: 5
+  SpawnCoolTime: 8
   StorePrice: 0
   CardType: 2
-  HaveCard: 0
+  HaveCard: 1
   UnitUpgradeData:
-    _health: 1200
+    _health: 750
     _healthUpgradeRatio: 1.15
-    _attackDamage: 180
+    _attackDamage: 100
     _attackDamageUpgradeRatio: 1.15
-    _attackSpeed: 1
+    _attackSpeed: 1.5
     _attackSpeedUpgradeRatio: 1
     _attackRange: 7
     _attackRangeUpgradeRatio: 1
     _attackDetectRange: 10
     _attackDetectRangeUpgradeRatio: 1
-    _moveSpeed: 4
+    _moveSpeed: 2
     _moveSpeedUpgradeRatio: 1

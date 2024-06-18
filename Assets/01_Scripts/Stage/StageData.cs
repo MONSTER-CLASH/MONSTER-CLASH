@@ -7,7 +7,7 @@ public class StageData : ScriptableObject
     [Header("Stage Info")]
     public int StageLevel;
     public string StageName;
-    public string StageDescription;
+    [TextArea] public string StageDescription;
 
     [Header("Player Info")]
     public BaseStatusData PlayerBaseStatusData;

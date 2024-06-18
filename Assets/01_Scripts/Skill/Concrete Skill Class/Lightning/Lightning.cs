@@ -11,6 +11,8 @@ public class Lightning : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.LightningSFX);
+
         _damage = _lightningCardData.Damage;
         _destroyTime = _lightningCardData.DestroyTime;
 

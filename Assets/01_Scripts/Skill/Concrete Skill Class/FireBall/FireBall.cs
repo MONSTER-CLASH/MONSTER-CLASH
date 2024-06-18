@@ -9,6 +9,8 @@ public class FireBall : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.FireBallSFX);
+
         _damage = _fireBallCardData.Damage;
         _destroyTime = _fireBallCardData.DestroyTime;
 

@@ -11,6 +11,8 @@ public class FireArea : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.HealAreaSFX);
+
         _damage = _fireAreaCardData.Damage;
         _tickTime = _fireAreaCardData.TickTime;
         _destoryTime = _fireAreaCardData.DurationTime;

@@ -6,8 +6,23 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
+    [Header("Audio Sources")]
     [SerializeField] private AudioSource _bgmAudioSource;
     [SerializeField] private AudioSource _sfxAudioSource;
+
+    [Header("BGM")]
+    public AudioClip StageSelectSceneBGM;
+    public AudioClip StageSceneBGM;
+
+    [Header("Stage SFX")]
+    public AudioClip StageWinSFX;
+    public AudioClip StageDefeatSFX;
+
+    [Header("Skill SFX")]
+    public AudioClip FireBallSFX;
+    public AudioClip LightningSFX;
+    public AudioClip HealAreaSFX;
+    public AudioClip FireAreaSFX;
 
     private void Awake()
     {

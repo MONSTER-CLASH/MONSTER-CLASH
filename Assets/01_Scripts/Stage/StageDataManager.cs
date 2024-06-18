@@ -19,7 +19,7 @@ public class StageDataManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.SoundPlay(SoundDataManager.Instance.StageSelectSceneBGM, SoundType.BGM);
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.StageSelectSceneBGM, SoundType.BGM);
     }
 
     private void Update()

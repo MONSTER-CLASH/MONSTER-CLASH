@@ -33,7 +33,7 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.SoundPlay(SoundDataManager.Instance.StageSceneBGM, SoundType.BGM);
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.StageSceneBGM, SoundType.BGM);
     }
 
     private void Update()

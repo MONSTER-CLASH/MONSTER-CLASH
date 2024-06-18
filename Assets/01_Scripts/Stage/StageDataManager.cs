@@ -60,8 +60,8 @@ public class StageDataManager : MonoBehaviour
 
         for (int i=0; i<_subStageDatas.Length; i++)
         {
-            if (_subStageDatas[i].RequiredMinMainStage >= LastClearStageLevel && 
-                _subStageDatas[i].RequiredMaxMainStage <= LastClearStageLevel &&
+            if (_subStageDatas[i].RequiredMinMainStage <= LastClearStageLevel && 
+                _subStageDatas[i].RequiredMaxMainStage >= LastClearStageLevel &&
                 stageCount < getStageCount)
             {
                 stageDatas.Add(_subStageDatas[i]);

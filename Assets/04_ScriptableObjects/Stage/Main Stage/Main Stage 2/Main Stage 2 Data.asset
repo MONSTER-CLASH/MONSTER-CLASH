@@ -15,8 +15,8 @@ MonoBehaviour:
   StageLevel: 2
   StageName: "\uB9C8\uBC95 \uB85C\uBD07 \uD30C\uAD34"
   StageDescription: "\uBAB0\uB824\uC624\uB294 \uB85C\uBD07\uACFC \uB9C8\uBC95\uC0AC\uB4E4\uC744
-    \uCC98\uCE58\uD574\uC8FC\uC138\uC694. \uBCF4\uC0C1\uC73C\uB85C \"\uB85C\uBD07\"
-    \uCE74\uB4DC\uC640 \"\uB9C8\uBC95\uC0AC\" \uCE74\uB4DC\uB97C \uB4DC\uB9BD\uB2C8\uB2E4."
+    \uCC98\uCE58\uD574\uC8FC\uC138\uC694. \uBCF4\uC0C1\uC73C\uB85C '\uB85C\uBD07'
+    \uCE74\uB4DC\uC640 '\uB9C8\uBC95\uC0AC' \uCE74\uB4DC\uB97C \uB4DC\uB9BD\uB2C8\uB2E4."
   PlayerBaseStatusData: {fileID: 11400000, guid: 5c4abf8a9e3e4414abd66608c7a9cb68, type: 2}
   EnemyBaseStatusData: {fileID: 11400000, guid: b03804b3708f28546bf570c4abd121f9, type: 2}
   LeftUnitSpawnDatas:

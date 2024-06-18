@@ -75,5 +75,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3efe019d2e1e884bb53f106c0c1c851, type: 2}
   - {fileID: 11400000, guid: 33b2d22b955f91c4997a2fa00b1cc8ce, type: 2}
   IsSubStage: 1
-  RequiredMinMainStage: 2
+  RequiredMinMainStage: 0
   RequiredMaxMainStage: 3

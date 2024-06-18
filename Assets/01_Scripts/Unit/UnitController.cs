@@ -35,6 +35,7 @@ public class UnitController : MonoBehaviour
         _unitStatusSystem = GetComponent<UnitStatusSystem>();
         _healthSystem = GetComponent<HealthSystem>();
         _attackSystem = GetComponent<AttackSystem>();
+        _buffSystem = GetComponent<BuffSystem>();
 
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();

@@ -27,6 +27,9 @@ public class UnitController : MonoBehaviour
     private bool _canMove => _motionStopTime < Time.time;
     private float _motionStopTime;
 
+    protected bool _canUseSkill => _skillCool < Time.time;
+    protected float _skillCool;
+
     private LayerMask _oppositeLayer;
 
 
@@ -55,6 +58,7 @@ public class UnitController : MonoBehaviour
         Move();
         DetectAttackTarget();
         Attack();
+        HandleSkill();
     }
 
     protected void SetOppositeBase()
@@ -151,6 +155,8 @@ public class UnitController : MonoBehaviour
         }
     }
 
+    protected virtual void HandleSkill() { }
+
     private void HandleDie(GameObject killer)
     {
         StartCoroutine(DieCoroutine(killer));
@@ -173,10 +179,10 @@ public class UnitController : MonoBehaviour
         if (_unitStatusSystem)
         {
             Gizmos.color = new Color(0, 1, 0, 0.25f);
-            Gizmos.DrawSphere(transform.position, _unitStatusSystem.AttackDetectRange);
+            Gizmos.DrawWireSphere(transform.position, _unitStatusSystem.AttackDetectRange);
 
             Gizmos.color = new Color(1, 0, 0, 0.25f);
-            Gizmos.DrawSphere(transform.position, _unitStatusSystem.AttackRange);
+            Gizmos.DrawWireSphere(transform.position, _unitStatusSystem.AttackRange);
         }
     }
 }

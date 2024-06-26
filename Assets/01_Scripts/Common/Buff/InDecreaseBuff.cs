@@ -13,7 +13,7 @@ public abstract class InDecreaseBuff<T> : Buff<T> where T : InDecreaseBuff<T>
     public InDecreaseBuff(InDecreaseType inDecreaseType, float value, float remainingTime)
     {
         InDecreaseType = inDecreaseType;
-        Value = value;
+        Value = inDecreaseType == InDecreaseType.Constant ? value : 1 + 0.1f * value;
         RemainingType = remainingTime;
     }
 

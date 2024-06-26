@@ -17,7 +17,7 @@ public class UnitController : MonoBehaviour
     protected BuffSystem _buffSystem;
 
     private NavMeshAgent _agent;
-    private Animator _animator;
+    protected Animator _animator;
 
     private bool _canAttack => _attackCool < Time.time;
     private float _attackCool;
@@ -115,8 +115,9 @@ public class UnitController : MonoBehaviour
 
         if (enemys.Contains(_attackTarget.GetComponent<Collider>()))
         {
-            _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
+            _animator.SetTrigger("Attack");
             StartCoroutine(SetMotionStopTime());
+            _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
         }
     }
 
@@ -128,9 +129,8 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    private IEnumerator SetMotionStopTime()
+    protected IEnumerator SetMotionStopTime()
     {
-        _animator.SetTrigger("Attack");
         yield return null;
         _motionStopTime = Time.time + _animator.GetCurrentAnimatorStateInfo(0).length;
     }

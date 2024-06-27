@@ -40,5 +40,5 @@ MonoBehaviour:
     _moveSpeedUpgradeRatio: 1
   SkillVFX: {fileID: 0}
   SkillCoolTime: 8
-  SkillIncreaseCoefficient: 35
+  SkillIncreaseCoefficient: 0.35
   SkillDurationTime: 2.5

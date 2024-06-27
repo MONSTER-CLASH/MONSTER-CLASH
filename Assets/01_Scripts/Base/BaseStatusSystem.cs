@@ -14,7 +14,7 @@ public class BaseStatusSystem : StatusSystem
         Name = _baseStatusData.Name;
         MaxHealth = _baseStatusData.Health;
         CurrentHealth = MaxHealth;
-        AttackDamage = _baseStatusData.AttackDamage;
+        _attackDamage = _baseStatusData.AttackDamage;
         AttackSpeed = _baseStatusData.AttackSpeed;
         AttackRange = _baseStatusData.AttackRange;
     }

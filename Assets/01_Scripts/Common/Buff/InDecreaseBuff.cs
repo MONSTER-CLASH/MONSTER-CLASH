@@ -8,13 +8,13 @@ public abstract class InDecreaseBuff<T> : Buff<T> where T : InDecreaseBuff<T>
 
     public InDecreaseType InDecreaseType { get; }
     public float Value { get; }
-    public float RemainingType { get; }
+    public float RemainingTime { get; }
 
     public InDecreaseBuff(InDecreaseType inDecreaseType, float value, float remainingTime)
     {
         InDecreaseType = inDecreaseType;
-        Value = inDecreaseType == InDecreaseType.Constant ? value : 1 + 0.1f * value;
-        RemainingType = remainingTime;
+        Value = value;
+        RemainingTime = remainingTime;
     }
 
     public override void OnAdded(BuffSystem manager)
@@ -23,7 +23,7 @@ public abstract class InDecreaseBuff<T> : Buff<T> where T : InDecreaseBuff<T>
         {
             InDecreaseType = InDecreaseType,
             Value = Value,
-            RemainingTime = RemainingType
+            RemainingTime = RemainingTime
         });
     }
 
@@ -33,21 +33,27 @@ public abstract class InDecreaseBuff<T> : Buff<T> where T : InDecreaseBuff<T>
         {
             InDecreaseType = other.InDecreaseType,
             Value = other.Value,
-            RemainingTime = other.RemainingType
+            RemainingTime = other.RemainingTime
         });
     }
 
     public override void OnUpdate(BuffSystem manager)
     {
-        foreach(var element in _inDecreaseInfos)
-        {
-            element.RemainingTime -= Time.deltaTime;
-            if (element.RemainingTime <= 0) _inDecreaseInfos.Remove(element);
-        }
-
         if (_inDecreaseInfos.Count == 0)
         {
             manager.RemoveBuff<T>();
+        }
+        else
+        {
+            for (int i=0; i< _inDecreaseInfos.Count; i++)
+            {
+                _inDecreaseInfos[i].RemainingTime -= Time.deltaTime;
+                if (_inDecreaseInfos[i].RemainingTime <= 0)
+                {
+                    _inDecreaseInfos.RemoveAt(i);
+                    i--;
+                }
+            }
         }
     }
 

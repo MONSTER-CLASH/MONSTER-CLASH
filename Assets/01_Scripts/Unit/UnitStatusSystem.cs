@@ -15,7 +15,7 @@ public class UnitStatusSystem : StatusSystem
             Name = unitData.CardName;
             MaxHealth = unitData.GetUnitStatusData().Health;
             CurrentHealth = MaxHealth;
-            AttackDamage = unitData.GetUnitStatusData().AttackDamage;
+            _attackDamage = unitData.GetUnitStatusData().AttackDamage;
             AttackSpeed = unitData.GetUnitStatusData().AttackSpeed;
             AttackRange = unitData.GetUnitStatusData().AttackRange;
             AttackDetectRange = unitData.GetUnitStatusData().AttackDetectRange;
@@ -32,7 +32,7 @@ public class UnitStatusSystem : StatusSystem
         Name = unitData.CardName;
         MaxHealth = unitData.GetUnitStatusData(unitLevel).Health;
         CurrentHealth = MaxHealth;
-        AttackDamage = unitData.GetUnitStatusData(unitLevel).AttackDamage;
+        _attackDamage = unitData.GetUnitStatusData(unitLevel).AttackDamage;
         AttackSpeed = unitData.GetUnitStatusData(unitLevel).AttackSpeed;
         AttackRange = unitData.GetUnitStatusData(unitLevel).AttackRange;
         AttackDetectRange = unitData.GetUnitStatusData(unitLevel).AttackDetectRange;

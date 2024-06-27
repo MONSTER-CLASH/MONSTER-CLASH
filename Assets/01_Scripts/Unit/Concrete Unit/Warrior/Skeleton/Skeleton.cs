@@ -13,9 +13,6 @@ public class Skeleton : UnitController
             _buffSystem.AddBuff(new AttackDamageIncreaseBuff(
                 InDecreaseType.Coefficient, _skeletonCardData.SkillIncreaseCoefficient, _skeletonCardData.SkillDurationTime));
 
-            _animator.SetTrigger("Skill");
-            StartCoroutine(SetMotionStopTime());
-
             _skillCool = Time.time + _skeletonCardData.SkillCoolTime;
         }
     }

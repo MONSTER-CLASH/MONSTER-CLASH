@@ -2132,6 +2132,7 @@ GameObject:
   - component: {fileID: 5608448609713486835}
   - component: {fileID: 7662259908630617822}
   - component: {fileID: 4226096290716460651}
+  - component: {fileID: 5792242844561254860}
   m_Layer: 6
   m_Name: Player EvilMage
   m_TagString: Untagged
@@ -2192,7 +2193,6 @@ MonoBehaviour:
   Name: "\uB9C8\uBC95\uC0AC"
   MaxHealth: 0
   CurrentHealth: 0
-  AttackDamage: 0
   AttackSpeed: 0
   AttackRange: 0
   AttackDetectRange: 0
@@ -2234,6 +2234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8742faaddff48fd4589375af97a49cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _evilMageCardData: {fileID: 11400000, guid: b0c972887d5f2b542874c65ccdd1b8fb, type: 2}
+  _evilMageSkillPrefab: {fileID: 5380655978965893416, guid: a576de3ebe942e04f95a6320a061d0c5, type: 3}
   _attackProjectileSpawnPos: {fileID: 8832897651771097996}
   _attackProjectilePrefab: {fileID: 5368602506785596673, guid: ed782447f1036424cb883b149a8ffe23, type: 3}
 --- !u!195 &7662259908630617822
@@ -2279,6 +2281,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5792242844561254860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814391999353116905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd12a4f9581b57f43b18944e6a12c362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8943978989694138207
 GameObject:
   m_ObjectHideFlags: 0

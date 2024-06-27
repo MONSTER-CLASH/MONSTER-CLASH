@@ -38,3 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 1
     _moveSpeed: 1.5
     _moveSpeedUpgradeRatio: 1
+  SkillCoolTime: 8
+  SkillHitDamage: 500
+  SkillSplashDamage: 200
+  SkillStunTime: 1

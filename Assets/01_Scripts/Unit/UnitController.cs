@@ -24,7 +24,7 @@ public class UnitController : MonoBehaviour
     protected GameObject _attackTarget;
     private Transform _oppositeBasePos;
 
-    private bool _canMove => _motionStopTime < Time.time;
+    private bool _canMove => _motionStopTime < Time.time && !_buffSystem.ContainsBuff<StunBuff>();
     private float _motionStopTime;
 
     protected bool _canUseSkill => _skillCool < Time.time;

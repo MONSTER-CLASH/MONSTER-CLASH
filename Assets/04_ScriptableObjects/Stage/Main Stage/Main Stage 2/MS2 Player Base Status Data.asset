@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MS2 Player Base Status Data
   m_EditorClassIdentifier: 
   Name: "\uC544\uAD70 \uAE30\uC9C0"
-  Health: 2000
+  Health: 4000
   AttackDamage: 100
   AttackSpeed: 1.5
   AttackRange: 12.5

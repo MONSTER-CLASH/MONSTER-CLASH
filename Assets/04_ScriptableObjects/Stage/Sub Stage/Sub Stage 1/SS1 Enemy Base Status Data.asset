@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SS1 Enemy Base Status Data
   m_EditorClassIdentifier: 
   Name: "\uC801\uAD70 \uAE30\uC9C0"
-  Health: 1750
+  Health: 3000
   AttackDamage: 75
   AttackSpeed: 1
   AttackRange: 10

@@ -54,7 +54,7 @@ public class EvilMageSkill : MonoBehaviour
                 enemy.GetComponent<BuffSystem>()?.AddBuff(new StunBuff(_stunTime));
             }
 
-            Instantiate(_splashVFX, transform.position, Quaternion.identity);
+            Destroy(Instantiate(_splashVFX, transform.position, Quaternion.identity), 3);
 
             Destroy(gameObject);
         }

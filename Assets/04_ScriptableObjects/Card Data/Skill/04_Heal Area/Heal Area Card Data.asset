@@ -38,7 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 0
     _moveSpeed: 0
     _moveSpeedUpgradeRatio: 0
-  Heal: 150
+  Heal: 250
   HealUpgradeRatio: 1.1
   HealImage: {fileID: 21300000, guid: 1f0a5101f046446228923d050008f777, type: 3}
   HealName: "\uD68C\uBCF5\uB7C9"

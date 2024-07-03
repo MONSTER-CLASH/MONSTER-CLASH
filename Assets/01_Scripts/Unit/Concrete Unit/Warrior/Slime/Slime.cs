@@ -10,7 +10,7 @@ public class Slime : UnitController
     {
         if (_canUseSkill)
         {
-            Instantiate(_slimeCardData.SkillVFX, transform.position, Quaternion.identity);
+            Destroy(Instantiate(_slimeCardData.SkillVFX, transform.position, Quaternion.identity), 3);
 
             LayerMask enemyLayer = 0;
             if (gameObject.layer == LayerMask.NameToLayer("Player")) enemyLayer = LayerMask.GetMask("Enemy");

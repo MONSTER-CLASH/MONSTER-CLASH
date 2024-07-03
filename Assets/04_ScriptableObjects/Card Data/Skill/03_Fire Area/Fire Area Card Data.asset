@@ -38,7 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 0
     _moveSpeed: 0
     _moveSpeedUpgradeRatio: 0
-  Damage: 100
+  Damage: 200
   DamageUpgradeRatio: 1.15
   DamageImage: {fileID: 21300000, guid: 4574f1ebea9e14588a88aed1815dca2d, type: 3}
   DamageName: "\uACF5\uACA9\uB825"

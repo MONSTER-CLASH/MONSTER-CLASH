@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 5331652582497889198}
   - component: {fileID: 8080481881909562220}
   - component: {fileID: 4523776117218130884}
+  - component: {fileID: 7353552041914300917}
   m_Layer: 7
   m_Name: Enemy Dragon
   m_TagString: Untagged
@@ -139,7 +140,6 @@ MonoBehaviour:
   Name: "\uB4DC\uB798\uACE4"
   MaxHealth: 0
   CurrentHealth: 0
-  AttackDamage: 0
   AttackSpeed: 0
   AttackRange: 0
   AttackDetectRange: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc996b9857e5594981bb336afc0bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dragonCardData: {fileID: 11400000, guid: f3efe019d2e1e884bb53f106c0c1c851, type: 2}
   _attackProjectileSpawnPos: {fileID: 4650298473346869823}
   _attackProjectilePrefab: {fileID: 5368602506785596673, guid: 1302c2fb40d37844b93225a89b02e98f, type: 3}
 --- !u!195 &8080481881909562220
@@ -226,6 +227,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7353552041914300917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337252649637521631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd12a4f9581b57f43b18944e6a12c362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589903383386284674
 GameObject:
   m_ObjectHideFlags: 0

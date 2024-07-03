@@ -12,6 +12,11 @@ public class EvilMageSkill : MonoBehaviour
     private float _stunTime;
     private float _speed;
 
+    private void Awake()
+    {
+        Destroy(gameObject, 3);
+    }
+
     private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
@@ -53,11 +58,5 @@ public class EvilMageSkill : MonoBehaviour
 
             Destroy(gameObject);
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 2.5f);
     }
 }

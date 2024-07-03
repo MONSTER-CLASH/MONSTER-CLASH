@@ -10,6 +10,9 @@ public class BuffDataManager : MonoBehaviour
     public BuffData StunBuffData;
     public BuffData MoveSpeedDecreaseBuffData;
 
+    [Header("Positive Buff")]
+    public BuffData AttackDamageIncreaseBuffData;
+
     private void Awake()
     {
         if (Instance == null)

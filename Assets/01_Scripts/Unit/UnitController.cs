@@ -17,15 +17,18 @@ public class UnitController : MonoBehaviour
     protected BuffSystem _buffSystem;
 
     private NavMeshAgent _agent;
-    private Animator _animator;
+    protected Animator _animator;
 
     private bool _canAttack => _attackCool < Time.time;
     private float _attackCool;
     protected GameObject _attackTarget;
     private Transform _oppositeBasePos;
 
-    private bool _canMove => _motionStopTime < Time.time;
+    private bool _canMove => _motionStopTime < Time.time && !_buffSystem.ContainsBuff<StunBuff>();
     private float _motionStopTime;
+
+    protected bool _canUseSkill => _skillCool < Time.time;
+    protected float _skillCool;
 
     private LayerMask _oppositeLayer;
 
@@ -55,6 +58,7 @@ public class UnitController : MonoBehaviour
         Move();
         DetectAttackTarget();
         Attack();
+        HandleSkill();
     }
 
     protected void SetOppositeBase()
@@ -111,8 +115,9 @@ public class UnitController : MonoBehaviour
 
         if (enemys.Contains(_attackTarget.GetComponent<Collider>()))
         {
-            _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
+            _animator.SetTrigger("Attack");
             StartCoroutine(SetMotionStopTime());
+            _attackCool = Time.time + (1f / _unitStatusSystem.AttackSpeed);
         }
     }
 
@@ -124,9 +129,8 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    private IEnumerator SetMotionStopTime()
+    protected IEnumerator SetMotionStopTime()
     {
-        _animator.SetTrigger("Attack");
         yield return null;
         _motionStopTime = Time.time + _animator.GetCurrentAnimatorStateInfo(0).length;
     }
@@ -151,6 +155,8 @@ public class UnitController : MonoBehaviour
         }
     }
 
+    protected virtual void HandleSkill() { }
+
     private void HandleDie(GameObject killer)
     {
         StartCoroutine(DieCoroutine(killer));
@@ -173,10 +179,10 @@ public class UnitController : MonoBehaviour
         if (_unitStatusSystem)
         {
             Gizmos.color = new Color(0, 1, 0, 0.25f);
-            Gizmos.DrawSphere(transform.position, _unitStatusSystem.AttackDetectRange);
+            Gizmos.DrawWireSphere(transform.position, _unitStatusSystem.AttackDetectRange);
 
             Gizmos.color = new Color(1, 0, 0, 0.25f);
-            Gizmos.DrawSphere(transform.position, _unitStatusSystem.AttackRange);
+            Gizmos.DrawWireSphere(transform.position, _unitStatusSystem.AttackRange);
         }
     }
 }

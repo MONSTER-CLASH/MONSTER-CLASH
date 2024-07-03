@@ -695,6 +695,7 @@ GameObject:
   - component: {fileID: 2833634986935240181}
   - component: {fileID: 4773495511557024064}
   - component: {fileID: 5794909758920432428}
+  - component: {fileID: 2153437284425970264}
   m_Layer: 7
   m_Name: Enemy Cactus
   m_TagString: Untagged
@@ -755,7 +756,6 @@ MonoBehaviour:
   Name: "\uC120\uC778\uC7A5"
   MaxHealth: 0
   CurrentHealth: 0
-  AttackDamage: 0
   AttackSpeed: 0
   AttackRange: 0
   AttackDetectRange: 0
@@ -797,6 +797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954c776120cfa134490d49c48092ef31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cactusCardData: {fileID: 11400000, guid: ef45048c9cfc14d419ae18d8ebe3cb33, type: 2}
+  _skillProjectilePrefab: {fileID: 2984004995791714006, guid: 729b0a44c545cf649ad390b0aebf25b5, type: 3}
   _attackProjectileSpawnPos: {fileID: 2292398885833696196}
   _attackProjectilePrefab: {fileID: 5368602506785596673, guid: b6029e223b98b144e993098301c354c5, type: 3}
 --- !u!195 &4773495511557024064
@@ -842,6 +844,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2153437284425970264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104173531795261979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd12a4f9581b57f43b18944e6a12c362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8846168141320417871
 GameObject:
   m_ObjectHideFlags: 0

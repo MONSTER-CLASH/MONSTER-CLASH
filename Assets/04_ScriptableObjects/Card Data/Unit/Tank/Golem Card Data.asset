@@ -38,3 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 1
     _moveSpeed: 2
     _moveSpeedUpgradeRatio: 1
+  SkillCoolTime: 7
+  SkillStunTime: 1.5
+  SkillHitVFX: {fileID: 4186470608034871016, guid: 4b9a3b2ca3b5a5c42bcfa2af0d62c65a, type: 3}
+  SkillAttackVFX: {fileID: 4464204545794115248, guid: 4487efb071ef32945b8a3b9ac76f6f7e, type: 3}

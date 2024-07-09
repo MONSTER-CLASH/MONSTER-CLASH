@@ -2236,6 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _evilMageCardData: {fileID: 11400000, guid: b0c972887d5f2b542874c65ccdd1b8fb, type: 2}
   _evilMageSkillPrefab: {fileID: 5380655978965893416, guid: a576de3ebe942e04f95a6320a061d0c5, type: 3}
+  _evilMageSkillChargePrefab: {fileID: 2037249967788233916, guid: 16ac1a523a4d6e748914e00f19c5b3f3, type: 3}
   _attackProjectileSpawnPos: {fileID: 5658232290370486964}
   _attackProjectilePrefab: {fileID: 5368602506785596673, guid: ed782447f1036424cb883b149a8ffe23, type: 3}
 --- !u!195 &7662259908630617822

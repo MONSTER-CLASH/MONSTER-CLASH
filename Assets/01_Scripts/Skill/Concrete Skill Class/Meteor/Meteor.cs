@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class Meteor : MonoBehaviour
 {
-    [SerializeField] private FireBallCardData _fireBallCardData;
+    [SerializeField] private MeteorCardData _meteorCardData;
     [SerializeField] private float _attackRange;
     private float _damage;
     private float _destroyTime;
 
     private void Awake()
     {
-        SoundManager.Instance.SoundPlay(SoundManager.Instance.FireBallSFX);
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.MeteorSFX);
 
-        _damage = _fireBallCardData.Damage;
-        _destroyTime = _fireBallCardData.DestroyTime;
+        _damage = _meteorCardData.Damage;
+        _destroyTime = _meteorCardData.DestroyTime;
 
         Collider[] enemys = Physics.OverlapSphere(transform.position, _attackRange, 1 << LayerMask.NameToLayer("Enemy"));
 

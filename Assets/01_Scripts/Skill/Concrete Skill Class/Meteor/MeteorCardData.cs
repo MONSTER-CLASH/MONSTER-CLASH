@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Fire Ball Card Data", menuName = "Scriptable Object/Skill/Fire Ball Card Data")]
-public class FireBallCardData : CardData
+[CreateAssetMenu(fileName = "Meteor Card Data", menuName = "Scriptable Object/Skill/Meteor Card Data")]
+public class MeteorCardData : CardData
 {
-    [Header("Fire Ball Card Data")]
+    [Header("Meteor Card Data")]
     public float Damage;
     public float DamageUpgradeRatio;
     public float DestroyTime;
 
-    [Header("Fire Ball Card Info")]
-    public Sprite FireBallImage;
-    public string FireBallName;
+    [Header("Meteor Card Info")]
+    public Sprite MeteorImage;
+    public string MeteorName;
 
     public override void UpgradeCard()
     {
@@ -25,8 +25,8 @@ public class FireBallCardData : CardData
         {
             new HaveCardInfoData
             {
-                InfoImage = FireBallImage,
-                InfoName = FireBallName,
+                InfoImage = MeteorImage,
+                InfoName = MeteorName,
                 InfoValue = Damage,
                 NextLevelInfoValue = Damage * DamageUpgradeRatio
             }

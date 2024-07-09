@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip StageDefeatSFX;
 
     [Header("Skill SFX")]
-    public AudioClip FireBallSFX;
+    public AudioClip MeteorSFX;
     public AudioClip LightningSFX;
     public AudioClip HealAreaSFX;
     public AudioClip FireAreaSFX;

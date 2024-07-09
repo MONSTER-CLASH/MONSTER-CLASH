@@ -125,6 +125,7 @@ public class UnitController : MonoBehaviour
     {
         if (_attackTarget)
         {
+            transform.LookAt(_attackTarget.transform);
             _attackSystem.SendDamage(_attackTarget, _unitStatusSystem.AttackDamage, gameObject);
         }
     }

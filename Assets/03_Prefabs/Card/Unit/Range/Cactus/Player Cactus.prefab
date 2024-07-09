@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cactusCardData: {fileID: 11400000, guid: ef45048c9cfc14d419ae18d8ebe3cb33, type: 2}
+  _skillProjectileSpawnPos: {fileID: 7536038313819993404}
   _skillProjectilePrefab: {fileID: 2984004995791714006, guid: 729b0a44c545cf649ad390b0aebf25b5, type: 3}
   _attackProjectileSpawnPos: {fileID: 2292398885833696196}
   _attackProjectilePrefab: {fileID: 5368602506785596673, guid: b6029e223b98b144e993098301c354c5, type: 3}

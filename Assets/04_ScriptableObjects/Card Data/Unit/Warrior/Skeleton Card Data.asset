@@ -38,7 +38,7 @@ MonoBehaviour:
     _attackDetectRangeUpgradeRatio: 1
     _moveSpeed: 2.5
     _moveSpeedUpgradeRatio: 1
-  SkillVFX: {fileID: 0}
+  SkillVFX: {fileID: 3712118245887311818, guid: 93ad63778a118914f8e3127530fb5757, type: 3}
   SkillCoolTime: 8
   SkillIncreaseCoefficient: 0.35
   SkillDurationTime: 2.5

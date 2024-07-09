@@ -5,10 +5,7 @@ using UnityEngine;
 public class DragonSkill : MonoBehaviour
 {
     private Collider _collider;
-    private float _curDamage;
-    private float _firstDamage;
-    private float _secondDamage;
-    private float _thirdDamage;
+    private float _tickDamage;
     private string _enemyLayer;
     private GameObject _dragon;
 
@@ -23,11 +20,9 @@ public class DragonSkill : MonoBehaviour
         if (_dragon == null) Destroy(gameObject);
     }
 
-    public void SetDragonSkillData(float firstDamage, float secondDamage, float thirdDamage, string enemyLayer, GameObject dragon)
+    public void SetDragonSkillData(float tickDamage, string enemyLayer, GameObject dragon)
     {
-        _firstDamage = firstDamage;
-        _secondDamage = secondDamage;
-        _thirdDamage = thirdDamage;
+        _tickDamage = tickDamage;
         _enemyLayer = enemyLayer;
         _dragon = dragon;
 
@@ -36,23 +31,13 @@ public class DragonSkill : MonoBehaviour
 
     private IEnumerator DragonSkillCoroutine()
     {
-        yield return new WaitForSeconds(0.3f);
-        _curDamage = _firstDamage;
-        _collider.enabled = true;
-        yield return new WaitForSeconds(0.01f);
-        _collider.enabled = false;
-
-        yield return new WaitForSeconds(0.3f);
-        _curDamage = _secondDamage;
-        _collider.enabled = true;
-        yield return new WaitForSeconds(0.01f);
-        _collider.enabled = false;
-
-        yield return new WaitForSeconds(0.4f);
-        _curDamage = _thirdDamage;
-        _collider.enabled = true;
-        yield return new WaitForSeconds(0.01f);
-        _collider.enabled = false;
+        for (int i=0; i<10; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            _collider.enabled = true;
+            yield return new WaitForSeconds(0.01f);
+            _collider.enabled = false;
+        }
 
         Destroy(gameObject);
 
@@ -63,7 +48,7 @@ public class DragonSkill : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(_enemyLayer))
         {
-            other.GetComponent<HealthSystem>().TakeDamage(_curDamage, gameObject);
+            other.GetComponent<HealthSystem>().TakeDamage(_tickDamage, gameObject);
         }
     }
 }

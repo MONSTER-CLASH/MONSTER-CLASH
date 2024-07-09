@@ -8,7 +8,7 @@ public class Slime : UnitController
 
     protected override void HandleSkill()
     {
-        if (_canUseSkill)
+        if (_canUseSkill && _attackTarget && Vector3.Distance(_attackTarget.transform.position, transform.position) <= _slimeCardData.SkillRange)
         {
             Destroy(Instantiate(_slimeCardData.SkillVFX, transform.position, Quaternion.identity), 3);
 
@@ -28,5 +28,11 @@ public class Slime : UnitController
 
             _skillCool = Time.time + _slimeCardData.SkillCoolTime;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 0, 1, 0.25f);
+        Gizmos.DrawWireSphere(transform.position, _slimeCardData.SkillRange);
     }
 }

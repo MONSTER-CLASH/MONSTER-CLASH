@@ -20,6 +20,8 @@ public class StageManager : MonoBehaviour
     [SerializeField] private GameObject _leftDirectController;
     [SerializeField] private GameObject _rightDirectController;
 
+    [SerializeField] private GameObject deckObject;
+
     private float _stageTime;
     private bool _isStageEnd;
 
@@ -45,10 +47,11 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            _leftDirectController.SetActive(false);
-            _rightDirectController.SetActive(false);
+            //_leftDirectController.SetActive(false);
+            //_rightDirectController.SetActive(false);
             _leftRayController.SetActive(true);
             _rightRayController.SetActive(true);
+            //deckObject.GetComponent<BoxCollider>().isTrigger = false;
 
             Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, true);
             DeckManager.Gold += StageData.StageWinGold;
@@ -73,10 +76,11 @@ public class StageManager : MonoBehaviour
     {
         if (!_isStageEnd)
         {
-            _leftDirectController.SetActive(false);
-            _rightDirectController.SetActive(false);
+            //_leftDirectController.SetActive(false);
+            //_rightDirectController.SetActive(false);
             _leftRayController.SetActive(true);
             _rightRayController.SetActive(true);
+            //deckObject.GetComponent<BoxCollider>().isTrigger = false;
 
             Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, false);
             DeckManager.Gold += StageData.StageDefeatGold;

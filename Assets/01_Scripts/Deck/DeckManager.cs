@@ -11,7 +11,6 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentGoldText;
 
     [Header("Have Cards")]
-
     [Space()]
     [SerializeField] private Transform _haveCardItemParent;
     [SerializeField] private GameObject _haveCardItem;

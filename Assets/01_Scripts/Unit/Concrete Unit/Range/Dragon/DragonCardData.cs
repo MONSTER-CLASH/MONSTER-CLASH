@@ -8,9 +8,7 @@ public class DragonCardData : CardData
     [Header("Dragon Card Data")]
     public GameObject SkillVFX;
     public float SkillCoolTime;
-    public float SkillFirstDamage;
-    public float SkillSecondDamage;
-    public float SkillThirdDamage;
+    public float SkillTickDamage;
 
     public override void UpgradeCard() { }
 }

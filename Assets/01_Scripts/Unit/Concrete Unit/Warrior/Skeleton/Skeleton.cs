@@ -10,6 +10,11 @@ public class Skeleton : UnitController
     {
         if (_canUseSkill)
         {
+            GameObject go = Instantiate(_skeletonCardData.SkillVFX, transform);
+            go.transform.localPosition = Vector3.zero;
+            Destroy(go, _skeletonCardData.SkillDurationTime);
+
+
             _buffSystem.AddBuff(new AttackDamageIncreaseBuff(
                 InDecreaseType.Coefficient, _skeletonCardData.SkillIncreaseCoefficient, _skeletonCardData.SkillDurationTime));
 

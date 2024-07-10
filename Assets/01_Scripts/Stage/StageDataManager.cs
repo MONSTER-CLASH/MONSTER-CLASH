@@ -20,6 +20,7 @@ public class StageDataManager : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.SoundPlay(SoundManager.Instance.StageSelectSceneBGM, SoundType.BGM);
+        StartCoroutine(FadeInOutManager.Instance.FadeOut(null));
     }
 
     private void Update()
@@ -43,9 +44,14 @@ public class StageDataManager : MonoBehaviour
     /// </summary>
     public void StartStage(StageData stageData)
     {
-        DeckManager.Instance.SetEquipDeck();
-        StageManager.StageData = stageData;
-        SceneManager.LoadScene("Main Stage 1");
+        Action action = () =>
+        {
+            DeckManager.Instance.SetEquipDeck();
+            StageManager.StageData = stageData;
+            SceneManager.LoadScene("Main Stage 1");
+        };
+
+        StartCoroutine(FadeInOutManager.Instance.FadeIn(action));
     }
 
     public void StartNextMainStage()

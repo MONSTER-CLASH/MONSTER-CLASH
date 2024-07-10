@@ -30,7 +30,7 @@ public class UnitController : MonoBehaviour
     protected bool _canUseSkill => _skillCool < Time.time;
     protected float _skillCool;
 
-    private LayerMask _oppositeLayer;
+    protected LayerMask _oppositeLayer;
 
 
     private void Awake()
@@ -91,7 +91,7 @@ public class UnitController : MonoBehaviour
         if (_attackTarget || !_canMove || _healthSystem.IsDead || StageManager.Instance.IsStageEnd) return;
 
         List<Collider> enemys = Physics.OverlapSphere(transform.position, _unitStatusSystem.AttackDetectRange, _oppositeLayer).ToList();
-        enemys = enemys.OrderByDescending(i => Vector3.Distance(transform.position, i.transform.position)).ToList();
+        enemys = enemys.OrderBy(i => Vector3.Distance(transform.position, i.transform.position)).ToList();
         
         if (enemys.Count > 0)
         {
@@ -125,6 +125,7 @@ public class UnitController : MonoBehaviour
     {
         if (_attackTarget)
         {
+            transform.LookAt(_attackTarget.transform);
             _attackSystem.SendDamage(_attackTarget, _unitStatusSystem.AttackDamage, gameObject);
         }
     }

@@ -26,8 +26,6 @@ public class SpecialWaveWarningShower : MonoBehaviour
 
     private IEnumerator ShowWarningCoroutine()
     {
-        yield return new WaitForSeconds(1f);
-
         _warningUI.SetActive(true);
         _warningLight.gameObject.SetActive(true);
 

@@ -42,6 +42,4 @@ MonoBehaviour:
     _moveSpeedUpgradeRatio: 1
   SkillVFX: {fileID: 7269821006557506982, guid: 4af9a46cc4f317e4387ade0663b7d694, type: 3}
   SkillCoolTime: 6
-  SkillFirstDamage: 100
-  SkillSecondDamage: 150
-  SkillThirdDamage: 250
+  SkillTickDamage: 70

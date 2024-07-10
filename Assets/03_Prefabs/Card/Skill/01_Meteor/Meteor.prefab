@@ -58760,7 +58760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f51178852996f41a3d958559531768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireBallCardData: {fileID: 11400000, guid: 5c8f65382ea83ba4b8c689f400ea2cd4, type: 2}
+  _meteorCardData: {fileID: 11400000, guid: 5c8f65382ea83ba4b8c689f400ea2cd4, type: 2}
   _attackRange: 4
 --- !u!1 &7722308213933981789
 GameObject:

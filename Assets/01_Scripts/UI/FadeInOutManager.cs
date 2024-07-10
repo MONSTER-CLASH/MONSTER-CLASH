@@ -25,6 +25,7 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator FadeIn(Action action)
     {
+        _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(0, 0, 0, 0);
 
         while (_fadeInOutImage.color.a < 1)
@@ -40,6 +41,7 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator FadeOut(Action action)
     {
+        _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(0, 0, 0, 1);
 
         while (_fadeInOutImage.color.a > 0)
@@ -49,6 +51,7 @@ public class FadeInOutManager : MonoBehaviour
         }
 
         action?.Invoke();
+        _fadeInOutImage.gameObject.SetActive(false);
 
         yield break;
     }

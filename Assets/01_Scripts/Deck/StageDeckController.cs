@@ -8,7 +8,9 @@ public class StageDeckController : MonoBehaviour
     public Transform[] SpawnBases;
     public TMP_Text[] SpawnCoolTimeText;
     public TMP_Text MerceneryCoinText;
-    
+
+    [SerializeField] private GameObject[] SpawnArea = new GameObject[6];
+
     public float[] coolTime;
 
     public float mercenaryCoin;
@@ -72,5 +74,31 @@ public class StageDeckController : MonoBehaviour
     private void SetMerceneryCoin()
     {
         MerceneryCoinText.text = ((int)mercenaryCoin).ToString();
+    }
+
+    public void ShowSpawnArea(int index)
+    {
+        if(DeckManager.EquipCardDatas[index].CardType == CardType.Skill)
+        {
+            foreach (GameObject area in SpawnArea)
+            {
+                area.SetActive(true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                SpawnArea[i].SetActive(true);
+            }
+        }
+    }
+
+    public void HideSpawnArea()
+    {
+        foreach (GameObject area in SpawnArea)
+        {
+            area.SetActive(false);
+        }
     }
 }

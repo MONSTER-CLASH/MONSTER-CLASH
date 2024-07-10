@@ -50,11 +50,22 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state != State.Drop || other.CompareTag("GameController"))
-            return;
-
-        if (other.gameObject.CompareTag("SpawnZone") && StageDeckController.Instance.mercenaryCoin > DeckManager.EquipCardDatas[cardIndex].SpawnCost)
+        if (other.CompareTag("GameController")) return;
+        if (state != State.Drop || StageDeckController.Instance.mercenaryCoin < DeckManager.EquipCardDatas[cardIndex].SpawnCost)
         {
+            Recycle();
+            return;
+        }
+
+
+        if (other.gameObject.CompareTag("SpawnZone"))
+        {
+            Debug.Log("이거 맞고" + other.name + "스폰존");
+            Spawn();
+        }
+        else if (other.gameObject.CompareTag("SkillSpawnZone") && gameObject.CompareTag("SkillModel"))
+        {
+            Debug.Log("이거 맞고" + other.name + "스킬스폰존");
             Spawn();
         }
         else
@@ -99,5 +110,15 @@ public class Ball : MonoBehaviour
         StageDeckController.Instance.UseMerceneryCoin(DeckManager.EquipCardDatas[cardIndex].SpawnCost);
         yield return new WaitForSeconds(DeckManager.EquipCardDatas[cardIndex].SpawnCoolTime);
         xrGrabInteractable.enabled = true;
+    }
+
+    public void SelectModel()
+    {
+        StageDeckController.Instance.ShowSpawnArea(cardIndex);
+    }
+
+    public void UnSelectModel()
+    {
+        StageDeckController.Instance.HideSpawnArea();
     }
 }

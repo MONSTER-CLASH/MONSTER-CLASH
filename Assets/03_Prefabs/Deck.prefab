@@ -325,8 +325,8 @@ GameObject:
   - component: {fileID: 8434602108502803225}
   - component: {fileID: 8434602108502803226}
   - component: {fileID: 8434602108502803205}
-  - component: {fileID: -2909069801503704207}
   - component: {fileID: 275541807525250945}
+  - component: {fileID: 5053344949280014804}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -452,12 +452,64 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-2909069801503704207
+--- !u!114 &275541807525250945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434602108502803227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f0e51ce8ce24b4ab9deef8aa8e9fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnBases:
+  - {fileID: 8252570594209012270}
+  - {fileID: 220690647520908990}
+  - {fileID: 5689095569128487041}
+  - {fileID: 6603861284711894848}
+  - {fileID: 1403617720041205066}
+  - {fileID: 2846993676198800498}
+  - {fileID: 4277338436644423965}
+  - {fileID: 8689155143895160297}
+  - {fileID: 8824555656306728563}
+  SpawnCoolTimeText:
+  - {fileID: 4481383530148383588}
+  - {fileID: 5739304811813292020}
+  - {fileID: 163728207173429707}
+  - {fileID: 1662874385307622922}
+  - {fileID: 6903087259232353280}
+  - {fileID: 7724968598203186488}
+  - {fileID: 8640788162869631063}
+  - {fileID: 3756005628302017699}
+  - {fileID: 3945444874437644089}
+  MerceneryCoinText: {fileID: 629525417974632374}
+  SpawnArea:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  coolTime:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  mercenaryCoin: 0
+  mercenartCoinPerSecond: 3
+--- !u!114 &5053344949280014804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -575,12 +627,12 @@ MonoBehaviour:
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
+  m_SmoothPositionAmount: 8
+  m_TightenPosition: 0.1
   m_TrackRotation: 1
   m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
+  m_SmoothRotationAmount: 8
+  m_TightenRotation: 0.1
   m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
@@ -610,51 +662,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &275541807525250945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8434602108502803227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f0e51ce8ce24b4ab9deef8aa8e9fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnBases:
-  - {fileID: 8252570594209012270}
-  - {fileID: 220690647520908990}
-  - {fileID: 5689095569128487041}
-  - {fileID: 6603861284711894848}
-  - {fileID: 1403617720041205066}
-  - {fileID: 2846993676198800498}
-  - {fileID: 4277338436644423965}
-  - {fileID: 8689155143895160297}
-  - {fileID: 8824555656306728563}
-  SpawnCoolTimeText:
-  - {fileID: 4481383530148383588}
-  - {fileID: 5739304811813292020}
-  - {fileID: 163728207173429707}
-  - {fileID: 1662874385307622922}
-  - {fileID: 6903087259232353280}
-  - {fileID: 7724968598203186488}
-  - {fileID: 8640788162869631063}
-  - {fileID: 3756005628302017699}
-  - {fileID: 3945444874437644089}
-  MerceneryCoinText: {fileID: 629525417974632374}
-  coolTime:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  mercenaryCoin: 0
-  mercenartCoinPerSecond: 3
 --- !u!1001 &325755465279990538
 PrefabInstance:
   m_ObjectHideFlags: 0

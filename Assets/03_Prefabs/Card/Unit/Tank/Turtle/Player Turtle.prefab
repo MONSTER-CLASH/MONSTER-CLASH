@@ -583,6 +583,7 @@ GameObject:
   - component: {fileID: 7303362335887094817}
   - component: {fileID: 4594417676159175914}
   - component: {fileID: 8240757862492228235}
+  - component: {fileID: 932088092485625410}
   m_Layer: 6
   m_Name: Player Turtle
   m_TagString: Untagged
@@ -643,7 +644,6 @@ MonoBehaviour:
   Name: "\uAC70\uBD81"
   MaxHealth: 0
   CurrentHealth: 0
-  AttackDamage: 0
   AttackSpeed: 0
   AttackRange: 0
   AttackDetectRange: 0
@@ -728,6 +728,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &932088092485625410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251644086444118725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd12a4f9581b57f43b18944e6a12c362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4283124583837207715
 GameObject:
   m_ObjectHideFlags: 0

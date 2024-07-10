@@ -34,6 +34,7 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.SoundPlay(SoundManager.Instance.StageSceneBGM, SoundType.BGM);
+        StartCoroutine(FadeInOutManager.Instance.FadeOut(null));
     }
 
     private void Update()

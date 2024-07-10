@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,16 +20,25 @@ public class StageResultUIController : MonoBehaviour
     {
         _stageSelectSceneBtn.onClick.AddListener(() =>
         {
-            if (StageDataManager.LastClearStageLevel == 3)
+            Action action = () =>
             {
-                SceneManager.LoadScene("Ending Scene");
-            }
-            else
-            {
-                SceneManager.LoadScene("Stage Select Scene");
-            }
+                if (StageDataManager.LastClearStageLevel == 3)
+                {
+                    SceneManager.LoadScene("Ending Scene");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Stage Select Scene");
+                }
+            };
+
+            StartCoroutine(FadeInOutManager.Instance.FadeIn(action));
         });
-        _stageRetryBtn.onClick.AddListener(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
+        _stageRetryBtn.onClick.AddListener(() => 
+        {
+            Action action = () => { SceneManager.LoadScene(SceneManager.GetActiveScene().name); };
+            StartCoroutine(FadeInOutManager.Instance.FadeIn(action));
+        });
     }
 
     public void SetStageResultUI(StageData stageData, float stageTime, bool isPlayerWin)

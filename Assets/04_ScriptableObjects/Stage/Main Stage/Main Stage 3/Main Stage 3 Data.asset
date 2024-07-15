@@ -43,6 +43,14 @@ MonoBehaviour:
     SpawnDelay: 0
     IsSpecialWave: 1
     SpecialWaveStartHp: 500
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 7702425354083881902, guid: 6fbb5416d2b5eab4e8d4d1ebc515adb7, type: 3}
+    UnitLevel: 1
+    SpawnCount: 1
+    SpawnUnitCount: 1
+    SpawnDelay: 0
+    IsSpecialWave: 1
+    SpecialWaveStartHp: 500
   RightUnitSpawnDatas:
   - SpawnTime: 5
     SpawnUnit: {fileID: 337252649637521631, guid: 7a64025de03327345a7bf034b8529732, type: 3}

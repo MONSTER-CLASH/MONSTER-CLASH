@@ -14,6 +14,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip StageSelectSceneBGM;
     public AudioClip StageSceneBGM;
 
+    [Header("Start Story Cut Scene")]
+    public AudioClip DemonKingWalkSound;
+    public AudioClip DemonKingAttackSound;
+
     [Header("Stage SFX")]
     public AudioClip StageWinSFX;
     public AudioClip StageDefeatSFX;

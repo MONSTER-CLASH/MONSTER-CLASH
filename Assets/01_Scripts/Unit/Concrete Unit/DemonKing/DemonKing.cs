@@ -45,7 +45,7 @@ public class DemonKing : UnitController
         else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) enemyLayer = "Player";
 
         GameObject skill = Instantiate(_skillProjectilePrefab, transform.position + new Vector3(0,1.5f,0) + transform.forward, Quaternion.identity);
-        skill.GetComponent<DemonKingSkillProjectile>().SetDemonKingSkillData(gameObject, enemyLayer, _demonKingCardData.SkillDamage, _unitStatusSystem.AttackRange * 2);
+        skill.GetComponent<DemonKingSkillProjectile>().SetDemonKingSkillData(gameObject, enemyLayer, _demonKingCardData.SkillDamage, _unitStatusSystem.AttackDetectRange * 1.25f);
         skill.transform.forward = transform.forward;
 
         yield break;

@@ -20,28 +20,11 @@ MonoBehaviour:
   PlayerBaseStatusData: {fileID: 11400000, guid: 81875d82e674343469caaba85c904e24, type: 2}
   EnemyBaseStatusData: {fileID: 11400000, guid: 1a7a02719d820c34ca39fdb91b02e678, type: 2}
   LeftUnitSpawnDatas:
-  - SpawnTime: 10
-    SpawnUnit: {fileID: 8814391999353116905, guid: 800caaf7650f5fa458d44043342b8f02, type: 3}
-    UnitLevel: 2
-    SpawnCount: 3
-    SpawnUnitCount: 2
-    SpawnDelay: 20
-    IsSpecialWave: 0
-    SpecialWaveStartHp: 0
-  - SpawnTime: 0
-    SpawnUnit: {fileID: 8814391999353116905, guid: 800caaf7650f5fa458d44043342b8f02, type: 3}
-    UnitLevel: 5
-    SpawnCount: 1
-    SpawnUnitCount: 1
-    SpawnDelay: 0
-    IsSpecialWave: 1
-    SpecialWaveStartHp: 500
-  RightUnitSpawnDatas:
   - SpawnTime: 20
     SpawnUnit: {fileID: 8814391999353116905, guid: 800caaf7650f5fa458d44043342b8f02, type: 3}
     UnitLevel: 2
-    SpawnCount: 3
-    SpawnUnitCount: 2
+    SpawnCount: 10
+    SpawnUnitCount: 1
     SpawnDelay: 20
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
@@ -52,7 +35,24 @@ MonoBehaviour:
     SpawnUnitCount: 1
     SpawnDelay: 0
     IsSpecialWave: 1
-    SpecialWaveStartHp: 500
+    SpecialWaveStartHp: 1000
+  RightUnitSpawnDatas:
+  - SpawnTime: 30
+    SpawnUnit: {fileID: 8814391999353116905, guid: 800caaf7650f5fa458d44043342b8f02, type: 3}
+    UnitLevel: 2
+    SpawnCount: 10
+    SpawnUnitCount: 1
+    SpawnDelay: 20
+    IsSpecialWave: 0
+    SpecialWaveStartHp: 0
+  - SpawnTime: 0
+    SpawnUnit: {fileID: 8814391999353116905, guid: 800caaf7650f5fa458d44043342b8f02, type: 3}
+    UnitLevel: 5
+    SpawnCount: 1
+    SpawnUnitCount: 1
+    SpawnDelay: 0
+    IsSpecialWave: 1
+    SpecialWaveStartHp: 1000
   StageWinGold: 1000
   StageDefeatGold: 250
   RewardUnits:

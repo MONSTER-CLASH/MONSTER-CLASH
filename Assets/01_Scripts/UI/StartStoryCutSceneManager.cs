@@ -210,11 +210,11 @@ public class StartStoryCutSceneManager : MonoBehaviour
     {
         StartCoroutine(FadeInOutManager.Instance.FadeIn(null));
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
 
         _titleImage.SetActive(true);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.25f);
 
         SceneManager.LoadScene("Stage Select Scene");
 

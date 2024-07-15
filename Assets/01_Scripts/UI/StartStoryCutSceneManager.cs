@@ -15,6 +15,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _playerText;
     [SerializeField] private GameObject _evilMageTextObj;
     [SerializeField] private TextMeshProUGUI _evilMageText;
+    [SerializeField] private GameObject _crystalSphere;
 
     [Header("Stage Map")]
     [SerializeField] private Transform _stageMapPos;
@@ -87,7 +88,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(8);
 
-        string text3 = "말로 설명할 시간이 없으니,\n 자세한건 이 수정구를 통해 확인해주십시오.";
+        string text3 = "말로 설명할 시간이 없으니,\n 이 수정구를 통해 확인해주십시오.";
         StartCoroutine(ShowTextAnimation(text3, _evilMageText, 0.5f, 0.1f, 4));
 
         yield break;
@@ -113,6 +114,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
     {
         Action action = () =>
         {
+            _crystalSphere.SetActive(false);
             _xrOrigin.position = _stageMapPos.position;
             _xrOrigin.localEulerAngles = new Vector3(0, -90, 0);
             StartCoroutine(StageMapAnimation());

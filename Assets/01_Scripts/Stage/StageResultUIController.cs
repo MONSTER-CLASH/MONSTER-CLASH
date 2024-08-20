@@ -24,6 +24,7 @@ public class StageResultUIController : MonoBehaviour
             {
                 if (StageDataManager.LastClearStageLevel == 3)
                 {
+                    SoundManager.Instance.SoundPlay(SoundManager.Instance.EndingSceneBGM, SoundType.BGM);
                     SceneManager.LoadScene("Ending Scene");
                 }
                 else

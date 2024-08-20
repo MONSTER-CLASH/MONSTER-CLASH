@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
     [Header("BGM")]
     public AudioClip StageSelectSceneBGM;
     public AudioClip StageSceneBGM;
+    public AudioClip EndingSceneBGM;
 
     [Header("Start Story Cut Scene")]
     public AudioClip DemonKingWalkSound;

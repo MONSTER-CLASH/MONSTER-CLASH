@@ -26,7 +26,7 @@ MonoBehaviour:
     SpawnUnitCount: 1
     SpawnDelay: 0
     IsSpecialWave: 1
-    SpecialWaveStartHp: 1500
+    SpecialWaveStartHp: 3000
   - SpawnTime: 20
     SpawnUnit: {fileID: 337252649637521631, guid: 7a64025de03327345a7bf034b8529732, type: 3}
     UnitLevel: 1

@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource _sfxAudioSource;
 
     [Header("BGM")]
+    public AudioClip startCutSceneBGM;
     public AudioClip StageSelectSceneBGM;
     public AudioClip StageSceneBGM;
     public AudioClip EndingSceneBGM;

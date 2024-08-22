@@ -13309,7 +13309,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 1000}
+  m_SizeDelta: {x: 750, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &642726505
 MonoBehaviour:
@@ -15061,8 +15061,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bgmAudioSource: {fileID: 1415261113}
   _sfxAudioSource: {fileID: 1245350581}
+  startCutSceneBGM: {fileID: 0}
   StageSelectSceneBGM: {fileID: 8300000, guid: a77f8894f1a6bd44e8a56b8a38c23826, type: 3}
   StageSceneBGM: {fileID: 8300000, guid: 1bbdeef8bcbe058439f0825509305f94, type: 3}
+  EndingSceneBGM: {fileID: 0}
   DemonKingWalkSound: {fileID: 8300000, guid: 47c6b14c22655f146a604ccdba3fab5c, type: 3}
   DemonKingAttackSound: {fileID: 8300000, guid: c5b8c28c8bbadca40835c43d55c359e9, type: 3}
   StageWinSFX: {fileID: 0}

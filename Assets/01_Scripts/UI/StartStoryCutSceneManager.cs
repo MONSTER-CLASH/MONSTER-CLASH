@@ -30,6 +30,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.SoundPlay(SoundManager.Instance.startCutSceneBGM, SoundType.BGM);
         StartCoroutine(FadeInOutManager.Instance.FadeOut(null));
         StartCoroutine(PlayerTextAnimation1());
     }

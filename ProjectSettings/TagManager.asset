@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerBase
+  - EnemyBase
+  - SpawnZone
+  - Item
+  - Door
+  - Enemy
+  - UnitModel
+  - SkillModel
+  - SkillSpawnZone
   layers:
   - Default
   - TransparentFX
@@ -11,10 +20,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - SpawnModel
+  - SpawnArea
   - 
   - 
   - 

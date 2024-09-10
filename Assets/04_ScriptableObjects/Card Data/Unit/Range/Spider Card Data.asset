@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927ca87abe73ad5498219137a1cf1c0f, type: 3}
+  m_Name: Spider Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uAC70\uBBF8"
+  CardImage: {fileID: 21300000, guid: 10adcb977f4bdce4e8843166043ad915, type: 3}
+  CardDescription: "\uC774\uB807\uAC8C \uCEE4\uB2E4\uB780 \uAC70\uBBF8\uB77C\uB2C8..
+    \uC0C1\uC0C1\uB9CC \uD574\uB3C4 \uB054\uCC0D\uD558\uB2E4."
+  CardLevel: 1
+  UpgradeCosts: 190000003200000064000000c800000090010000
+  CardModel: {fileID: 8870663661246530960, guid: 5a6668404366be64b8d493a50341871a, type: 3}
+  CardPrefab: {fileID: 8668471426078744270, guid: 1d850a724fc89294bbc33bf9a25c5277, type: 3}
+  SpawnCost: 3
+  SpawnCoolTime: 4
+  StorePrice: 0
+  CardType: 2
+  HaveCard: 0
+  UnitUpgradeData:
+    _health: 800
+    _healthUpgradeRatio: 1.15
+    _attackDamage: 100
+    _attackDamageUpgradeRatio: 1.15
+    _attackSpeed: 1.5
+    _attackSpeedUpgradeRatio: 1
+    _attackRange: 6
+    _attackRangeUpgradeRatio: 1
+    _attackDetectRange: 10
+    _attackDetectRangeUpgradeRatio: 1
+    _moveSpeed: 3
+    _moveSpeedUpgradeRatio: 1

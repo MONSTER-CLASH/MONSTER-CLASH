@@ -4,5 +4,24 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/00_Scenes/Start Title Scene.unity
+    guid: b3dc6c33f72da36449d7a8f5dcae82ce
+  - enabled: 1
+    path: Assets/00_Scenes/Start Story Cut Scene.unity
+    guid: 7de6b17e7fb791648b9d3723bb2579ce
+  - enabled: 1
+    path: Assets/00_Scenes/Stage Select Scene.unity
+    guid: ade639d4436796d408c05dfd278ade18
+  - enabled: 1
+    path: Assets/00_Scenes/Stage/Main Stage/Main Stage 1.unity
+    guid: 10d922ebdaa44c94d98f40c41d059974
+  - enabled: 1
+    path: Assets/00_Scenes/Ending Scene.unity
+    guid: 0ebb69ab2dbb7b94f9617a10bf3a8fba
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d1720a311f115b74a933a6c318a76c26, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ecf45576eb63a5f4f978c46a2220b4d4, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8e1fcad55676c3f43895da089a43fe0f, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: ecdfe21d218907446809dafd54cd88a1, type: 2}

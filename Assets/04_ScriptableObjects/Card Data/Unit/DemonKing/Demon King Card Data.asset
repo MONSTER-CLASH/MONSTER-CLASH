@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c5ae70e23457149b9ae239525e8d0e, type: 3}
+  m_Name: Demon King Card Data
+  m_EditorClassIdentifier: 
+  CardName: "\uB9C8\uC655"
+  CardImage: {fileID: 0}
+  CardDescription: 
+  CardLevel: 1
+  UpgradeCosts: 
+  CardModel: {fileID: 0}
+  CardPrefab: {fileID: 0}
+  SpawnCost: 0
+  SpawnCoolTime: 0
+  StorePrice: 0
+  CardType: 0
+  HaveCard: 0
+  UnitUpgradeData:
+    _health: 10000
+    _healthUpgradeRatio: 1
+    _attackDamage: 100
+    _attackDamageUpgradeRatio: 1
+    _attackSpeed: 1
+    _attackSpeedUpgradeRatio: 1
+    _attackRange: 3.5
+    _attackRangeUpgradeRatio: 1
+    _attackDetectRange: 10
+    _attackDetectRangeUpgradeRatio: 1
+    _moveSpeed: 1
+    _moveSpeedUpgradeRatio: 1
+  SkillCoolTime: 5
+  SkillDamage: 300

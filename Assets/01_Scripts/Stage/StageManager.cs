@@ -12,7 +12,8 @@ public class StageManager : MonoBehaviour
 
     [Header("Result UI")]
     [SerializeField] private GameObject _stageResultUIPrefab;
-    [SerializeField] private Transform _stageResultUIParent;
+    [SerializeField] private Transform _stageWinResultUIParent;
+    [SerializeField] private Transform _stageDefeatResultUIParent;
 
     [Space()]
     [SerializeField] private GameObject _leftRayController;
@@ -54,7 +55,7 @@ public class StageManager : MonoBehaviour
             _rightRayController.SetActive(true);
             //deckObject.GetComponent<BoxCollider>().isTrigger = false;
 
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, true);
+            Instantiate(_stageResultUIPrefab, _stageWinResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, true);
             DeckManager.Gold += StageData.StageWinGold;
             if (!StageData.IsSubStage) StageDataManager.LastClearStageLevel = StageData.StageLevel;
 
@@ -83,7 +84,7 @@ public class StageManager : MonoBehaviour
             _rightRayController.SetActive(true);
             //deckObject.GetComponent<BoxCollider>().isTrigger = false;
 
-            Instantiate(_stageResultUIPrefab, _stageResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, false);
+            Instantiate(_stageResultUIPrefab, _stageDefeatResultUIParent).GetComponent<StageResultUIController>().SetStageResultUI(StageData, _stageTime, false);
             DeckManager.Gold += StageData.StageDefeatGold;
 
             _isStageEnd=true;

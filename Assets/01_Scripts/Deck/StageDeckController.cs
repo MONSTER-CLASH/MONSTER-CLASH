@@ -9,7 +9,8 @@ public class StageDeckController : MonoBehaviour
     public TMP_Text[] SpawnCoolTimeText;
     public TMP_Text MerceneryCoinText;
 
-    [SerializeField] private GameObject[] SpawnArea = new GameObject[6];
+    [SerializeField] private GameObject unitSpawnArea;
+    [SerializeField] private GameObject skillSpawnArea;
 
     public float[] coolTime;
 
@@ -78,27 +79,17 @@ public class StageDeckController : MonoBehaviour
 
     public void ShowSpawnArea(int index)
     {
-        if(DeckManager.EquipCardDatas[index].CardType == CardType.Skill)
+        unitSpawnArea.SetActive(true);
+
+        if (DeckManager.EquipCardDatas[index].CardType == CardType.Skill)
         {
-            foreach (GameObject area in SpawnArea)
-            {
-                area.SetActive(true);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                SpawnArea[i].SetActive(true);
-            }
+            skillSpawnArea.SetActive(true);
         }
     }
 
     public void HideSpawnArea()
     {
-        foreach (GameObject area in SpawnArea)
-        {
-            area.SetActive(false);
-        }
+        unitSpawnArea.SetActive(false);
+        skillSpawnArea.SetActive(false);
     }
 }

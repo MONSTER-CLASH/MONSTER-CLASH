@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class BaseAttackSystem : MonoBehaviour
 {
     [SerializeField] private GameObject _attackProjectilePrefab;
     [SerializeField] private Transform attackProjectileSpawnPos;
+    [SerializeField] private GameObject _baseDieExplosionEffect;
     private float _attackCool;
     private bool _canAttack => _attackCool <= Time.time;
 
@@ -22,6 +24,8 @@ public class BaseAttackSystem : MonoBehaviour
 
         if (gameObject.layer == LayerMask.NameToLayer("Player")) _oppositeLayer = LayerMask.GetMask("Enemy");
         else if (gameObject.layer == LayerMask.NameToLayer("Enemy")) _oppositeLayer = LayerMask.GetMask("Player");
+
+        _healthSystem.OnDead += DieHandler;
     }
 
     private void Update()
@@ -50,6 +54,18 @@ public class BaseAttackSystem : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void DieHandler(GameObject _)
+    {
+        StartCoroutine(DieCoroutine());
+    }
+
+    private IEnumerator DieCoroutine()
+    {
+        Instantiate(_baseDieExplosionEffect, transform.position, Quaternion.identity);
+
+        yield break;
     }
 
     private void OnDrawGizmos()

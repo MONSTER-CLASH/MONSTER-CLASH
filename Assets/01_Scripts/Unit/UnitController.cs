@@ -169,7 +169,7 @@ public class UnitController : MonoBehaviour
 
         yield return null;
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
-        Instantiate(VFXManager.Instance.UnitDieVFX, transform.position, Quaternion.identity);
+        Destroy(Instantiate(VFXManager.Instance.UnitDieVFX, transform.position, Quaternion.identity), 3);
         Destroy(gameObject);
 
         yield break;

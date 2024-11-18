@@ -16,6 +16,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
     [SerializeField] private GameObject _evilMageTextObj;
     [SerializeField] private TextMeshProUGUI _evilMageText;
     [SerializeField] private GameObject _crystalSphere;
+    [SerializeField] private GameObject _crystalInteractDiscription;
 
     [Header("Stage Map")]
     [SerializeField] private Transform _stageMapPos;
@@ -27,6 +28,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
     [SerializeField] private GameObject _evilMageTextObj2;
     [SerializeField] private TextMeshProUGUI _evilMageText2;
     [SerializeField] private PlayableDirector _evilMage2PD;
+    [SerializeField] private GameObject _swordInteractDiscription;
 
     private void Awake()
     {
@@ -91,6 +93,10 @@ public class StartStoryCutSceneManager : MonoBehaviour
 
         string text3 = "말로 설명할 시간이 없으니,\n 이 수정구를 통해 확인해주십시오.";
         StartCoroutine(ShowTextAnimation(text3, _evilMageText, 0.5f, 0.1f, 4));
+
+        yield return new WaitForSeconds(1.25f);
+
+        _crystalInteractDiscription.SetActive(true);
 
         yield break;
     }
@@ -187,6 +193,9 @@ public class StartStoryCutSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         _evilMage2PD.Play();
+
+        yield return new WaitForSeconds(1);
+        _swordInteractDiscription.SetActive(true);
 
         yield break;
     }

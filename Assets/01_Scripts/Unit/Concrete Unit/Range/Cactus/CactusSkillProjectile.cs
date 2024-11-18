@@ -13,7 +13,7 @@ public class CactusSkillProjectile : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(gameObject, 0.75f);
+        Destroy(gameObject, 1.15f);
     }
 
     private void FixedUpdate()

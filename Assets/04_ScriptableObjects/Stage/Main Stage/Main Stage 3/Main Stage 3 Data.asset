@@ -26,8 +26,8 @@ MonoBehaviour:
     SpawnUnitCount: 1
     SpawnDelay: 0
     IsSpecialWave: 1
-    SpecialWaveStartHp: 3000
-  - SpawnTime: 20
+    SpecialWaveStartHp: 4500
+  - SpawnTime: 12.5
     SpawnUnit: {fileID: 337252649637521631, guid: 7a64025de03327345a7bf034b8529732, type: 3}
     UnitLevel: 1
     SpawnCount: 10
@@ -35,7 +35,7 @@ MonoBehaviour:
     SpawnDelay: 30
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
-  - SpawnTime: 20
+  - SpawnTime: 12.5
     SpawnUnit: {fileID: 8814391999353116905, guid: 800caaf7650f5fa458d44043342b8f02, type: 3}
     UnitLevel: 1
     SpawnCount: 10
@@ -44,7 +44,7 @@ MonoBehaviour:
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
   RightUnitSpawnDatas:
-  - SpawnTime: 35
+  - SpawnTime: 27.5
     SpawnUnit: {fileID: 4655204728400927847, guid: 87ca36b4b20370649869d95c945f1db1, type: 3}
     UnitLevel: 1
     SpawnCount: 10
@@ -52,7 +52,7 @@ MonoBehaviour:
     SpawnDelay: 30
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
-  - SpawnTime: 35
+  - SpawnTime: 27.5
     SpawnUnit: {fileID: 3179369348985438236, guid: 56a037df1dd8f634b89c341a1e4a61ed, type: 3}
     UnitLevel: 1
     SpawnCount: 10
@@ -60,8 +60,8 @@ MonoBehaviour:
     SpawnDelay: 30
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
-  StageWinGold: 2000
-  StageDefeatGold: 500
+  StageWinGold: 10000
+  StageDefeatGold: 2500
   RewardUnits: []
   IsSubStage: 0
   RequiredMinMainStage: 0

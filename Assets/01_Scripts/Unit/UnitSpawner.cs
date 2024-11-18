@@ -12,6 +12,8 @@ public class UnitSpawner : MonoBehaviour
     private bool _isTeamBaseDead => _teamBaseHealthSystem ? _teamBaseHealthSystem.IsDead : false;
     private float _teamBaseHealth => _teamBaseStatusSystem ? _teamBaseStatusSystem.CurrentHealth : 0;
 
+    private float _startTime;
+
     private void Awake()
     {
         if (gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -33,6 +35,8 @@ public class UnitSpawner : MonoBehaviour
         {
             _unitSpawnDatas = new List<UnitSpawnData>(StageManager.StageData.RightUnitSpawnDatas);
         }
+
+        _startTime = Time.time;
     }
 
     private void Update()
@@ -52,7 +56,7 @@ public class UnitSpawner : MonoBehaviour
                 }
                 else
                 {
-                    if (_unitSpawnDatas[i].SpawnTime < Time.time)
+                    if (_unitSpawnDatas[i].SpawnTime < Time.time - _startTime)
                     {
                         StartCoroutine(UnitSpawnCoroutine(_unitSpawnDatas[i]));
                         _unitSpawnDatas.Remove(_unitSpawnDatas[i]);

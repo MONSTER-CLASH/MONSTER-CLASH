@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Main Stage 1 Data
   m_EditorClassIdentifier: 
   StageLevel: 1
-  StageName: "\uC2AC\uB77C\uC784 \uD1A0\uBC8C \uC758\uB8B0"
-  StageDescription: "\uBAB0\uB824\uC624\uB294 \uC2AC\uB77C\uC784\uB4E4\uC744 \uCC98\uCE58\uD574\uC8FC\uC138\uC694.
-    \uBCF4\uC0C1\uC73C\uB85C '\uD30C\uC774\uC5B4\uBCFC' \uCE74\uB4DC\uB97C \uB4DC\uB9BD\uB2C8\uB2E4."
+  StageName: "\uC120\uC778\uC7A5 \uD1A0\uBC8C \uC758\uB8B0"
+  StageDescription: "\uBAB0\uB824\uC624\uB294 \uC120\uC778\uC7A5\uB4E4\uC744 \uCC98\uCE58\uD574\uC8FC\uC138\uC694.
+    \uBCF4\uC0C1\uC73C\uB85C '\uC120\uC778\uC7A5' \uCE74\uB4DC\uB97C \uB4DC\uB9BD\uB2C8\uB2E4."
   PlayerBaseStatusData: {fileID: 11400000, guid: 363bd94a98fc48e42b27b5ce2ac3fb2e, type: 2}
   EnemyBaseStatusData: {fileID: 11400000, guid: a0408824871ccf348a281a60e21281f1, type: 2}
   LeftUnitSpawnDatas:
   - SpawnTime: 20
-    SpawnUnit: {fileID: 7164601812322574416, guid: 90e01a101ed6c11459af0766331a0d8d, type: 3}
+    SpawnUnit: {fileID: 7104173531795261979, guid: 15b74b5e850751448b88e1a1b575ec6d, type: 3}
     UnitLevel: 1
     SpawnCount: 10
     SpawnUnitCount: 1
@@ -28,7 +28,7 @@ MonoBehaviour:
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
   - SpawnTime: 0
-    SpawnUnit: {fileID: 7164601812322574416, guid: 90e01a101ed6c11459af0766331a0d8d, type: 3}
+    SpawnUnit: {fileID: 7104173531795261979, guid: 15b74b5e850751448b88e1a1b575ec6d, type: 3}
     UnitLevel: 2
     SpawnCount: 2
     SpawnUnitCount: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
     SpecialWaveStartHp: 1000
   RightUnitSpawnDatas:
   - SpawnTime: 27.5
-    SpawnUnit: {fileID: 7164601812322574416, guid: 90e01a101ed6c11459af0766331a0d8d, type: 3}
+    SpawnUnit: {fileID: 7104173531795261979, guid: 15b74b5e850751448b88e1a1b575ec6d, type: 3}
     UnitLevel: 1
     SpawnCount: 10
     SpawnUnitCount: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
     IsSpecialWave: 0
     SpecialWaveStartHp: 0
   - SpawnTime: 0
-    SpawnUnit: {fileID: 7164601812322574416, guid: 90e01a101ed6c11459af0766331a0d8d, type: 3}
+    SpawnUnit: {fileID: 7104173531795261979, guid: 15b74b5e850751448b88e1a1b575ec6d, type: 3}
     UnitLevel: 2
     SpawnCount: 2
     SpawnUnitCount: 2
@@ -55,7 +55,7 @@ MonoBehaviour:
   StageWinGold: 1000
   StageDefeatGold: 250
   RewardUnits:
-  - {fileID: 11400000, guid: 5c8f65382ea83ba4b8c689f400ea2cd4, type: 2}
+  - {fileID: 11400000, guid: ef45048c9cfc14d419ae18d8ebe3cb33, type: 2}
   IsSubStage: 0
   RequiredMinMainStage: 0
   RequiredMaxMainStage: 0

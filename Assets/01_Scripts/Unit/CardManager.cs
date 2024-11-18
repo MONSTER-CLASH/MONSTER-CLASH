@@ -42,11 +42,6 @@ public class CardManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-
-        foreach(CardData cardData in CardDatas)
-        {
-            cardData.CardLevel = 1;
-        }
     }
 
     public CardData[] GetHaveCardDatas()

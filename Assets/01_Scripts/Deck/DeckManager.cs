@@ -24,7 +24,6 @@ public class DeckManager : MonoBehaviour
     {
         Instance = this;
 
-        Gold += 10000;
         ShowHaveCardItem();
 
         UpdateEquipCardItem();

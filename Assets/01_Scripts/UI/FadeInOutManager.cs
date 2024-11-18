@@ -8,7 +8,7 @@ public class FadeInOutManager : MonoBehaviour
 {
     public static FadeInOutManager Instance;
 
-    [SerializeField] private Image _fadeInOutImage;
+    private Image _fadeInOutImage;
 
     private void Awake()
     {
@@ -25,6 +25,16 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator ImmediatelyFadeIn(Action action, float waitTime)
     {
+        if (_fadeInOutImage == null)
+        {
+            _fadeInOutImage = GameObject.FindGameObjectWithTag("FadeInOutImage").GetComponent<Image>();
+
+            if (_fadeInOutImage == null)
+            {
+                yield break;
+            }
+        }
+
         _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(0, 0, 0, 1);
 
@@ -37,6 +47,16 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator FadeIn(Action action)
     {
+        if (_fadeInOutImage == null)
+        {
+            _fadeInOutImage = GameObject.FindGameObjectWithTag("FadeInOutImage").GetComponent<Image>();
+
+            if (_fadeInOutImage == null)
+            {
+                yield break;
+            }
+        }
+
         _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(0, 0, 0, 0);
 
@@ -53,6 +73,16 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator FadeOut(Action action)
     {
+        if (_fadeInOutImage == null)
+        {
+            _fadeInOutImage = GameObject.FindGameObjectWithTag("FadeInOutImage").GetComponent<Image>();
+
+            if (_fadeInOutImage == null)
+            {
+                yield break;
+            }
+        }
+
         _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(0, 0, 0, 1);
 
@@ -70,6 +100,16 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator FadeInWhite(Action action)
     {
+        if (_fadeInOutImage == null)
+        {
+            _fadeInOutImage = GameObject.FindGameObjectWithTag("FadeInOutImage").GetComponent<Image>();
+
+            if (_fadeInOutImage == null)
+            {
+                yield break;
+            }
+        }
+
         _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(1, 1, 1, 0);
 
@@ -86,6 +126,16 @@ public class FadeInOutManager : MonoBehaviour
 
     public IEnumerator FadeOutWhite(Action action)
     {
+        if (_fadeInOutImage == null)
+        {
+            _fadeInOutImage = GameObject.FindGameObjectWithTag("FadeInOutImage").GetComponent<Image>();
+
+            if (_fadeInOutImage == null)
+            {
+                yield break;
+            }
+        }
+
         _fadeInOutImage.gameObject.SetActive(true);
         _fadeInOutImage.color = new Color(1, 1, 1, 1);
 

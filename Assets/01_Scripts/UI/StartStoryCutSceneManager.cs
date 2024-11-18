@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class StartStoryCutSceneManager : MonoBehaviour
 {
     [SerializeField] private Transform _xrOrigin;
-    [SerializeField] private GameObject _titleImage;
 
     [Header("Mercenary Pub")]
     [SerializeField] private TextMeshProUGUI _playerText;
@@ -218,15 +217,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
 
     private IEnumerator StartGameCoroutine()
     {
-        StartCoroutine(FadeInOutManager.Instance.FadeIn(null));
-
-        yield return new WaitForSeconds(1.5f);
-
-        _titleImage.SetActive(true);
-
-        yield return new WaitForSeconds(0.25f);
-
-        SceneManager.LoadScene("Tutorial Scene");
+        StartCoroutine(FadeInOutManager.Instance.FadeIn(() => SceneManager.LoadScene("Tutorial Scene")));
 
         yield break;
     }

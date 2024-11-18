@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: "\uC120\uC778\uC7A5"
   CardImage: {fileID: 21300000, guid: cfda2dbba7460204fbfc502a9a316db7, type: 3}
-  CardDescription: "\uAC89\uBAA8\uC2B5\uB9CC \uBCF4\uACE0 \uD0F1\uCEE4\uB85C \uC624\uD574
-    \uBC1B\uB294 \uACBD\uC6B0\uB3C4 \uC788\uB2E4. \uB180\uB78D\uAC8C\uB3C4 \uC6D0\uAC70\uB9AC
-    \uC720\uB2DB."
+  CardDescription: "\uC2A4\uD0AC\n\uAC00\uC2DC \uBFCC\uB9AC\uAE30 : \uC804\uBC29\uC5D0
+    \uBD80\uCC44\uAF34\uB85C \uC801\uC744 \uAD00\uD1B5\uD558\uB294 \uD22C\uC0AC\uCCB4\uB97C
+    \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
   CardLevel: 1
   UpgradeCosts: 64000000c8000000f4010000e8030000d0070000
   CardModel: {fileID: 2202662579194564764, guid: 0540591aee8242245b54bb182a2ce470, type: 3}

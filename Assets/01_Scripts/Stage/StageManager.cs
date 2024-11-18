@@ -21,7 +21,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private GameObject _leftDirectController;
     [SerializeField] private GameObject _rightDirectController;
 
-    [SerializeField] private GameObject deckObject;
+    [SerializeField] private bool isTurtorial;
 
     private float _stageTime;
     private bool _isStageEnd;
@@ -30,14 +30,20 @@ public class StageManager : MonoBehaviour
     {
         Instance = this;
 
-        GameObject.FindGameObjectWithTag("PlayerBase").GetComponent<HealthSystem>().OnDead += PlayerDefeat;
-        GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
+        if (!isTurtorial)
+        {
+            GameObject.FindGameObjectWithTag("PlayerBase").GetComponent<HealthSystem>().OnDead += PlayerDefeat;
+            GameObject.FindGameObjectWithTag("EnemyBase").GetComponent<HealthSystem>().OnDead += PlayerWin;
+        }
     }
 
     private void Start()
     {
-        SoundManager.Instance.SoundPlay(SoundManager.Instance.StageSceneBGM, SoundType.BGM);
-        StartCoroutine(FadeInOutManager.Instance.FadeOut(null));
+        if (!isTurtorial)
+        {
+            SoundManager.Instance.SoundPlay(SoundManager.Instance.StageSceneBGM, SoundType.BGM);
+            StartCoroutine(FadeInOutManager.Instance.FadeOut(null));
+        }
     }
 
     private void Update()

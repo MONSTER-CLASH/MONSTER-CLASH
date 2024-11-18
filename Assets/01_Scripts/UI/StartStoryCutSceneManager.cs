@@ -217,7 +217,7 @@ public class StartStoryCutSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.25f);
 
-        SceneManager.LoadScene("Stage Select Scene");
+        SceneManager.LoadScene("Tutorial Scene");
 
         yield break;
     }

@@ -10,6 +10,9 @@ public class StartTitleUIManager : MonoBehaviour
     [SerializeField] private Button _startBtn;
     [SerializeField] private Button _quitBtn;
 
+    [SerializeField] private CardData _tutorialUnitCardData;
+    [SerializeField] private CardData _tutorialSkillCardData;
+
     private void Start()
     {
         _startBtn.onClick.AddListener(() =>
@@ -22,5 +25,8 @@ public class StartTitleUIManager : MonoBehaviour
             Action action = () => { Application.Quit(); };
             StartCoroutine(FadeInOutManager.Instance.FadeIn(action));
         });
+
+        DeckManager.EquipCardDatas[0] = _tutorialUnitCardData;
+        DeckManager.EquipCardDatas[3] = _tutorialSkillCardData;
     }
 }

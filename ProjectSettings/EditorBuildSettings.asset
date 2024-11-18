@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/Ending Scene.unity
     guid: 0ebb69ab2dbb7b94f9617a10bf3a8fba
+  - enabled: 1
+    path: Assets/00_Scenes/Tutorial Scene.unity
+    guid: 8bd691fb2826ccb45b9b2765861a34de
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d1720a311f115b74a933a6c318a76c26, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ecf45576eb63a5f4f978c46a2220b4d4, type: 2}

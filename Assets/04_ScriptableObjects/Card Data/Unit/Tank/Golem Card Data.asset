@@ -16,7 +16,7 @@ MonoBehaviour:
   CardImage: {fileID: 21300000, guid: fb77a8b10f6be2f499bc6c3e60282ca5, type: 3}
   CardDescription: "\uC2A4\uD0AC\n\uC804\uC790\uC11D \uADF8\uB7A9 : \uC801 \uAC10\uC9C0\uBC94\uC704
     \uB0B4\uC5D0 \uC788\uB294 \uC801 \uC720\uB2DB \uC911 \uAC00\uC7A5 \uBA40\uB9AC\uC788\uB294
-    \uC720\uB2DB\uC744 \uB04C\uC5B4\uC628\uB2E4."
+    \uC720\uB2DB\uC744 \uB04C\uC5B4\uC635\uB2C8\uB2E4."
   CardLevel: 1
   UpgradeCosts: 64000000c8000000f4010000e8030000d0070000
   CardModel: {fileID: 1592360429518579161, guid: 4917c7c9b4651dc449b686c71ac0ec93, type: 3}

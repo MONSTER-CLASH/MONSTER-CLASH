@@ -25,9 +25,9 @@ MonoBehaviour:
   CardType: 0
   HaveCard: 0
   UnitUpgradeData:
-    _health: 10000
+    _health: 12000
     _healthUpgradeRatio: 1
-    _attackDamage: 100
+    _attackDamage: 225
     _attackDamageUpgradeRatio: 1
     _attackSpeed: 1
     _attackSpeedUpgradeRatio: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     _attackRangeUpgradeRatio: 1
     _attackDetectRange: 10
     _attackDetectRangeUpgradeRatio: 1
-    _moveSpeed: 1
+    _moveSpeed: 0.65
     _moveSpeedUpgradeRatio: 1
   SkillCoolTime: 5
-  SkillDamage: 300
+  SkillDamage: 400
